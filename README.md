@@ -25,4 +25,5 @@ The results are for the enitre organisation (i.e. summed across repositories) an
 ## TODO
 
 1. Unlimit contributor count. The GitHub API has a 100-dev limit on returning contributors, will find a way around this.
-2. Estimate the number of devs building on a protocol - this is very difficult to compute accurately. Could count the number of projects using the `web3.js`-equivalent package, as this component is used by virtually all developers, regardless of blockchain client choice.
+2. Estimate the number of devs building on a protocol - this is very difficult to compute accurately. Could count the number of projects using the `web3.js`-equivalent package (or SDK), as this component is used by virtually all developers, regardless of blockchain client choice.
+3. Use data from https://coincodecap.com/coins.
