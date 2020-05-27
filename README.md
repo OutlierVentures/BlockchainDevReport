@@ -16,11 +16,26 @@ pip3 install pygithub seaborn
 python3 dev.py [ORGANISATION_NAME]
 ```
 
-The results are for the enitre organisation (i.e. summed across repositories) and for all branches. Results are written to 2 files:
+The results are for the entire organisation (i.e. summed across repositories) and for all branches. Results are written to 2 files:
 
 `[ORGANISATION_NAME]_stats.py`: Latest stats, such as star count and code churn in the last month.
 
 `[ORGANISATION_NAME]_history.py`: Historical commits and code churn on a week-by-week basis.
+
+
+## Methodology
+
+### Historical commits and code changes
+
+*For the Q2 2020 report, data was pulled 27-28 May 2020.*
+
+Commits and code changes are pulled directly from the GitHub API. These are pulled per-repository, and then summed for all repositories in a given organisation.
+
+The data points used are the total number of commits and total number of code changes (additions + deletions) each week across all branches.
+
+In the visualisation, a 4-week moving average is taken to smooth the data.
+
+The data collection is in `dev.py` and the visualization is in `viz.py`.
 
 ## TODO
 
