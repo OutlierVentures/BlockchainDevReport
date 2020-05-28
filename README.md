@@ -12,6 +12,14 @@ pip3 install pygithub seaborn toml
 
 ## Usage
 
+For all large data pulling operations, a [Github Personal Access Token (PAT)](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) is required.
+
+```sh
+export PAT=[YOUR_GITHUB_PAT]
+```
+
+## Core protocol progress
+
 ```sh
 python3 dev.py [ORGANISATION_NAME]
 ```
@@ -22,10 +30,28 @@ The results are for the entire organisation (i.e. summed across repositories) an
 
 `[ORGANISATION_NAME]_history.py`: Historical commits and code churn on a week-by-week basis.
 
+## Total devs building on a chain
+
+Repos to search are loaded from a toml file of the following format:
+```toml
+[[repo]]
+url = "https://github.com/org1/repo1"
+
+[[repo]]
+url = "https://github.com/org2/repo2"
+```
+
+This is compatible with [Electric Capital's Crypto Ecosystems repo](https://github.com/electric-capital/crypto-ecosystems), which catalogues the repos building on a given blockchain.
+
+```sh
+python3 contr.py yourfilename.toml
+```
+
+The total number active in the past year is printed, and the usernames written to `yourfilename.json`. If an error occurs, progress is written to this file and the latest viewed repo is printed (the one on which it failed). To restart, delete all repos in the toml file before but not including the last repo printed.
 
 ## Methodology
 
-### Historical commits and code changes
+### Core protocol progress: historical commits and code changes
 
 *For the Q2 2020 report, data was pulled 27-28 May 2020.*
 
@@ -37,8 +63,12 @@ In the visualisation, a 4-week moving average is taken to smooth the data.
 
 The data collection is in `dev.py` and the visualization is in `viz.py`.
 
+## Total devs building on a chain
+
+The list of repos building on a given chain is specified in a `.toml` (format above), and data is pulled from [Electric Capital's Crypto Ecosystems repo](https://github.com/electric-capital/crypto-ecosystems), which catalogues the repos building on a given blockchain.
+
+All commits are pulled from each repo and the date as well as the author (GitHub username) returned. Any commits with a date from more than one year in the past are filtered out. The process is repeated for all repos in the `.toml` file, with the resulting list of contributors combined and de-duplicated.
+
 ## TODO
 
-1. Unlimit contributor count. The GitHub API has a 100-dev limit on returning contributors, will find a way around this.
-2. Estimate the number of devs building on a protocol - this is very difficult to compute accurately. Could count the number of projects using the `web3.js`-equivalent package (or SDK), as this component is used by virtually all developers, regardless of blockchain client choice.
-3. Use data from https://coincodecap.com/coins.
+1. Use data from https://coincodecap.com/coins.
