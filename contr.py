@@ -1,4 +1,4 @@
-import os, sys, requests, datetime
+import os, sys, requests, datetime, toml, json
 
 # Python client only allows the first 100 contributors to be returned, so use vanilla HTTP to get contributors
 class Contributors:
@@ -62,9 +62,49 @@ class Contributors:
                 sys.exit(1)
         # De-duplicate commiters
         deduplicated_contributors = list(set(contributors))    
-        print(len(deduplicated_contributors))
+        #print(len(deduplicated_contributors))
         return deduplicated_contributors
 
+    def get_year_contr_from_toml(self, toml_file : str):
+        out_file_name = toml_file.replace('.toml', '') + '.json'
+        with open(out_file_name, 'w') as outfile:
+            json.dump([], outfile)
+        try:
+            with open(toml_file, 'r') as f:
+                data = f.read()
+            repos = toml.loads(data)['repo']
+        except:
+            print('Could not open toml file - check formatting.')
+            sys.exit(1)
+        # Don't thread this - API limit
+        for repo in repos:
+            if 'url' in repo:
+                url = repo['url'].lower()
+                org_then_slash_then_repo = url.split('github.com/')[1]
+                if org_then_slash_then_repo[-1] == '/':
+                    org_then_slash_then_repo = org_then_slash_then_repo[:-1]
+                print(org_then_slash_then_repo)
+                contributors = self.get_contributors_in_last_year(org_then_slash_then_repo)
+                # Save progress in case of failure
+                try:
+                    with open(out_file_name) as json_file:
+                        data = json.load(json_file)
+                    data.extend(contributors)
+                    with open(out_file_name, 'w') as outfile:
+                        json.dump(data, outfile)
+                except Exception as e:
+                    print(e)
+                    sys.exit(1)
+        try:
+            with open(out_file_name) as json_file:
+                data = json.load(json_file)
+        except Exception as e:
+            print(e)
+            sys.exit(1)
+        deduplicated_contributors = list(set(data))
+        print(len(deduplicated_contributors))
+        os.remove(out_file_name) # Done with our progrss saving temp file
+        return deduplicated_contributors
 
 
 # Get last commit from JSON response, and create one list of all active in the past year, and one list of all contributors ever
@@ -72,5 +112,5 @@ class Contributors:
 
 if __name__ == '__main__':
     c = Contributors('./')
-    c.get_contributors_in_last_year(sys.argv[1])
+    c.get_year_contr_from_toml('effect.toml')
 
