@@ -19,6 +19,8 @@ class Contributors:
             print(page)
             data = requests.get('https://api.github.com/repos/' + org_then_slash_then_repo + '/contributors?page='
                                 + str(page) + '&per_page=100', headers = {'Authorization': 'Token ' + self.pat}).json()
+            if type(data) == dict:
+                return [] # Repo doesn't exist
             for item in data:
                 try:
                     contributors.append(item['login'])
@@ -38,9 +40,10 @@ class Contributors:
         page = 1
         commits = []
         while len(data):
-            print(page)
             data = requests.get('https://api.github.com/repos/' + org_then_slash_then_repo + '/commits?page='
                                 + str(page) + '&per_page=100', headers = {'Authorization': 'Token ' + self.pat}).json()
+            if type(data) == dict:
+                return [] # Repo doesn't exist
             try:
                 commits.extend(data)
             except Exception as e:
@@ -67,8 +70,9 @@ class Contributors:
 
     def get_year_contr_from_toml(self, toml_file : str):
         out_file_name = toml_file.replace('.toml', '') + '.json'
-        with open(out_file_name, 'w') as outfile:
-            json.dump([], outfile)
+        if not os.path.exists(out_file_name):
+            with open(out_file_name, 'w') as outfile:
+                json.dump([], outfile)
         try:
             with open(toml_file, 'r') as f:
                 data = f.read()
@@ -83,7 +87,7 @@ class Contributors:
                 org_then_slash_then_repo = url.split('github.com/')[1]
                 if org_then_slash_then_repo[-1] == '/':
                     org_then_slash_then_repo = org_then_slash_then_repo[:-1]
-                print(org_then_slash_then_repo)
+                print('Analysing ' + org_then_slash_then_repo)
                 contributors = self.get_contributors_in_last_year(org_then_slash_then_repo)
                 # Save progress in case of failure
                 try:
@@ -102,8 +106,9 @@ class Contributors:
             print(e)
             sys.exit(1)
         deduplicated_contributors = list(set(data))
-        print(len(deduplicated_contributors))
-        os.remove(out_file_name) # Done with our progrss saving temp file
+        print('Total active developers in the past year: ' + str(len(deduplicated_contributors)))
+        with open(out_file_name, 'w') as outfile:
+            json.dump(deduplicated_contributors, outfile)
         return deduplicated_contributors
 
 
@@ -111,6 +116,9 @@ class Contributors:
 # Write to file every n repos + repos viewed to not lose progress
 
 if __name__ == '__main__':
+    if len(sys.argv) != 2:
+        print('Usage: python3 contr.py [INPUTFILE.TOML]')
+        sys.exit(1)
     c = Contributors('./')
-    c.get_year_contr_from_toml('effect.toml')
+    c.get_year_contr_from_toml(sys.argv[1])
 
