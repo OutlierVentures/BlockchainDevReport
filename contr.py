@@ -24,6 +24,7 @@ class Contributors:
                     contributors.append(item['login'])
                 except Exception as e:
                     print(e)
+                    sys.exit(1)
             page += 1
             
         print(contributors)
