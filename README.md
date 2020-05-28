@@ -7,7 +7,7 @@ Report on blockchain developer trends in 2020.
 Requires Python.
 
 ```sh
-pip3 install pygithub seaborn
+pip3 install pygithub seaborn toml
 ```
 
 ## Usage
