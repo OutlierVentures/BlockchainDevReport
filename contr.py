@@ -114,9 +114,13 @@ class Contributors:
         
 
     def get_contr_from_toml(self, toml_file : str, monthly : bool = True):
-        out_file_name = toml_file.replace('.toml', '') + '.json'
+        out_file_name = toml_file.replace('.toml', '.json')
+        # Useful if left running e.g. over weekend - if failed, re-run INCLUDING last repo listed
+        progress_file_name = toml_file.replace('.toml', '_repos_seen.txt')
         if os.path.exists(out_file_name):
             os.remove(out_file_name) # Overwrite any old attempts
+        if os.path.exists(progress_file_name):
+            os.remove(progress_file_name) # Overwrite any old attempts
         if monthly:
             # Explicity def, see above
             core_array = [[], [], [], [], [], [], [], [], [], [], [], []]
@@ -139,6 +143,8 @@ class Contributors:
                 if org_then_slash_then_repo[-1] == '/':
                     org_then_slash_then_repo = org_then_slash_then_repo[:-1]
                 print('Analysing ' + org_then_slash_then_repo)
+                with open(progress_file_name, 'a') as f:
+                    f.write(org_then_slash_then_repo + '\n')
                 if monthly:
                     contributors = self.get_monthly_contributors_in_last_year(org_then_slash_then_repo)
                 else:
@@ -148,7 +154,7 @@ class Contributors:
                     with open(out_file_name) as json_file:
                         data = json.load(json_file)
                     if monthly:
-                        # FIXME efficiency. np.concatenate on axis 1 doesn't play well with our core array
+                        # FIXME efficiency, note np.concatenate on axis 1 doesn't play well with our core array
                         for index, item in enumerate(data):
                             item.extend(contributors[index])
                     else:
