@@ -7,7 +7,7 @@ Report on blockchain developer trends in 2020.
 Requires Python.
 
 ```sh
-pip3 install pygithub seaborn toml
+pip3 install pandas pygithub seaborn toml
 ```
 
 ## Usage
@@ -51,9 +51,9 @@ The total number active in the past year is printed, and the usernames written t
 
 ## Methodology
 
-### Core protocol progress: historical commits and code changes
+*For the Q2 2020 report, data was pulled 27-31 May 2020. The source files used for repositories analysed for the total developer count are in the `protocols` folder.*
 
-*For the Q2 2020 report, data was pulled 27-28 May 2020.*
+### Core protocol progress: historical commits and code changes
 
 Commits and code changes are pulled directly from the GitHub API. These are pulled per-repository, and then summed for all repositories in a given organisation.
 
@@ -63,7 +63,7 @@ In the visualisation, a 4-week moving average is taken to smooth the data.
 
 The data collection is in `dev.py` and the visualization is in `viz.py`.
 
-## Total devs building on a chain
+### Total devs building on a chain
 
 The list of repos building on a given chain is specified in a `.toml` (format above), and data is pulled from [Electric Capital's Crypto Ecosystems repo](https://github.com/electric-capital/crypto-ecosystems), which catalogues the repos building on a given blockchain.
 
