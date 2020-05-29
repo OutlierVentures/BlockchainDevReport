@@ -68,11 +68,62 @@ class Contributors:
         #print(len(deduplicated_contributors))
         return deduplicated_contributors
 
-    def get_year_contr_from_toml(self, toml_file : str):
+    def get_monthly_contributors_in_last_year(self, org_then_slash_then_repo : str):
+        # Commits are not chronological, so need to pull all and filter
+        data = ['exists']
+        page = 1
+        commits = []
+        while len(data):
+            data = requests.get('https://api.github.com/repos/' + org_then_slash_then_repo + '/commits?page='
+                                + str(page) + '&per_page=100', headers = {'Authorization': 'Token ' + self.pat}).json()
+            if type(data) == dict:
+                return [[], [], [], [], [], [], [], [], [], [], [], []] # Repo doesn't exist, see below why not []*12
+            try:
+                commits.extend(data)
+            except Exception as e:
+                print(e)
+                sys.exit(1)
+            page += 1
+        # If wanting to create a record of every repo's commits, uncomment this
+        #with open(org_then_slash_then_repo + '_commits.json', 'w+') as outfile:
+        #    json.dump(commits, outfile)
+        # Remove older commits
+        month_start_dates = [datetime.datetime.now()] # Include final end date for later use
+        for month in range(1, 13): # Generate 12 months of start dates
+            month_start_dates.append(month_start_dates[-1] - datetime.timedelta(days = 30)) # 12 'months' is 360 days
+        month_start_dates.reverse()
+        # Explicity def rather than []*12 as this uses same memory ref, thus append to one element means append to all
+        contributors = [[], [], [], [], [], [], [], [], [], [], [], []]
+        for item in commits:
+            try:
+                date_string = item['commit']['author']['date']
+                date = datetime.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
+                # FIXME find a more efficient way to do this
+                for index, (start, end) in enumerate(zip(month_start_dates, month_start_dates[1:])):
+                    if date >= start and date < end and item['author']: # Can be null (user not logged in)
+                        contributors[index].append(item['author']['login'])
+            except Exception as e:
+                print('Failed to get monthly contributors for ' + org_then_slash_then_repo)
+                print(e)
+                sys.exit(1)
+        # De-duplicate commiters
+        for index, month_of_contributors in enumerate(contributors):
+            deduplicated_contributors = list(set(month_of_contributors))    
+            contributors[index] = deduplicated_contributors
+        return contributors
+        
+
+    def get_contr_from_toml(self, toml_file : str, monthly : bool = True):
         out_file_name = toml_file.replace('.toml', '') + '.json'
-        if not os.path.exists(out_file_name):
-            with open(out_file_name, 'w') as outfile:
-                json.dump([], outfile)
+        if os.path.exists(out_file_name):
+            os.remove(out_file_name) # Overwrite any old attempts
+        if monthly:
+            # Explicity def, see above
+            core_array = [[], [], [], [], [], [], [], [], [], [], [], []]
+        else:
+            core_array = []
+        with open(out_file_name, 'w') as outfile:
+            json.dump(core_array, outfile)
         try:
             with open(toml_file, 'r') as f:
                 data = f.read()
@@ -88,15 +139,24 @@ class Contributors:
                 if org_then_slash_then_repo[-1] == '/':
                     org_then_slash_then_repo = org_then_slash_then_repo[:-1]
                 print('Analysing ' + org_then_slash_then_repo)
-                contributors = self.get_contributors_in_last_year(org_then_slash_then_repo)
+                if monthly:
+                    contributors = self.get_monthly_contributors_in_last_year(org_then_slash_then_repo)
+                else:
+                    contributors = self.get_contributors_in_last_year(org_then_slash_then_repo)
                 # Save progress in case of failure
                 try:
                     with open(out_file_name) as json_file:
                         data = json.load(json_file)
-                    data.extend(contributors)
+                    if monthly:
+                        # FIXME efficiency. np.concatenate on axis 1 doesn't play well with our core array
+                        for index, item in enumerate(data):
+                            item.extend(contributors[index])
+                    else:
+                        data.extend(contributors)
                     with open(out_file_name, 'w') as outfile:
                         json.dump(data, outfile)
                 except Exception as e:
+                    print('Failed to collate monthly contributors for all repos in toml file')
                     print(e)
                     sys.exit(1)
         try:
@@ -105,12 +165,19 @@ class Contributors:
         except Exception as e:
             print(e)
             sys.exit(1)
-        deduplicated_contributors = list(set(data))
-        print('Total active developers in the past year: ' + str(len(deduplicated_contributors)))
+        if monthly:
+            print('Monthly active developers in the past year:')
+            for index, month_of_contributors in enumerate(data):
+                deduplicated_monthly_contributors = list(set(month_of_contributors))
+                data[index] = deduplicated_monthly_contributors
+                print('Month ' + str(index + 1) + ': ' + str(len(deduplicated_monthly_contributors)))
+            deduplicated_contributors = data
+        else:
+            deduplicated_contributors = list(set(data))
+            print('Total active developers in the past year: ' + str(len(deduplicated_contributors)))
         with open(out_file_name, 'w') as outfile:
             json.dump(deduplicated_contributors, outfile)
         return deduplicated_contributors
-
 
 # Get last commit from JSON response, and create one list of all active in the past year, and one list of all contributors ever
 # Write to file every n repos + repos viewed to not lose progress
@@ -120,5 +187,5 @@ if __name__ == '__main__':
         print('Usage: python3 contr.py [INPUTFILE.TOML]')
         sys.exit(1)
     c = Contributors('./')
-    c.get_year_contr_from_toml(sys.argv[1])
+    c.get_contr_from_toml(sys.argv[1])
 
