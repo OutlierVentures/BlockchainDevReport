@@ -1,0 +1,414 @@
+# Ecosystem Level Information
+title = "Polkadot"
+
+sub_ecosystems = ["Edgeware"]
+
+github_organizations = ["https://github.com/w3f"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/ChainSafe/gossamer"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/paritytech/finality-grandpa"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/paritytech/polkadot"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/paritytech/rhododendron"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/paritytech/substrate"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-ui"
+
+[[repo]]
+url = "https://github.com/w3f/1k-validators-be"
+
+[[repo]]
+url = "https://github.com/w3f/accountant"
+
+[[repo]]
+url = "https://github.com/w3f/algorithmacs"
+
+[[repo]]
+url = "https://github.com/w3f/ansible-docker"
+
+[[repo]]
+url = "https://github.com/w3f/api-client-ts"
+
+[[repo]]
+url = "https://github.com/w3f/base-services"
+
+[[repo]]
+url = "https://github.com/w3f/base-services-charts"
+
+[[repo]]
+url = "https://github.com/w3f/bellman"
+
+[[repo]]
+url = "https://github.com/w3f/bls"
+
+[[repo]]
+url = "https://github.com/w3f/chainspec-generator"
+
+[[repo]]
+url = "https://github.com/w3f/cla-assistant"
+
+[[repo]]
+url = "https://github.com/w3f/Claims-App"
+
+[[repo]]
+url = "https://github.com/w3f/cmd-ts"
+
+[[repo]]
+url = "https://github.com/w3f/community-base-services"
+
+[[repo]]
+url = "https://github.com/w3f/community-matrix-server"
+
+[[repo]]
+url = "https://github.com/w3f/config-ts"
+
+[[repo]]
+url = "https://github.com/w3f/consensus"
+
+[[repo]]
+url = "https://github.com/w3f/crowdsale-website"
+
+[[repo]]
+url = "https://github.com/w3f/downloader-ts"
+
+[[repo]]
+url = "https://github.com/w3f/drift-calculator"
+
+[[repo]]
+url = "https://github.com/w3f/dumbot"
+
+[[repo]]
+url = "https://github.com/w3f/edgeware-deployment"
+
+[[repo]]
+url = "https://github.com/w3f/edgeware-node"
+
+[[repo]]
+url = "https://github.com/w3f/ethereum-tracker"
+
+[[repo]]
+url = "https://github.com/w3f/faucet-bot"
+
+[[repo]]
+url = "https://github.com/w3f/files-ts"
+
+[[repo]]
+url = "https://github.com/w3f/General-Grants-Program"
+
+[[repo]]
+url = "https://github.com/w3f/ghost-preview"
+
+[[repo]]
+url = "https://github.com/w3f/givethbot"
+
+[[repo]]
+url = "https://github.com/w3f/givethbot-chart"
+
+[[repo]]
+url = "https://github.com/w3f/Grant-Milestone-Delivery"
+
+[[repo]]
+url = "https://github.com/w3f/harvester-chart"
+
+[[repo]]
+url = "https://github.com/w3f/hd-ed25519"
+
+[[repo]]
+url = "https://github.com/w3f/helm-charts"
+
+[[repo]]
+url = "https://github.com/w3f/hs-p4p"
+
+[[repo]]
+url = "https://github.com/w3f/injection-tool"
+
+[[repo]]
+url = "https://github.com/w3f/isogenies_vdf_uses"
+
+[[repo]]
+url = "https://github.com/w3f/js-libp2p-crypto"
+
+[[repo]]
+url = "https://github.com/w3f/k4a-f-test"
+
+[[repo]]
+url = "https://github.com/w3f/KTFPs"
+
+[[repo]]
+url = "https://github.com/w3f/kubeconfig-generator"
+
+[[repo]]
+url = "https://github.com/w3f/kusama-genesis-spec"
+
+[[repo]]
+url = "https://github.com/w3f/librustzcash"
+
+[[repo]]
+url = "https://github.com/w3f/link-checker"
+
+[[repo]]
+url = "https://github.com/w3f/logger-ts"
+
+[[repo]]
+url = "https://github.com/w3f/matrix-recorder"
+
+[[repo]]
+url = "https://github.com/w3f/matrix-server"
+
+[[repo]]
+url = "https://github.com/w3f/matrix-server-charts"
+
+[[repo]]
+url = "https://github.com/w3f/matrixbot"
+
+[[repo]]
+url = "https://github.com/w3f/messaging"
+
+[[repo]]
+url = "https://github.com/w3f/molecule-docker"
+
+[[repo]]
+url = "https://github.com/w3f/mongo-express-chart"
+
+[[repo]]
+url = "https://github.com/w3f/mooc-exercises"
+
+[[repo]]
+url = "https://github.com/w3f/namespaces-chart"
+
+[[repo]]
+url = "https://github.com/w3f/noiseexplorer"
+
+[[repo]]
+url = "https://github.com/w3f/NPoS-Economics"
+
+[[repo]]
+url = "https://github.com/w3f/nym-mixnode-chart"
+
+[[repo]]
+url = "https://github.com/w3f/offences-monitor"
+
+[[repo]]
+url = "https://github.com/w3f/Open-Grants-Program"
+
+[[repo]]
+url = "https://github.com/w3f/operator-sdk-docker"
+
+[[repo]]
+url = "https://github.com/w3f/parity"
+
+[[repo]]
+url = "https://github.com/w3f/plasm"
+
+[[repo]]
+url = "https://github.com/w3f/plasm-deployment"
+
+[[repo]]
+url = "https://github.com/w3f/platform"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-api-client-ts"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-auction"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-chart"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-charts"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-claims"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-dashboard"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-deployer"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-deployer-ci"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-legacy-spec"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-light-paper"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-module-benchmarking"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-network"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-network-website"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-overview"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-re-spec"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-re-tests"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-release"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-secure-validator"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-spec"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-validator-ansible"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-validator-watcher"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-watcher"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-white-paper"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-wiki"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-wiki-chart"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-wiki-old"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-yellow-paper"
+
+[[repo]]
+url = "https://github.com/w3f/postgresql-chart"
+
+[[repo]]
+url = "https://github.com/w3f/PSPs"
+
+[[repo]]
+url = "https://github.com/w3f/pumba-chart"
+
+[[repo]]
+url = "https://github.com/w3f/research"
+
+[[repo]]
+url = "https://github.com/w3f/reverse-proxy-chart"
+
+[[repo]]
+url = "https://github.com/w3f/ring-vrf"
+
+[[repo]]
+url = "https://github.com/w3f/schnorr-dalek"
+
+[[repo]]
+url = "https://github.com/w3f/schnorrkel"
+
+[[repo]]
+url = "https://github.com/w3f/Small-Grants-Program"
+
+[[repo]]
+url = "https://github.com/w3f/substrate"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-benchmarks"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-benchmarks-results"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-benchmarks-role"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-telemetry-chart"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-telemetry-exporter"
+
+[[repo]]
+url = "https://github.com/w3f/succinct"
+
+[[repo]]
+url = "https://github.com/w3f/summit2019"
+
+[[repo]]
+url = "https://github.com/w3f/talks"
+
+[[repo]]
+url = "https://github.com/w3f/terraform-azure-polkadot-k8s"
+
+[[repo]]
+url = "https://github.com/w3f/terraform-client-ts"
+
+[[repo]]
+url = "https://github.com/w3f/terraform-google-polkadot-lab"
+
+[[repo]]
+url = "https://github.com/w3f/terratest-docker"
+
+[[repo]]
+url = "https://github.com/w3f/test-utils-ts"
+
+[[repo]]
+url = "https://github.com/w3f/uptime-probe"
+
+[[repo]]
+url = "https://github.com/w3f/validator-security"
+
+[[repo]]
+url = "https://github.com/w3f/vdf"
+
+[[repo]]
+url = "https://github.com/w3f/w3f-base-services"
+
+[[repo]]
+url = "https://github.com/w3f/w3f-matrix-server"
+
+[[repo]]
+url = "https://github.com/w3f/w3f-substrate-telemetry"
+
+[[repo]]
+url = "https://github.com/w3f/web3"
+
+[[repo]]
+url = "https://github.com/w3f/web3-assets-chart"
+
+[[repo]]
+url = "https://github.com/w3f/Web3-collaboration"
+
+[[repo]]
+url = "https://github.com/w3f/Web3-wiki"
+
+[[repo]]
+url = "https://github.com/w3f/web3summit"
+
+[[repo]]
+url = "https://github.com/w3f/website-tmp"
+
+[[repo]]
+url = "https://github.com/w3f/zexe"
