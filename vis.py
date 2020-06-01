@@ -9,6 +9,7 @@ class Visualize:
         self.chains = ['Binance-Chain', 'Bitcoin', 'Bitcoin-ABC', 'Bitcoin-SV', 'Corda', 'Cosmos', 'Crypto-Com', 'DashPay', 'DogeCoin', 'EOSio', 'Ethereum', 'EthereumClassic', 'HuobiGroup', 'Hyperledger', 'Input-Output-HK', 'IOTALedger', 'Litecoin-Project', 'MakerDAO', 'Monero-Project', 'NemProject', 'Neo-Project', 'OKEX', 'OntIO', 'ParityTech', 'Ripple', 'SmartContractKit', 'Stellar', 'ThetaToken', 'TronProtocol', 'VeChain', 'Zcash']
         self.target_names = ['Binance Chain', 'Bitcoin', 'Bitcoin Cash', 'Bitcoin SV', 'Corda', 'Cosmos', 'Crypto.Com', 'Dash', 'Dogecoin', 'EOS', 'Ethereum', 'Ethereum Classic', 'Huobi Chain', 'Hyperledger', 'Cardano', 'IOTA', 'Litecoin', 'MakerDAO', 'Monero', 'NEM', 'NEO', 'OKChain', 'Ontology', 'Polkadot', 'Ripple', 'Chainlink', 'Stellar', 'Theta', 'Tron', 'VeChain', 'Zcash']
         self.contributor_chains = ['bitcoin-cash', 'bitcoin', 'cardano', 'corda', 'cosmos', 'eos', 'ethereum', 'hyperledger', 'polkadot', 'ripple', 'stellar', 'tron']
+        self.contributor_target_names = ['Bitcoin Cash', 'Bitcoin', 'Cardano', 'Corda', 'Cosmos', 'EOS', 'Ethereum', 'Hyperledger', 'Polkadot', 'Ripple', 'Stellar', 'Tron']
         end = datetime.now()
         start = datetime.now() - relativedelta(years = 1)
         date_index = pd.date_range(start, end, freq = 'W')
@@ -55,6 +56,8 @@ class Visualize:
             protocols_comparison[chain] = monthly_active_dev_count
             percentage_change = round((((monthly_active_dev_count[-2] + monthly_active_dev_count[-1]) / (monthly_active_dev_count[0] + monthly_active_dev_count[1])) * 100) - 100)
             change_list.append(percentage_change)
+        protocols_comparison.columns = ['Month'] + self.contributor_target_names
+        percentage_changes['Protocol'] = self.contributor_target_names
         percentage_changes['Percentage change in active devs'] = change_list
         percentage_changes = percentage_changes.sort_values('Percentage change in active devs')
         print(percentage_changes)
