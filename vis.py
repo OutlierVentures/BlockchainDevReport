@@ -6,8 +6,9 @@ from dateutil.relativedelta import relativedelta
 class Visualize:
 
     def __init__(self):
-        self.chains = ['ethereum', 'ParityTech', 'fetchai', 'bitcoin']
-        self.target_names = ['Ethereum', 'Polkadot', 'Fetch.AI', 'Bitcoin']
+        self.chains = ['Binance-Chain', 'Bitcoin', 'Bitcoin-ABC', 'Bitcoin-SV', 'Corda', 'Cosmos', 'Crypto-Com', 'DashPay', 'DogeCoin', 'EOSio', 'Ethereum', 'EthereumClassic', 'HuobiGroup', 'Hyperledger', 'Input-Output-HK', 'IOTALedger', 'Litecoin-Project', 'MakerDAO', 'Monero-Project', 'NemProject', 'Neo-Project', 'OKEX', 'OntIO', 'ParityTech', 'Ripple', 'SmartContractKit', 'Stellar', 'ThetaToken', 'TronProtocol', 'VeChain', 'Zcash']
+        self.target_names = ['Binance Chain', 'Bitcoin', 'Bitcoin Cash', 'Bitcoin SV', 'Corda', 'Cosmos', 'Crypto.Com', 'Dash', 'Dogecoin', 'EOS', 'Ethereum', 'Ethereum Classic', 'Huobi Chain', 'Hyperledger', 'Cardano', 'IOTA', 'Litecoin', 'MakerDAO', 'Monero', 'NEM', 'NEO', 'OKChain', 'Ontology', 'Polkadot', 'Ripple', 'Chainlink', 'Stellar', 'Theta', 'Tron', 'VeChain', 'Zcash']
+        self.contributor_chains = ['bitcoin-cash', 'bitcoin', 'cardano', 'corda', 'cosmos', 'eos', 'ethereum', 'hyperledger', 'polkadot', 'ripple', 'stellar', 'tron']
         end = datetime.now()
         start = datetime.now() - relativedelta(years = 1)
         date_index = pd.date_range(start, end, freq = 'W')
@@ -41,6 +42,23 @@ class Visualize:
         fig2.get_figure().savefig('churn.png')
         fig2.clear()
     
+    def plot_devs(self):
+        protocols_comparison = pd.DataFrame({'Month': ['Jun 19', 'Jul 19', 'Aug 19', 'Sep 19', 'Oct 19', 'Nov 19', 'Dec 19', 'Jan 20', 'Feb 20', 'Mar 20', 'Apr 20', 'May 20']})
+        for chain in self.contributor_chains:
+            monthly_active_dev_count = []
+            with open('protocols/protocols/' + chain + '.json') as json_file:
+                data = json.load(json_file)
+            for month in data:
+                monthly_active_dev_count.append(len(month))
+            protocols_comparison[chain] = monthly_active_dev_count
+        protocols_comparison = protocols_comparison.melt('Month', var_name = 'Protocol', value_name = 'Monthly Active Devs')
+        # Disable Seaborn sorting or months appear out of order
+        fig3 = sns.lineplot(x = "Month", y = "Monthly Active Devs", hue = 'Protocol', data = protocols_comparison, sort = False)
+        fig3.get_figure().savefig('devs.png')
+        fig3.clear()
+        
+            
+    
     def run(self):
         for chain in self.chains:
             self.load(chain)
@@ -52,4 +70,7 @@ class Visualize:
 
 if __name__ == '__main__':
     v = Visualize()
-    v.run()
+    sns.set(style = "darkgrid")
+    sns.set(rc = {'figure.figsize': (16, 9)})
+    v.plot_devs()
+    #v.run()
