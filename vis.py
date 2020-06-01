@@ -64,7 +64,7 @@ class Visualize:
         change_list = []
         for chain in self.contributor_chains:
             monthly_active_dev_count = []
-            with open('protocols/protocols/' + chain + '.json') as json_file:
+            with open(chain + '.json') as json_file:
                 data = json.load(json_file)
             for month in data:
                 monthly_active_dev_count.append(len(month))       
