@@ -1,6 +1,6 @@
 # Blockchain Dev Report
 
-Report on blockchain developer trends in 2020.
+Source code and full methodology for Outlier Ventures' Blockchain Developer Reports.
 
 ## Install
 
@@ -18,7 +18,7 @@ For all large data pulling operations, a [Github Personal Access Token (PAT)](ht
 export PAT=[YOUR_GITHUB_PAT]
 ```
 
-## Core protocol progress
+### Core protocol progress
 
 ```sh
 python3 dev.py [ORGANISATION_NAME]
@@ -30,7 +30,7 @@ The results are for the entire organisation (i.e. summed across repositories) an
 
 `[ORGANISATION_NAME]_history.py`: Historical commits and code churn on a week-by-week basis.
 
-## Total devs building on a chain
+### Total devs building on a chain
 
 Repos to search are loaded from a toml file of the following format:
 ```toml
@@ -49,9 +49,19 @@ python3 contr.py yourfilename.toml
 
 The total number active in the past year is printed, and the usernames written to `yourfilename.json`. If an error occurs, progress is written to this file and the latest viewed repo is printed (the one on which it failed). To restart, delete all repos in the toml file before but not including the last repo printed.
 
+### Visualizing results
+
+Once you have run both of the above, you can visualize results:
+
+```sh
+python3 vis.py
+```
+
+Results are written to files `commits.png`, `commits_change.png`, `churn.png`, `churn_change.png`, `devs.png` and `devs_change.png`. Note that churn refers to the number of code changes.
+
 ## Methodology
 
-*For the Q2 2020 report, data was pulled 27-31 May 2020. The source files used for repositories analysed for the total developer count are in the `protocols` folder.*
+*For the Q2 2020 report, data was pulled 27 May - 1 June 2020. The source files used for repositories analysed for the total developer count are in the `protocols` folder.*
 
 ### Core protocol progress: historical commits and code changes
 
@@ -61,7 +71,7 @@ The data points used are the total number of commits and total number of code ch
 
 In the visualisation, a 4-week moving average is taken to smooth the data.
 
-The data collection is in `dev.py` and the visualization is in `viz.py`.
+The data collection is in `dev.py` and the visualization is in `vis.py`.
 
 ### Total devs building on a chain
 
@@ -69,6 +79,26 @@ The list of repos building on a given chain is specified in a `.toml` (format ab
 
 All commits are pulled from each repo and the date as well as the author (GitHub username) returned. Any commits with a date from more than one year in the past are filtered out. The process is repeated for all repos in the `.toml` file, with the resulting list of contributors combined and de-duplicated.
 
-## TODO
+The data collection is in `contr.py` and the visualization is in `vis.py`.
 
-1. Use data from https://coincodecap.com/coins.
+### Visualization, including growth calculation
+
+Commit and churn charts are visualised using a 4-week moving average to smooth data. Therefore, the curve lags by approximately 2 weeks.
+
+Developer activity charts display the raw data.
+
+Growth charts (percentage change) take an average of the last 8 weeks of the year and compare this figure to the first 8 weeks of the year, rounding to the nearest whole percentage point. This applies to all growth charts: commit, churn and developer activity.
+
+### Dapp metrics, such as daily active users
+
+Dapp data was taken from State of the Dapps, which reads directly from the relevant blockchains. The data source can be found [here](https://www.stateofthedapps.com/stats).
+
+Number of dapps and daily active users was extracted and visualized in Seaborn using the same method as in `vis.py`. The raw data is displayed.
+
+### Survey data
+
+Survey data for the Q2 2020 report was taken from [Embark's Developer Survey 2020](https://blog.embarklabs.io/news/2020/03/04/2020-Blockchain-Developer-Survey/), as well as the [Deloitte Blockchain Trends Report 2020](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Blockchain-Trends-2020-report.pdf). The raw data is displayed.
+
+### DeFi data
+
+DeFi data for the Q2 2020 report was taken from [Alethio Analytics' Ethereum Decentralized Finance Report 2020](https://pages.consensys.net/ethereum-decentralized-finance-report-alethio). The raw data is displayed.
