@@ -6,8 +6,6 @@ sub_ecosystems = []
 github_organizations = ["https://github.com/bitcoincashorg", "https://github.com/Electron-Cash", "https://github.com/gcash", "https://github.com/simpleledger"]
 
 # Repositories
-[[repo]]
-url = "https://bitbucket.org/o-studio/spedn/src/master"
 
 [[repo]]
 url = "https://github.com/4ops/docker-bitcoin-abc"
@@ -105,12 +103,6 @@ url = "https://github.com/dsmurrell/awesome-bitcoin-cash"
 
 [[repo]]
 url = "https://github.com/Ekliptor/cashp"
-
-[[repo]]
-url = "https://github.com/Electron-Cash/android-platform-ndk"
-
-[[repo]]
-url = "https://github.com/Electron-Cash/android-vendor-freebsd"
 
 [[repo]]
 url = "https://github.com/Electron-Cash/buildozer"
@@ -443,13 +435,3 @@ url = "https://github.com/WeProgramIT/cryptowoo-bitcoin-cash-addon"
 
 [[repo]]
 url = "https://github.com/yenom/bitbox-watch-tx"
-
-[[repo]]
-url = "https://gitlab.com/pokkst/bchgallery.git"
-
-[[repo]]
-url = "https://gitlab.com/pokkst/crescentcash.git"
-
-[[repo]]
-url = "https://reviews.bitcoinabc.org/source/bitcoin-abc"
-tags = ["Protocol"]
