@@ -55,14 +55,15 @@ class Visualize:
             protocols_comparison[chain] = monthly_active_dev_count
             percentage_change = round((((monthly_active_dev_count[-2] + monthly_active_dev_count[-1]) / (monthly_active_dev_count[0] + monthly_active_dev_count[1])) * 100) - 100)
             change_list.append(percentage_change)
-        percentage_changes['Change in active devs'] = change_list
+        percentage_changes['Percentage change in active devs'] = change_list
+        percentage_changes = percentage_changes.sort_values('Percentage change in active devs')
         print(percentage_changes)
         protocols_comparison = protocols_comparison.melt('Month', var_name = 'Protocol', value_name = 'Monthly Active Devs')
         # Disable Seaborn sorting or months appear out of order
         fig3 = sns.lineplot(x = "Month", y = "Monthly Active Devs", hue = 'Protocol', data = protocols_comparison, sort = False)
         fig3.get_figure().savefig('devs.png')
         fig3.clear()
-        fig3 = sns.barplot(x = "Protocol", y = "Change in active devs", data = percentage_changes)
+        fig3 = sns.barplot(y = "Protocol", x = "Percentage change in active devs", data = percentage_changes, palette = "RdYlGn")
         fig3.get_figure().savefig('devchange.png')
         fig3.clear()
         
