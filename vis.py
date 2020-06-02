@@ -1,7 +1,6 @@
 import seaborn as sns, pandas as pd, json, sys
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
-from matplotlib import pyplot as plt
 
 
 class Visualize:
@@ -113,6 +112,7 @@ class Visualize:
         self.plot_churn(code, percentage_changes)
         protocols_comparison, percentage_changes = self.prep_devs()
         self.plot_devs(protocols_comparison, percentage_changes)
+
 
 if __name__ == '__main__':
     v = Visualize()

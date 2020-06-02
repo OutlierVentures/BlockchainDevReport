@@ -93,8 +93,21 @@ Growth charts (percentage change) take an average of the last 8 weeks of the yea
 
 Dapp data was taken from State of the Dapps, which reads directly from the relevant blockchains. The data source can be found [here](https://www.stateofthedapps.com/stats).
 
-Number of dapps and daily active users was extracted and visualized in Seaborn using the same method as in `vis.py`. The raw data is displayed.
+The daily active users data was extracted and visualized in Seaborn using the same method as in `vis.py`. The raw data is displayed.
+
+The share of smart contracts and dapps data was extracted and visualised in MatPlotLib using the following code (as Seaborn does not provide pie charts):
+
+```py
+from matplotlib import pyplot as plt
+
+labels = ['Ethereum', 'EOS', 'etc.']
+number_of_contracts_or_dapps = [4500, 500, 450]
+fig1, ax1 = plt.subplots()
+ax1.pie(dapps, labels = labels, startangle = 90,autopct = '%1.1f%%', pctdistance = 0.8)
+ax1.axis('equal') # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.savefig('myfile.png')
+```
 
 ### Survey and Defi data (further reading)
 
-Survey data for the Q2 2020 report was taken from [Embark's Developer Survey 2020](https://blog.embarklabs.io/news/2020/03/04/2020-Blockchain-Developer-Survey/), as well as the [Deloitte Blockchain Trends Report 2020](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Blockchain-Trends-2020-report.pdf). DeFi data for the Q2 2020 report was taken from [Alethio Analytics' Ethereum Decentralized Finance Report 2020](https://pages.consensys.net/ethereum-decentralized-finance-report-alethio).
+Survey data for the Q2 2020 report was taken from the [Embark Labs Developer Survey 2020](https://blog.embarklabs.io/news/2020/03/04/2020-Blockchain-Developer-Survey/). Enterprise data for the Q2 2020 report was taken from the [Deloitte Blockchain Trends Report 2020](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Blockchain-Trends-2020-report.pdf). DeFi data for the Q2 2020 report was taken from the [Alethio Analytics Ethereum Decentralized Finance Report 2020](https://pages.consensys.net/ethereum-decentralized-finance-report-alethio).
