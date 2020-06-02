@@ -26,9 +26,9 @@ python3 dev.py [ORGANISATION_NAME]
 
 The results are for the entire organisation (i.e. summed across repositories) and for all branches. Results are written to 2 files:
 
-`[ORGANISATION_NAME]_stats.py`: Latest stats, such as star count and code churn in the last month.
+`[ORGANISATION_NAME]_stats.json`: Latest stats, such as star count and code churn in the last month.
 
-`[ORGANISATION_NAME]_history.py`: Historical commits and code churn on a week-by-week basis.
+`[ORGANISATION_NAME]_history.json`: Historical commits and code churn on a week-by-week basis.
 
 ### Total devs building on a chain
 
@@ -95,10 +95,6 @@ Dapp data was taken from State of the Dapps, which reads directly from the relev
 
 Number of dapps and daily active users was extracted and visualized in Seaborn using the same method as in `vis.py`. The raw data is displayed.
 
-### Survey data
+### Survey and Defi data (further reading)
 
-Survey data for the Q2 2020 report was taken from [Embark's Developer Survey 2020](https://blog.embarklabs.io/news/2020/03/04/2020-Blockchain-Developer-Survey/), as well as the [Deloitte Blockchain Trends Report 2020](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Blockchain-Trends-2020-report.pdf). The raw data is displayed.
-
-### DeFi data
-
-DeFi data for the Q2 2020 report was taken from [Alethio Analytics' Ethereum Decentralized Finance Report 2020](https://pages.consensys.net/ethereum-decentralized-finance-report-alethio). The raw data is displayed.
+Survey data for the Q2 2020 report was taken from [Embark's Developer Survey 2020](https://blog.embarklabs.io/news/2020/03/04/2020-Blockchain-Developer-Survey/), as well as the [Deloitte Blockchain Trends Report 2020](https://www2.deloitte.com/content/dam/Deloitte/ie/Documents/Consulting/Blockchain-Trends-2020-report.pdf). DeFi data for the Q2 2020 report was taken from [Alethio Analytics' Ethereum Decentralized Finance Report 2020](https://pages.consensys.net/ethereum-decentralized-finance-report-alethio).
