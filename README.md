@@ -7,12 +7,12 @@ Source code and full methodology for Outlier Ventures' Blockchain Developer Repo
 Requires Python.
 
 ```sh
-pip3 install pandas pygithub seaborn toml
+pip3 install pandas pygithub seaborn toml joblib
 ```
 
 ## Usage
 
-For all large data pulling operations, a [Github Personal Access Token (PAT)](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) is required.
+For all large data pulling operations, a [Github Personal Access Token (PAT)](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) is required. If you have private repos, be sure to use a token that only has the `public_repo` scope.
 
 ```sh
 export PAT=[YOUR_GITHUB_PAT]
