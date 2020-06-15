@@ -154,8 +154,12 @@ class DevOracle:
     
 
 if __name__ == '__main__':
+    if 'PAT' not in os.environ:
+        print('This requires a GitHub PAT to do anything interesting.')
+        print('Usage: python3 dev.py [GITHUB_ORG]]')
+        sys.exit(1)
     if len(sys.argv) != 2 or '/' in sys.argv[1]:
         print('Usage: python3 dev.py [GITHUB_ORG]]')
-        sys.exit()
+        sys.exit(1)
     do = DevOracle('./')
     do.get_and_save_full_stats(sys.argv[1])

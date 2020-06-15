@@ -189,6 +189,10 @@ class Contributors:
 # Write to file every n repos + repos viewed to not lose progress
 
 if __name__ == '__main__':
+    if 'PAT' not in os.environ:
+        print('This requires a GitHub PAT to do anything interesting.')
+        print('Usage: python3 contr.py [INPUTFILE.TOML]')
+        sys.exit(1)
     if len(sys.argv) != 2:
         print('Usage: python3 contr.py [INPUTFILE.TOML]')
         sys.exit(1)
