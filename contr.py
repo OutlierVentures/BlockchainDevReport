@@ -29,7 +29,7 @@ class Contributors:
                     print(e)
                     sys.exit(1)
             page += 1
-            
+
         print(len(contributors))
         return contributors
 
@@ -51,7 +51,7 @@ class Contributors:
                 sys.exit(1)
             page += 1
         # Remove older commits
-        year_ago = datetime.datetime.now() - datetime.timedelta(days = 365) # Use 366 for leap years
+        year_ago = datetime.datetime(2019, 5, 27) # Use 366 for leap years
         contributors = []
         for item in commits:
             try:
@@ -64,7 +64,7 @@ class Contributors:
                 print(e)
                 sys.exit(1)
         # De-duplicate commiters
-        deduplicated_contributors = list(set(contributors))    
+        deduplicated_contributors = list(set(contributors))
         #print(len(deduplicated_contributors))
         return deduplicated_contributors
 
@@ -88,7 +88,7 @@ class Contributors:
         #with open(org_then_slash_then_repo + '_commits.json', 'w+') as outfile:
         #    json.dump(commits, outfile)
         # Remove older commits
-        month_start_dates = [datetime.datetime.now()] # Include final end date for later use
+        month_start_dates = [datetime.datetime(2020,6,1)] # Include final end date for later use
         for month in range(1, 13): # Generate 12 months of start dates
             month_start_dates.append(month_start_dates[-1] - datetime.timedelta(days = 30)) # 12 'months' is 360 days
         month_start_dates.reverse()
@@ -108,10 +108,10 @@ class Contributors:
                 sys.exit(1)
         # De-duplicate commiters
         for index, month_of_contributors in enumerate(contributors):
-            deduplicated_contributors = list(set(month_of_contributors))    
+            deduplicated_contributors = list(set(month_of_contributors))
             contributors[index] = deduplicated_contributors
         return contributors
-        
+
 
     def get_contr_from_toml(self, toml_file : str, monthly : bool = True):
         out_file_name = toml_file.replace('.toml', '.json')
@@ -198,4 +198,3 @@ if __name__ == '__main__':
         sys.exit(1)
     c = Contributors('./')
     c.get_contr_from_toml(sys.argv[1])
-
