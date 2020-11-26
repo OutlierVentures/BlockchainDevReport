@@ -2,7 +2,13 @@ from joblib import Parallel, delayed
 from itertools import zip_longest
 from collections import Counter
 from github import Github
-import os, sys, shutil, multiprocessing, json
+import os, sys, multiprocessing, json, toml
+from os import path
+
+dir_path = path.dirname(path.realpath(__file__))
+
+def element_wise_addition_lists(list1, list2):
+    return [sum(x) for x in zip_longest(list1, list2, fillvalue=0)]
 
 
 class DevOracle:
@@ -92,14 +98,67 @@ class DevOracle:
         org_repos = [org_name + '/{0}'.format(repo) for repo in org_repos]
         return org_repos
     
-    def get_and_save_full_stats(self, github_org : str):
-        stats = self.org_stats(github_org)
-        hist = self.historical_progress(github_org)
-        path_prefix = self.save_path + '/' + github_org
+    def get_and_save_full_stats(self, chain_name : str):
+        github_orgs = self._read_orgs_for_chain_from_toml(chain_name)
+
+        stats_counter = Counter()
+        hist_data = None
+
+        for org_url in github_orgs:
+            if not org_url.startswith("https://github.com/"):
+                print("%s is not a github repo...Skipping" % org_url)
+                continue
+            org = org_url.split("https://github.com/")[1]
+            print("Fetching stats(stargazers, forks, releases, churn_4w) for", org_url)
+            stats_counter += self.org_stats(org)
+            hist_data_for_org = self.historical_progress(org)
+            print("Combining hist data ...")
+            hist_data = self.combine_hist_data(hist_data, hist_data_for_org)
+
+        path_prefix = self.save_path + '/' + chain_name
         with open(path_prefix + '_stats.json', 'w') as outfile:
-            outfile.write(json.dumps(stats))
+            outfile.write(json.dumps(dict(stats_counter)))
         with open(path_prefix + '_history.json', 'w') as outfile:
-            outfile.write(json.dumps(hist))
+            outfile.write(json.dumps(dict(hist_data)))
+
+    def _read_orgs_for_chain_from_toml(self, chain_name):
+        toml_file_path = path.join(dir_path, 'protocols', chain_name + '.toml')
+        if not path.exists(toml_file_path):
+            print(".toml file not found for %s in /protocols folder" % chain_name)
+            sys.exit(1)
+        try:
+            with open(toml_file_path, 'r') as f:
+                data = f.read()
+            print("Fetching organizations for %s from toml file ..." % chain_name)
+            github_orgs = toml.loads(data)['github_organizations']
+            return github_orgs
+        except:
+            print('Could not open toml file - check formatting.')
+            sys.exit(1)
+
+    # Do element wise addition for `weekly_churn`, `weekly_commits`, `weeks_ago` lists
+    # to get the cumulative historical data for a given chain
+    def combine_hist_data(self, cumulative_hist_data, hist_data_for_org):
+        if cumulative_hist_data is None:
+            cumulative_hist_data = hist_data_for_org
+        else:
+            cumulative_hist_data["weekly_churn"] = \
+                element_wise_addition_lists(
+                    cumulative_hist_data["weekly_churn"],
+                    hist_data_for_org["weekly_churn"]
+                )
+            cumulative_hist_data["weekly_commits"] = \
+                element_wise_addition_lists(
+                    cumulative_hist_data["weekly_commits"],
+                    hist_data_for_org["weekly_commits"]
+                )
+            cumulative_hist_data["weeks_ago"] = \
+                element_wise_addition_lists(
+                    cumulative_hist_data["weeks_ago"],
+                    hist_data_for_org["weeks_ago"]
+            )
+
+        return cumulative_hist_data
 
     def get_churn_and_commits(self, org_then_slash_then_repo : str):
         try:
@@ -121,8 +180,8 @@ class DevOracle:
         except Exception as e:
             print(e)
             stats = {
-                'weekly_churn': weekly_churn,
-                'weekly_commits': weekly_commits,
+                'weekly_churn': [],
+                'weekly_commits': [],
                 'repo': org_then_slash_then_repo
             }
             return stats
