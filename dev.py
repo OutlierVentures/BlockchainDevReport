@@ -9,13 +9,6 @@ import optparse
 import toml
 from github import Github
 from joblib import Parallel, delayed
-from itertools import zip_longest
-from collections import Counter
-from itertools import zip_longest
-from os import path
-import toml
-from github import Github
-from joblib import Parallel, delayed
 
 dir_path = path.dirname(path.realpath(__file__))
 
@@ -283,5 +276,5 @@ if __name__ == '__main__':
     if not options.frequency:
         options.frequency = 4
     
-    do = DevOracle('./', options.PAT, options.frequency)
+    do = DevOracle('./output', options.PAT, options.frequency)
     do.get_and_save_full_stats(sys.argv[1])

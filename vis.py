@@ -1,7 +1,9 @@
 import seaborn as sns, pandas as pd, json, sys
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import path
 
+dir_path = path.dirname(path.realpath(__file__))
 
 class Visualize:
 
@@ -19,7 +21,8 @@ class Visualize:
         self.commits = pd.DataFrame({'Date': date_index})
         self.churn = pd.DataFrame({'Date': date_index})
         for chain in self.chains:
-            with open(chain + '_history.json') as json_file:
+            output_path = path.join(dir_path, 'output', chain + '_history.json')
+            with open(output_path) as json_file:
                 data = json.load(json_file)
             self.commits[chain] = data['weekly_commits']
             self.churn[chain] = data['weekly_churn'][-52:]
