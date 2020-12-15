@@ -7,7 +7,7 @@ Source code and full methodology for Outlier Ventures' Blockchain Developer Repo
 Requires Python.
 
 ```sh
-pip3 install pandas pygithub seaborn toml joblib
+pip3 install pandas pygithub seaborn toml joblib python-dotenv
 ```
 
 ## Usage
