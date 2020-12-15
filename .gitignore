@@ -1,3 +1,4 @@
 *.json
 *.png
 *.txt
+.env
