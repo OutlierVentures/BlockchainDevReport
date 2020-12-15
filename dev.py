@@ -1,7 +1,8 @@
 import json
 import multiprocessing
 import os
-import sys
+from logger import sys
+import time
 from collections import Counter
 from itertools import zip_longest
 from os import path
@@ -9,6 +10,8 @@ import optparse
 import toml
 from github import Github
 from joblib import Parallel, delayed
+from gitTokenHelper import GithubPersonalAccessTokenHelper
+from config import get_pats, remove_chain_from_config
 
 dir_path = path.dirname(path.realpath(__file__))
 
@@ -29,12 +32,22 @@ __main__ -> get_and_save_full_stats -> _read_orgs_for_chain_from_toml -> for eac
 
 class DevOracle:
 
-    def __init__(self, save_path: str, PAT, frequency):
+    def __init__(self, save_path: str, frequency):
         self.save_path = save_path
+        self.gh_pat_helper = GithubPersonalAccessTokenHelper(get_pats())        
+        PAT = self._get_access_token()
         self.gh = Github(PAT)
         # churn, commit frequency
         self.frequency = frequency
     
+    def _get_access_token(self):
+        res = self.gh_pat_helper.get_access_token()
+        if "token" in res and res["token"] is not None:
+            return res["token"]
+        print('Going to sleep since no token exists with usable rate limit')
+        time.sleep(res["sleep_time_secs"])
+        return self._get_access_token()
+
     def get_and_save_full_stats(self, chain_name: str):
         github_orgs = self._read_orgs_for_chain_from_toml(chain_name)
 
@@ -54,6 +67,11 @@ class DevOracle:
             hist_data_for_org = self._get_historical_progress(org_repo_data_list)
             print("Combining hist data ...")
             hist_data = self._combine_hist_data(hist_data, hist_data_for_org)
+
+        if hist_data == None or stats_counter == {}:
+            remove_chain_from_config(chain_name)
+            print('No data found for organisation in toml file')
+            sys.exit(1)
 
         path_prefix = self.save_path + '/' + chain_name
         with open(path_prefix + '_stats.json', 'w') as outfile:
@@ -101,6 +119,7 @@ class DevOracle:
     
     # get repo data using a repo URL in the form of `org/repo`
     def _get_single_repo_data(self, org_then_slash_then_repo: str):
+        print('Fetching repo data for ', org_then_slash_then_repo)
         try:
             repo = self.gh.get_repo(org_then_slash_then_repo)
             weekly_add_del = repo.get_stats_code_frequency()
@@ -116,7 +135,12 @@ class DevOracle:
                 "contributors": contributors,
                 "releases": releases
             }
-        except:
+        except Exception as e:
+            if e.status == 403:
+                print("Token rate limit reached, switching tokens")
+                PAT = self._get_access_token()
+                self.gh = Github(PAT)
+                return self._get_single_repo_data(org_then_slash_then_repo)
             print('Could not find data for ' + org_then_slash_then_repo)
             return {}
 
@@ -266,15 +290,11 @@ class DevOracle:
     
 if __name__ == '__main__':
     p = optparse.OptionParser()
-    p.add_option('--PAT', type='string', dest='PAT', help='GitHub Personal Access Token')
     p.add_option('--frequency', type='int', dest='frequency', help='Enter churn, commit frequency')
 
     options, arguments = p.parse_args()
-    if not options.PAT:
-        print('This requires a GitHub PAT to do anything interesting.')
-        sys.exit(1)
     if not options.frequency:
         options.frequency = 4
     
-    do = DevOracle('./output', options.PAT, options.frequency)
+    do = DevOracle('./output', options.frequency)
     do.get_and_save_full_stats(sys.argv[1])

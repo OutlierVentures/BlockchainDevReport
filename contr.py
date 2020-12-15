@@ -5,12 +5,13 @@ import datetime as dt
 import json
 import os
 import re
-import sys
+from logger import sys
 from asyncio import get_event_loop, ensure_future
 
 import toml
 from aiohttp import ClientSession
 from gitTokenHelper import GithubPersonalAccessTokenHelper
+from config import get_pats
 
 
 async def get_commits(session, pat, org_then_slash_then_repo, page):
@@ -47,7 +48,7 @@ class Contributors:
     def __init__(self, save_path: str):
         self.save_path = save_path
         # TODO: fix this to be an array
-        self.gh_pat_helper = GithubPersonalAccessTokenHelper(['add', 'tokens', 'here'])
+        self.gh_pat_helper = GithubPersonalAccessTokenHelper(get_pats())
 
     async def _get_access_token(self):
         res = self.gh_pat_helper.get_access_token()

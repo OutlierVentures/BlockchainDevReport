@@ -1,14 +1,12 @@
 # -*- coding: utf-8 -*-
 
 from os import path
-
+from config import get_chain_names
 import requests
+from logger import sys
 
 # WARNING: Make sure that the coin names are the same as .toml file names of Electric Capital
-coin_names = ["bitcoin", "bitcoin-cash", "bitcoin-sv", "bitcoin-gold", "bitcoin-diamond", "binance-coin", "cardano",
-              "corda", "cosmos", "eos", "ethereum",
-              "ethereum-classic", "xrp", "hyperledger", "litecoin", "polkadot", "stellar", "tron", "monero", "filecoin",
-              "vechain", "iota", "neo", "nem", "tezos", "monero"]
+coin_names = get_chain_names().split()
 ELECTRIC_CAPITAL_RAW_CONTENT_BASE_URL = "https://raw.githubusercontent.com/electric-capital/crypto-ecosystems/master/data/ecosystems"
 
 
