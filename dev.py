@@ -12,6 +12,7 @@ from github import Github
 from joblib import Parallel, delayed
 from gitTokenHelper import GithubPersonalAccessTokenHelper
 from config import get_pats, remove_chain_from_config
+import requests
 
 dir_path = path.dirname(path.realpath(__file__))
 
@@ -99,10 +100,16 @@ class DevOracle:
     # get the data for all the repos of a github organization
     def _get_repo_data_for_org(self, org_name: str):
         org_repos = self._make_org_repo_list(org_name)
+        url = f"https://api.github.com/orgs/{org_name}/repos?type=forks"
+        response = requests.get(url)
+        forked_repos = []
+        for repo in response.json():
+            forked_repos.append(repo["full_name"])
+        unforked_repos = list(set(org_repos) - set(forked_repos))
         # GitHub API can hit spam limit
         number_of_hyperthreads = multiprocessing.cpu_count()
         n_jobs = 2 if number_of_hyperthreads > 2 else number_of_hyperthreads
-        repo_data_list = Parallel(n_jobs=n_jobs)(delayed(self._get_single_repo_data)(repo) for repo in org_repos)
+        repo_data_list = Parallel(n_jobs=n_jobs)(delayed(self._get_single_repo_data)(repo) for repo in unforked_repos)
         return repo_data_list
 
     # given the org_name, return list of organisation repos
