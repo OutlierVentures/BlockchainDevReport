@@ -7,12 +7,13 @@ from os import path, remove
 import re
 from logger import sys
 from asyncio import get_event_loop, ensure_future
-
+import requests
 import toml
 from aiohttp import ClientSession
 from gitTokenHelper import GithubPersonalAccessTokenHelper
 from config import get_pats
 
+dir_path = path.dirname(path.realpath(__file__))
 
 async def get_commits(session, pat, org_then_slash_then_repo, page):
     async with session.get(url='https://api.github.com/repos/' + org_then_slash_then_repo + '/commits?page='
@@ -50,6 +51,61 @@ class Contributors:
         # TODO: fix this to be an array
         self.gh_pat_helper = GithubPersonalAccessTokenHelper(get_pats())
 
+    # list all the repos of a protocol from toml 
+    # Includes all the core github org/user repos and the repo urls listed in toml
+    # Ensure protocol is same as name of toml file
+    def get_repos_for_protocol_from_toml(self, protocol):
+        repos = set()
+        toml_file_path = path.join(dir_path, 'protocols', protocol + '.toml')
+        if not path.exists(toml_file_path):
+            print(".toml file not found for %s in /protocols folder" % chain_name)
+            sys.exit(1)
+        try:
+            with open(toml_file_path, 'r') as f:
+                data = f.read()
+            github_orgs = toml.loads(data)['github_organizations']
+            repos_in_toml = toml.loads(data)['repo']
+        except:
+            print('Could not open toml file - check formatting!!')
+            sys.exit(1)
+ 
+        for repo in repos_in_toml:
+            if 'url' in repo and repo['url'].lower().startswith("https://github.com/"):
+                repo_to_be_added = repo['url'].lower().split('github.com/')[1]
+                if repo_to_be_added[-1] == '/':
+                    repo_to_be_added = repo_to_be_added[:-1]
+                repos.add(repo_to_be_added)
+
+        for org in github_orgs:
+            if not org.lower().startswith("https://github.com/"):
+                continue
+            org_name = org.split('https://github.com/')[1]
+            try:
+                # Get all repos 
+                all_org_repos = []
+                url = f"https://api.github.com/orgs/{org_name}/repos"
+                response = requests.get(url)
+                for repo in response.json():
+                    all_org_repos.append(repo["full_name"])
+                # Get forked repos
+                forked_org_repos = []
+                url = f"https://api.github.com/orgs/{org_name}/repos?type=forks"
+                response = requests.get(url)
+                for repo in response.json():
+                    forked_org_repos.append(repo["full_name"])
+                # Find difference
+                unforked_repos = list(set(all_org_repos) - set(forked_org_repos))
+                for repo in unforked_repos:
+                    repos.add(repo['url'].lower())
+            except:
+                # Core org is not org but a user
+                # Get repos of user
+                url = f"https://api.github.com/users/{org_name}/repos"
+                response = requests.get(url)
+                for repo in response.json():
+                    repos.add(repo["full_name"].lower())
+        return list(repos)
+    
     async def _get_access_token(self):
         res = self.gh_pat_helper.get_access_token()
         if "token" in res and res["token"] is not None:
@@ -247,6 +303,7 @@ class Contributors:
 
     async def get_contr_from_toml(self, toml_file: str, monthly: bool = True):
         toml_file_without_protocols = toml_file.split('protocols/')[1]
+        protocol_name = toml_file_without_protocols.split('.toml')[0]
         out_file_name = toml_file_without_protocols.replace('.toml', '_contributors.json')
         out_file_name_with_path = self.save_path + '/' + out_file_name
         # Useful if left running e.g. over weekend - if failed, re-run INCLUDING last repo listed
@@ -276,53 +333,43 @@ class Contributors:
         else:
             # yearly
             core_array = []
-
+        
         with open(out_file_name_with_path, 'w') as outfile:
             json.dump(core_array, outfile)
-        try:
-            with open(toml_file, 'r') as f:
-                data = f.read()
-            repos = toml.loads(data)['repo']
-        except:
-            print('Could not open toml file - check formatting.')
-            sys.exit(1)
         
-        # Don't thread this - API limit
+        repos = self.get_repos_for_protocol_from_toml(protocol_name)
+        unseen_repo = []
         for repo in repos:
-            if 'url' in repo:
-                url = repo['url'].lower()
-                # check if repo is github repo
-                org_then_slash_then_repo = url.split('github.com/')[1]
-                if org_then_slash_then_repo[-1] == '/':
-                    org_then_slash_then_repo = org_then_slash_then_repo[:-1]
-                print('Analysing ' + org_then_slash_then_repo)
-                with open(progress_file_name, 'a') as f:
-                    f.write(org_then_slash_then_repo + '\n')
+            if repo in seen_repos:
+                print("Ignoring seen repo: ", repo)
+                continue
+            unseen_repo.append(repo)
 
-                if org_then_slash_then_repo in seen_repos:
-                    continue
+        # Don't thread this - API limit
+        for repo in unseen_repo:
+            print("Analysing repo: ", repo)
+            if monthly:
+                contributors = await self.get_monthly_contributors_of_repo_in_last_year(repo)
+            else:
+                contributors = await self.get_contributors_of_repo_in_last_year(repo)
+            # Save progress in case of failure
+            try:
+                with open(out_file_name_with_path) as json_file:
+                    data = json.load(json_file)
                 if monthly:
-                    contributors = await self.get_monthly_contributors_of_repo_in_last_year(org_then_slash_then_repo)
+                    # FIXME efficiency, note np.concatenate on axis 1 doesn't play well with our core array
+                    for index, item in enumerate(data):
+                        item.extend(contributors[index])
                 else:
-                    contributors = await self.get_contributors_of_repo_in_last_year(org_then_slash_then_repo)
-                # Save progress in case of failure
-                try:
-                    with open(out_file_name_with_path) as json_file:
-                        data = json.load(json_file)
-                    if monthly:
-                        # FIXME efficiency, note np.concatenate on axis 1 doesn't play well with our core array
-                        for index, item in enumerate(data):
-                            item.extend(contributors[index])
-                    else:
-                        data.extend(contributors)
-                    with open(progress_file_name, 'a') as progress_file:
-                        progress_file.write(org_then_slash_then_repo + '\n')
-                    with open(out_file_name_with_path, 'w') as outfile:
-                        json.dump(data, outfile)
-                except Exception as e:
-                    print('Failed to collate monthly contributors for all repos in toml file')
-                    print(e)
-                    sys.exit(1)
+                    data.extend(contributors)
+                with open(progress_file_name, 'a') as progress_file:
+                    progress_file.write(repo + '\n')
+                with open(out_file_name_with_path, 'w') as outfile:
+                    json.dump(data, outfile)
+            except Exception as e:
+                print('Failed to collate monthly contributors for all repos in toml file')
+                print(e)
+                sys.exit(1)
         try:
             with open(out_file_name_with_path) as json_file:
                 data = json.load(json_file)
