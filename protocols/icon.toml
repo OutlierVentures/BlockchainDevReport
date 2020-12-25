@@ -4,7 +4,6 @@ title = "ICON"
 sub_ecosystems = []
 
 github_organizations = [
-  "https://github.com/balancednetwork",
   "https://github.com/icon-project",
   "https://github.com/iconation",
   "https://github.com/insight-icon",

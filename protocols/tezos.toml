@@ -3,15 +3,16 @@ title = "Tezos"
 
 sub_ecosystems = ["Blockswap Network"]
 
+# Lot of non-core organizations listed as core repos have been migrated to gitlab
 github_organizations = [
   "https://github.com/baking-bad",
-  "https://github.com/hicetnunc2000",
   "https://github.com/kukai-wallet",
   "https://github.com/tacoinfra",
   "https://github.com/tezbox",
   "https://github.com/tezbridge",
   "https://github.com/tezos",
   "https://github.com/simplestaking",
+  "https://gitlab.com/tezos"
 ]
 
 # Repositories

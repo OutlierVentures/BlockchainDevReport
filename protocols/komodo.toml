@@ -4,6 +4,7 @@ title = "Komodo"
 sub_ecosystems = []
 
 github_organizations = ["https://github.com/KMDLabs", "https://github.com/KomodoPlatform"]
+# This repo is also protocol -> "https://github.com/jl777/komodo"
 
 # Repositories
 [[repo]]

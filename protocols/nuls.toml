@@ -3,7 +3,7 @@ title = "Nuls"
 
 sub_ecosystems = []
 
-github_organizations = []
+github_organizations = ["https://github.com/nuls-io"]
 
 # Repositories
 [[repo]]

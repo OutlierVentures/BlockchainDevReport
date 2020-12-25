@@ -3,7 +3,7 @@ title = "Arweave"
 
 sub_ecosystems = []
 
-github_organizations = ["https://github.com/ArweaveTeam", "https://github.com/nestdotland"]
+github_organizations = ["https://github.com/ArweaveTeam"]
 
 # Repositories
 [[repo]]

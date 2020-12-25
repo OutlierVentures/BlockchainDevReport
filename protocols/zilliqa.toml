@@ -1,9 +1,9 @@
 # Ecosystem Level Information
 title = "Zilliqa"
 
-sub_ecosystems = []
+sub_ecosystems = ["FireStack-Lab"]
 
-github_organizations = ["https://github.com/Zilliqa"]
+github_organizations = ["https://github.com/Zilliqa","https://github.com/zilpay"]
 
 # Repositories
 [[repo]]

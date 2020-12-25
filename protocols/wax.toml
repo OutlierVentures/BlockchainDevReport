@@ -3,7 +3,7 @@ title = "WAX"
 
 sub_ecosystems = []
 
-github_organizations = []
+github_organizations = ["https://github.com/worldwide-asset-exchange"]
 
 # Repositories
 [[repo]]

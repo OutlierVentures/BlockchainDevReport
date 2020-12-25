@@ -3,7 +3,7 @@ title = "NEO"
 
 sub_ecosystems = ["Trinity"]
 
-github_organizations = ["https://github.com/neo-project"]
+github_organizations = ["https://github.com/neotracker", "https://github.com/neo-project"]
 
 # Repositories
 [[repo]]

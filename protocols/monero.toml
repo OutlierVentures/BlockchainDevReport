@@ -5,9 +5,7 @@ sub_ecosystems = ["Tari"]
 
 github_organizations = [
   "https://github.com/monero-ecosystem",
-  "https://github.com/monerobook",
   "https://github.com/mymonero",
-  "https://github.com/xmr-ru",
 ]
 
 # Repositories

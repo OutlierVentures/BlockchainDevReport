@@ -3,7 +3,7 @@ title = "Zcash"
 
 sub_ecosystems = ["Bolt Labs"]
 
-github_organizations = ["https://github.com/zcash", "https://github.com/ZcashFoundation"]
+github_organizations = ["https://github.com/zcash", "https://github.com/ZcashFoundation", "https://github.com/zcash-hackworks"]
 
 # Repositories
 [[repo]]

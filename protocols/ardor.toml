@@ -3,7 +3,7 @@ title = "Ardor"
 
 sub_ecosystems = []
 
-github_organizations = []
+github_organizations = ["https://bitbucket.org/Jelurida/"]
 
 # Repositories
 [[repo]]

@@ -3,7 +3,7 @@ title = "Cardano"
 
 sub_ecosystems = []
 
-github_organizations = ["https://github.com/input-output-hk"]
+github_organizations = ["https://github.com/input-output-hk", "https://github.com/cardano-foundation"]
 
 # Repositories
 [[repo]]
