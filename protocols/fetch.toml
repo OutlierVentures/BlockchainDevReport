@@ -1,0 +1,155 @@
+# Ecosystem Level Information
+title = "Fetch"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/fetchai"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/fetchai/agent-simple"
+
+[[repo]]
+url = "https://github.com/fetchai/agents-aea"
+
+[[repo]]
+url = "https://github.com/fetchai/agents-tac"
+
+[[repo]]
+url = "https://github.com/fetchai/agents-template"
+
+[[repo]]
+url = "https://github.com/fetchai/apps-wallet-chrome-extension"
+
+[[repo]]
+url = "https://github.com/fetchai/bep3-deputy"
+
+[[repo]]
+url = "https://github.com/fetchai/carpark_agent"
+
+[[repo]]
+url = "https://github.com/fetchai/carpark_agent_big_data"
+
+[[repo]]
+url = "https://github.com/fetchai/cosmos-consensus"
+
+[[repo]]
+url = "https://github.com/fetchai/cosmos-explorer"
+
+[[repo]]
+url = "https://github.com/fetchai/cosmos-relayer"
+
+[[repo]]
+url = "https://github.com/fetchai/cosmos-sdk"
+
+[[repo]]
+url = "https://github.com/fetchai/demo-collective-learning"
+
+[[repo]]
+url = "https://github.com/fetchai/docker-constellation"
+
+[[repo]]
+url = "https://github.com/fetchai/docker-images"
+
+[[repo]]
+url = "https://github.com/fetchai/docs"
+
+[[repo]]
+url = "https://github.com/fetchai/etch-demos"
+
+[[repo]]
+url = "https://github.com/fetchai/etch-examples"
+
+[[repo]]
+url = "https://github.com/fetchai/eth-contract-metadata"
+
+[[repo]]
+url = "https://github.com/fetchai/fetchd"
+
+[[repo]]
+url = "https://github.com/fetchai/ledger"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/fetchai/ledger-api-javascript"
+
+[[repo]]
+url = "https://github.com/fetchai/ledger-api-py"
+
+[[repo]]
+url = "https://github.com/fetchai/ledger-archive"
+
+[[repo]]
+url = "https://github.com/fetchai/ledger-staking-contract"
+
+[[repo]]
+url = "https://github.com/fetchai/mettalex-documentation"
+
+[[repo]]
+url = "https://github.com/fetchai/mettalex-market-maker"
+
+[[repo]]
+url = "https://github.com/fetchai/monorepo"
+
+[[repo]]
+url = "https://github.com/fetchai/networks-agentland"
+
+[[repo]]
+url = "https://github.com/fetchai/networks-beaconworld"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-core"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-core-protocol"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-mt-core"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-sdk"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-sdk-cpp"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-sdk-python"
+
+[[repo]]
+url = "https://github.com/fetchai/oef-search-pluto"
+
+[[repo]]
+url = "https://github.com/fetchai/Private-ID"
+
+[[repo]]
+url = "https://github.com/fetchai/pydoc-markdown"
+
+[[repo]]
+url = "https://github.com/fetchai/relayer"
+
+[[repo]]
+url = "https://github.com/fetchai/research-dvrf"
+
+[[repo]]
+url = "https://github.com/fetchai/staking-contract"
+
+[[repo]]
+url = "https://github.com/fetchai/token-swap"
+
+[[repo]]
+url = "https://github.com/fetchai/tools-etch-code-highlighter"
+
+[[repo]]
+url = "https://github.com/fetchai/tools-pocketbook"
+
+[[repo]]
+url = "https://github.com/fetchai/tutorial-aea-weatherstation"
+
+[[repo]]
+url = "https://github.com/fetchai/website-developer-landing"
+
+[[repo]]
+url = "https://github.com/fetchai/website-roadmap"
+
+[[repo]]
+url = "https://github.com/fetchai/website-token-information"

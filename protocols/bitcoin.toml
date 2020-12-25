@@ -1,9 +1,28 @@
 # Ecosystem Level Information
 title = "Bitcoin"
 
-sub_ecosystems = ["Bitcoin JS", "Lightning", "RSK Smart Bitcoin", "ZeroNet"]
+sub_ecosystems = [
+  "Bitcoin JS",
+  "Fabric.fm",
+  "Keep network",
+  "Lightning",
+  "RSK Smart Bitcoin",
+  "ZeroNet",
+]
 
-github_organizations = ["https://github.com/bitcoin", "https://github.com/bitcoin-core", "https://github.com/bitcoinj", "https://github.com/bitcoinjs", "https://github.com/bitcoinops", "https://github.com/btcsuite", "https://github.com/libbitcoin", "https://github.com/rust-bitcoin", "https://github.com/Samourai-Wallet", "https://github.com/zkSNACKs"]
+github_organizations = [
+  "https://github.com/bitcoin",
+  "https://github.com/bitcoin-core",
+  "https://github.com/bitcoinj",
+  "https://github.com/bitcoinjs",
+  "https://github.com/bitcoinops",
+  "https://github.com/btcsuite",
+  "https://github.com/haskoin",
+  "https://github.com/libbitcoin",
+  "https://github.com/rust-bitcoin",
+  "https://github.com/Samourai-Wallet",
+  "https://github.com/zkSNACKs",
+]
 
 # Repositories
 [[repo]]
@@ -29,6 +48,12 @@ tags = ["Protocol"]
 url = "https://github.com/bitcoin-abe/bitcoin-abe"
 
 [[repo]]
+url = "https://github.com/bitcoin-core/apple-sdk-tools"
+
+[[repo]]
+url = "https://github.com/bitcoin-core/bitcoin-acks"
+
+[[repo]]
 url = "https://github.com/bitcoin-core/bitcoin-detached-sigs"
 
 [[repo]]
@@ -41,6 +66,9 @@ url = "https://github.com/bitcoin-core/bitcoin-maintainer-tools"
 url = "https://github.com/bitcoin-core/bitcoincore.org"
 
 [[repo]]
+url = "https://github.com/bitcoin-core/btcdeb"
+
+[[repo]]
 url = "https://github.com/bitcoin-core/crc32c"
 
 [[repo]]
@@ -51,6 +79,9 @@ url = "https://github.com/bitcoin-core/docs"
 
 [[repo]]
 url = "https://github.com/bitcoin-core/gitian.sigs"
+
+[[repo]]
+url = "https://github.com/bitcoin-core/gui"
 
 [[repo]]
 url = "https://github.com/bitcoin-core/guix-channel"
@@ -79,6 +110,10 @@ tags = ["Protocol"]
 
 [[repo]]
 url = "https://github.com/bitcoin-core/univalue"
+
+[[repo]]
+url = "https://github.com/bitcoin-s/bitcoin-s"
+tags = ["Protocol"]
 
 [[repo]]
 url = "https://github.com/bitcoin-studio/Bitcoin-Programming-with-BitcoinJS"
@@ -118,6 +153,9 @@ url = "https://github.com/bitcoinj/httpseed"
 
 [[repo]]
 url = "https://github.com/bitcoinj/wallet-template"
+
+[[repo]]
+url = "https://github.com/bitcoinjs/aezeed"
 
 [[repo]]
 url = "https://github.com/bitcoinjs/bech32"
@@ -184,6 +222,9 @@ url = "https://github.com/bitcoinjs/bs58check"
 url = "https://github.com/bitcoinjs/coinselect"
 
 [[repo]]
+url = "https://github.com/bitcoinjs/electrum-mnemonic"
+
+[[repo]]
 url = "https://github.com/bitcoinjs/fast-dat-parser"
 
 [[repo]]
@@ -194,6 +235,9 @@ url = "https://github.com/bitcoinjs/merkle-lib"
 
 [[repo]]
 url = "https://github.com/bitcoinjs/minimaldata"
+
+[[repo]]
+url = "https://github.com/bitcoinjs/payjoin-client"
 
 [[repo]]
 url = "https://github.com/bitcoinjs/playground"
@@ -258,6 +302,9 @@ url = "https://github.com/BitcoinUnlimited/BitcoinUnlimited"
 tags = ["Protocol"]
 
 [[repo]]
+url = "https://github.com/bithyve/hexa"
+
+[[repo]]
 url = "https://github.com/Bitlits/Bitcoin-Casino"
 
 [[repo]]
@@ -282,6 +329,9 @@ url = "https://github.com/blocktrail/blocktrail-sdk-php"
 
 [[repo]]
 url = "https://github.com/blocktrail/blocktrail-sdk-python"
+
+[[repo]]
+url = "https://github.com/blocktrail/blocktrail-webwallet"
 
 [[repo]]
 url = "https://github.com/BlueWallet/BlueWallet"
@@ -384,7 +434,22 @@ url = "https://github.com/btcsuite/websocket"
 url = "https://github.com/btcsuite/winsvc"
 
 [[repo]]
+url = "https://github.com/chaincodelabs/bitcoin-curriculum"
+
+[[repo]]
+url = "https://github.com/chaincodelabs/bitcoinperf"
+
+[[repo]]
+url = "https://github.com/chaincodelabs/study-groups"
+
+[[repo]]
+url = "https://github.com/chainside/btcnodejs"
+
+[[repo]]
 url = "https://github.com/chris-belcher/electrum-personal-server"
+
+[[repo]]
+url = "https://github.com/cloudhead/nakamoto"
 
 [[repo]]
 url = "https://github.com/coinspark/php-OP_RETURN"
@@ -417,6 +482,40 @@ tags = ["Wallet"]
 
 [[repo]]
 url = "https://github.com/F483/btctxstore"
+
+[[repo]]
+url = "https://github.com/haskoin/haskoin-core"
+
+[[repo]]
+url = "https://github.com/haskoin/haskoin-faucet"
+
+[[repo]]
+url = "https://github.com/haskoin/haskoin-node"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/haskoin/haskoin-store"
+
+[[repo]]
+url = "https://github.com/haskoin/haskoin-wallet"
+
+[[repo]]
+url = "https://github.com/haskoin/haskoin.github.io"
+
+[[repo]]
+url = "https://github.com/haskoin/hx"
+
+[[repo]]
+url = "https://github.com/haskoin/murmur3"
+
+[[repo]]
+url = "https://github.com/haskoin/old-haskoin-node"
+
+[[repo]]
+url = "https://github.com/haskoin/old-haskoin-wallet"
+
+[[repo]]
+url = "https://github.com/haskoin/secp256k1-haskell"
 
 [[repo]]
 url = "https://github.com/honest-cash/honestcash"
@@ -456,11 +555,11 @@ url = "https://github.com/JoinMarket-Org/joinmarket-clientserver"
 url = "https://github.com/JornC/bitcoin-transaction-explorer"
 
 [[repo]]
-url = "https://github.com/kallewoof/btcdeb"
+url = "https://github.com/k-nuth/kth"
+tags = ["Protocol"]
 
 [[repo]]
-url = "https://github.com/knowm/XChange"
-tags = ["Developer Tool"]
+url = "https://github.com/kallewoof/btcdeb"
 
 [[repo]]
 url = "https://github.com/kristapsk/bitcoin-scripts"
@@ -473,6 +572,9 @@ url = "https://github.com/kyuupichan/electrumx"
 
 [[repo]]
 url = "https://github.com/ladimolnar/BitcoinDatabaseGenerator"
+
+[[repo]]
+url = "https://github.com/lamassu/lamassu-machine"
 
 [[repo]]
 url = "https://github.com/lian/bitcoin-ruby"
@@ -553,6 +655,9 @@ url = "https://github.com/MGaetan89/Bitcoin"
 url = "https://github.com/mhanne/bitcoin-ruby-node"
 
 [[repo]]
+url = "https://github.com/mit-dci/utreexo"
+
+[[repo]]
 url = "https://github.com/nextcashtech/bitcoin"
 
 [[repo]]
@@ -595,6 +700,9 @@ url = "https://github.com/rust-bitcoin/rust-bech32"
 url = "https://github.com/rust-bitcoin/rust-bech32-bitcoin"
 
 [[repo]]
+url = "https://github.com/rust-bitcoin/rust-bip39"
+
+[[repo]]
 url = "https://github.com/rust-bitcoin/rust-bitcoin"
 tags = ["Protocol"]
 
@@ -614,6 +722,9 @@ url = "https://github.com/rust-bitcoin/rust-lightning"
 url = "https://github.com/rust-bitcoin/rust-lightning-invoice"
 
 [[repo]]
+url = "https://github.com/rust-bitcoin/rust-miniscript"
+
+[[repo]]
 url = "https://github.com/rust-bitcoin/rust-secp256k1"
 
 [[repo]]
@@ -627,6 +738,9 @@ url = "https://github.com/Samourai-Wallet/addrindexrs"
 
 [[repo]]
 url = "https://github.com/Samourai-Wallet/Afterburner"
+
+[[repo]]
+url = "https://github.com/Samourai-Wallet/android-torbinary"
 
 [[repo]]
 url = "https://github.com/Samourai-Wallet/Backup-Reader"
@@ -659,6 +773,12 @@ url = "https://github.com/Samourai-Wallet/hexadecimal-die"
 url = "https://github.com/Samourai-Wallet/java-server"
 
 [[repo]]
+url = "https://github.com/Samourai-Wallet/jtorctl"
+
+[[repo]]
+url = "https://github.com/Samourai-Wallet/RecoveryWorksheetStrings"
+
+[[repo]]
 url = "https://github.com/Samourai-Wallet/samourai-dojo"
 
 [[repo]]
@@ -672,6 +792,9 @@ url = "https://github.com/Samourai-Wallet/Sentinel-iOS"
 
 [[repo]]
 url = "https://github.com/Samourai-Wallet/sovereign.ly"
+
+[[repo]]
+url = "https://github.com/Samourai-Wallet/TOPL-Android-TorBinary"
 
 [[repo]]
 url = "https://github.com/Samourai-Wallet/Tor-Onion-Proxy-Library"
@@ -710,6 +833,9 @@ url = "https://github.com/segoverflow/izubitcoin"
 url = "https://github.com/sereneblue/blt-wallet"
 
 [[repo]]
+url = "https://github.com/Sifir-io/sifir-mobile-wallet"
+
+[[repo]]
 url = "https://github.com/siminchen/bitcoinIDE"
 
 [[repo]]
@@ -739,11 +865,23 @@ url = "https://github.com/sr-gi/bitcoin_tools"
 url = "https://github.com/straumat/blockchain2graph"
 
 [[repo]]
+url = "https://github.com/summa-tx/bitcoins-rs"
+
+[[repo]]
+url = "https://github.com/trezor/hd-wallet"
+
+[[repo]]
 url = "https://github.com/tsileo/txwatcher"
 
 [[repo]]
 url = "https://github.com/UASF/bitcoin"
 tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/unchained-capital/caravan"
+
+[[repo]]
+url = "https://github.com/unchained-capital/unchained-bitcoin"
 
 [[repo]]
 url = "https://github.com/upscaletech/localbch.shop"
@@ -764,10 +902,16 @@ url = "https://github.com/yenom/BitcoinKit"
 url = "https://github.com/zkSNACKs/Meta"
 
 [[repo]]
+url = "https://github.com/zkSNACKs/WabiSabi"
+
+[[repo]]
 url = "https://github.com/zkSNACKs/WalletWasabi"
 
 [[repo]]
 url = "https://github.com/zkSNACKs/WasabiBenchmark"
+
+[[repo]]
+url = "https://github.com/zkSNACKs/WasabiBlog"
 
 [[repo]]
 url = "https://github.com/zkSNACKs/WasabiDeploy"
@@ -783,3 +927,9 @@ url = "https://github.com/zkSNACKs/WasabiResearchClub"
 
 [[repo]]
 url = "https://github.com/zkSNACKs/WasabiStatTwitterBot"
+
+[[repo]]
+url = "https://github.com/zkSNACKs/zkSNACKs"
+
+[[repo]]
+url = "https://github.com/zkSNACKs/zkSNACKsSite"

@@ -1,0 +1,227 @@
+# Ecosystem Level Information
+title = "Zilliqa"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/Zilliqa"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/71ae/crypto-zil-miner-switch-ethos"
+
+[[repo]]
+url = "https://github.com/ArthurHoeke/zilliqa-ionic-app-wallet"
+
+[[repo]]
+url = "https://github.com/as1ndu/vscode-scilla"
+
+[[repo]]
+url = "https://github.com/compositeapp/Composite"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/cryptolandtech/moonlet-core"
+
+[[repo]]
+url = "https://github.com/FireStack-Lab/Laksa"
+
+[[repo]]
+url = "https://github.com/FireStack-Lab/LaksaCsharp"
+
+[[repo]]
+url = "https://github.com/FireStack-Lab/LaksaGo"
+
+[[repo]]
+url = "https://github.com/FireStack-Lab/LaksaJ"
+
+[[repo]]
+url = "https://github.com/FireStack-Lab/LaksaRuby"
+
+[[repo]]
+url = "https://github.com/GenesysLabs/Carbon"
+
+[[repo]]
+url = "https://github.com/julio-cabdu/didtyronZIL"
+
+[[repo]]
+url = "https://github.com/julio-cabdu/tyronZIL-js"
+
+[[repo]]
+url = "https://github.com/micovi/zilcli"
+
+[[repo]]
+url = "https://github.com/OpenZesame/Zhip"
+
+[[repo]]
+url = "https://github.com/Switcheo/zilswap"
+
+[[repo]]
+url = "https://github.com/Switcheo/zilswap-sdk"
+
+[[repo]]
+url = "https://github.com/Switcheo/zilswap-webapp"
+
+[[repo]]
+url = "https://github.com/unstoppabledomains/zns"
+
+[[repo]]
+url = "https://github.com/zillet/zillet"
+
+[[repo]]
+url = "https://github.com/zillet/zrc2-tokens"
+
+[[repo]]
+url = "https://github.com/Zilliqa/apidocs"
+
+[[repo]]
+url = "https://github.com/Zilliqa/bignum"
+
+[[repo]]
+url = "https://github.com/Zilliqa/ceres"
+
+[[repo]]
+url = "https://github.com/Zilliqa/dev-explorer"
+
+[[repo]]
+url = "https://github.com/Zilliqa/dev-portal"
+
+[[repo]]
+url = "https://github.com/Zilliqa/dev-portal-examples"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Devex-apollo"
+
+[[repo]]
+url = "https://github.com/Zilliqa/docs"
+
+[[repo]]
+url = "https://github.com/Zilliqa/eth-proxy"
+
+[[repo]]
+url = "https://github.com/Zilliqa/g3log"
+
+[[repo]]
+url = "https://github.com/Zilliqa/goduplicator"
+
+[[repo]]
+url = "https://github.com/Zilliqa/gozilliqa-sdk"
+
+[[repo]]
+url = "https://github.com/Zilliqa/kaya"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/Zilliqa/learn-scilla"
+
+[[repo]]
+url = "https://github.com/Zilliqa/ledger-app-zilliqa"
+
+[[repo]]
+url = "https://github.com/Zilliqa/neo-explorer"
+
+[[repo]]
+url = "https://github.com/Zilliqa/nucleus-wallet"
+
+[[repo]]
+url = "https://github.com/Zilliqa/savant-ide"
+
+[[repo]]
+url = "https://github.com/Zilliqa/schnorr"
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla-compiler"
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla-coq"
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla-docs"
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla-mode"
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla-vm"
+
+[[repo]]
+url = "https://github.com/Zilliqa/scilla-workshop"
+
+[[repo]]
+url = "https://github.com/Zilliqa/snapshot"
+
+[[repo]]
+url = "https://github.com/Zilliqa/snapshot-hub"
+
+[[repo]]
+url = "https://github.com/Zilliqa/snapshot-spaces"
+
+[[repo]]
+url = "https://github.com/Zilliqa/staking-calculator-plugin"
+
+[[repo]]
+url = "https://github.com/Zilliqa/staking-contract"
+
+[[repo]]
+url = "https://github.com/Zilliqa/xsgd-hackathon-"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zillion-issue"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zilliqa"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/Zilliqa/zilliqa-bounties"
+
+[[repo]]
+url = "https://github.com/Zilliqa/zilliqa-contracts"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zilliqa-ERC20-Token"
+
+[[repo]]
+url = "https://github.com/Zilliqa/zilliqa-exporter"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zilliqa-JavaScript-Library"
+
+[[repo]]
+url = "https://github.com/Zilliqa/zilliqa-multisig-wallet"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zilliqa-old-testnet-Wallet-Archived"
+
+[[repo]]
+url = "https://github.com/Zilliqa/zilliqa-relayer"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zilliqa-Release"
+
+[[repo]]
+url = "https://github.com/Zilliqa/zilliqa-social-pay"
+
+[[repo]]
+url = "https://github.com/Zilliqa/Zilliqa-wiki"
+
+[[repo]]
+url = "https://github.com/Zilliqa/ZIP"
+
+[[repo]]
+url = "https://github.com/Zilliqa/zli"
+
+[[repo]]
+url = "https://github.com/Zilliqa/ZRC"
+
+[[repo]]
+url = "https://github.com/zilpay/FungibleToken"
+
+[[repo]]
+url = "https://github.com/zilpay/ledger-bridge"
+
+[[repo]]
+url = "https://github.com/zilpay/zil-pay"

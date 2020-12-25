@@ -3,7 +3,13 @@ title = "Stellar"
 
 sub_ecosystems = ["Litemint", "Mobius", "Stronghold"]
 
-github_organizations = ["https://github.com/fairxio", "https://github.com/stellar", "https://github.com/StellarCN", "https://github.com/StellarKit"]
+github_organizations = [
+  "https://github.com/aurora-rs",
+  "https://github.com/fairxio",
+  "https://github.com/stellar",
+  "https://github.com/StellarCN",
+  "https://github.com/StellarKit",
+]
 
 # Repositories
 [[repo]]
@@ -41,6 +47,21 @@ url = "https://github.com/asebak/stellar-xlm-intellij-plugin"
 
 [[repo]]
 url = "https://github.com/astroband/astrograph"
+
+[[repo]]
+url = "https://github.com/aurora-rs/stellar-base-rs"
+
+[[repo]]
+url = "https://github.com/aurora-rs/stellar-federation-rs"
+
+[[repo]]
+url = "https://github.com/aurora-rs/stellar-horizon-rs"
+
+[[repo]]
+url = "https://github.com/aurora-rs/stellar-toml-rs"
+
+[[repo]]
+url = "https://github.com/aurora-rs/xdrgen"
 
 [[repo]]
 url = "https://github.com/bdteo/php-stellar-strkey"
@@ -436,6 +457,12 @@ url = "https://github.com/stellar/1-1-launch-opening-questions-bartekn"
 url = "https://github.com/stellar/account-viewer"
 
 [[repo]]
+url = "https://github.com/stellar/account-viewer-next"
+
+[[repo]]
+url = "https://github.com/stellar/account-viewer-v2"
+
+[[repo]]
 url = "https://github.com/stellar/anchor-transfer-server-validator-ui"
 
 [[repo]]
@@ -449,6 +476,9 @@ url = "https://github.com/stellar/angular-re-captcha"
 
 [[repo]]
 url = "https://github.com/stellar/archivist"
+
+[[repo]]
+url = "https://github.com/stellar/auth-required-tokens-manager"
 
 [[repo]]
 url = "https://github.com/stellar/bifrost-js-sdk"
@@ -505,6 +535,9 @@ url = "https://github.com/stellar/docker-stellar-core-state"
 url = "https://github.com/stellar/docker-stellar-developers"
 
 [[repo]]
+url = "https://github.com/stellar/docker-stellar-etl"
+
+[[repo]]
 url = "https://github.com/stellar/docs"
 
 [[repo]]
@@ -515,6 +548,9 @@ url = "https://github.com/stellar/escrowgator"
 
 [[repo]]
 url = "https://github.com/stellar/federation"
+
+[[repo]]
+url = "https://github.com/stellar/freighter"
 
 [[repo]]
 url = "https://github.com/stellar/generator-interstellar"
@@ -625,6 +661,9 @@ url = "https://github.com/stellar/laboratory"
 url = "https://github.com/stellar/libsodium"
 
 [[repo]]
+url = "https://github.com/stellar/lyra"
+
+[[repo]]
 url = "https://github.com/stellar/medida"
 
 [[repo]]
@@ -647,6 +686,9 @@ url = "https://github.com/stellar/paper-wallet"
 
 [[repo]]
 url = "https://github.com/stellar/product-conventions"
+
+[[repo]]
+url = "https://github.com/stellar/project-viewer"
 
 [[repo]]
 url = "https://github.com/stellar/react-starter"
@@ -677,6 +719,9 @@ url = "https://github.com/stellar/scp-proofs"
 
 [[repo]]
 url = "https://github.com/stellar/sep24-demo-client"
+
+[[repo]]
+url = "https://github.com/stellar/sep31-demo-client"
 
 [[repo]]
 url = "https://github.com/stellar/sep6-demo-client"
@@ -720,6 +765,15 @@ url = "https://github.com/stellar/stellar-core-prometheus-exporter"
 
 [[repo]]
 url = "https://github.com/stellar/stellar-demo-wallet"
+
+[[repo]]
+url = "https://github.com/stellar/stellar-design-system"
+
+[[repo]]
+url = "https://github.com/stellar/stellar-etl"
+
+[[repo]]
+url = "https://github.com/stellar/stellar-etl-airflow"
 
 [[repo]]
 url = "https://github.com/stellar/stellar-lib"
@@ -777,6 +831,9 @@ url = "https://github.com/stellar/ticker"
 
 [[repo]]
 url = "https://github.com/stellar/ticker-py"
+
+[[repo]]
+url = "https://github.com/stellar/tracy"
 
 [[repo]]
 url = "https://github.com/stellar/transfer-server-validator"

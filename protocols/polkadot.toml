@@ -1,33 +1,1235 @@
 # Ecosystem Level Information
 title = "Polkadot"
 
-sub_ecosystems = ["Edgeware"]
+sub_ecosystems = [
+  "Acala",
+  "Clover",
+  "Darwinia Network",
+  "Edgeware",
+  "Interlay",
+  "Kilt",
+  "Laminar",
+  "Phala Network",
+  "Plasm",
+  "Selendra",
+  "Stafi",
+  "Vertua",
+]
 
-github_organizations = ["https://github.com/w3f"]
+github_organizations = [
+  "https://github.com/polkadot-js",
+  "https://github.com/vue-polkadot",
+  "https://github.com/w3f",
+]
 
 # Repositories
 [[repo]]
+url = "https://github.com/2075/px"
+
+[[repo]]
+url = "https://github.com/4meta5/ssauce"
+
+[[repo]]
+url = "https://github.com/A-T-Dot/substrate-castor"
+
+[[repo]]
+url = "https://github.com/AcalaNetwork/Acala"
+tags = ["Dapp"]
+
+[[repo]]
+url = "https://github.com/AcalaNetwork/acala-official-website"
+
+[[repo]]
+url = "https://github.com/AchalaSB/substrate-demo"
+
+[[repo]]
+url = "https://github.com/acuity-social/acuity-substrate"
+
+[[repo]]
+url = "https://github.com/AdExNetwork/adex-protocol"
+tags = ["Dapp"]
+
+[[repo]]
+url = "https://github.com/aditya520/Substrate_Kickstarter"
+
+[[repo]]
+url = "https://github.com/adoriasoft/polkadot_cosmos_integration"
+
+[[repo]]
+url = "https://github.com/advanca/advanca-node"
+
+[[repo]]
+url = "https://github.com/airalab/robonomics"
+tags = ["Dapp"]
+
+[[repo]]
+url = "https://github.com/Akagi201/protochain"
+
+[[repo]]
+url = "https://github.com/Akagi201/pwasm-libs"
+
+[[repo]]
+url = "https://github.com/akropolisio/akropolis-c2fc-srml"
+
+[[repo]]
+url = "https://github.com/akropolisio/akropolisOS-chain-node"
+
+[[repo]]
+url = "https://github.com/akropolisio/erc20-substrate-bridge"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/akropolisio/POC-polkadai-bridge"
+
+[[repo]]
+url = "https://github.com/akropolisio/polkahub-cli"
+
+[[repo]]
+url = "https://github.com/akropolisio/polkahub-monorepo"
+
+[[repo]]
+url = "https://github.com/akropolisio/substrate-bridge-module"
+
+[[repo]]
+url = "https://github.com/akropolisio/validator-bridge-module"
+
+[[repo]]
+url = "https://github.com/akru/polkadot-nix"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/akru/polkadot-vanity"
+
+[[repo]]
+url = "https://github.com/alekspickle/iss-tracking-node"
+
+[[repo]]
+url = "https://github.com/alexxuyang/substrate-dex"
+tags = ["Dapp"]
+
+[[repo]]
+url = "https://github.com/alexxuyang/substrate-node-template"
+
+[[repo]]
+url = "https://github.com/AmadeusGB/vpp"
+
+[[repo]]
+url = "https://github.com/anakornk/substrate-node-template"
+
+[[repo]]
+url = "https://github.com/anakornk/substrate-offchain-ex"
+
+[[repo]]
+url = "https://github.com/AnnaXJGe/substratekitties"
+
+[[repo]]
+url = "https://github.com/ansonla3/moloch-substrate"
+
+[[repo]]
+url = "https://github.com/anuragjha/substrate-node"
+
+[[repo]]
+url = "https://github.com/apopiak/lottery_society"
+
+[[repo]]
+url = "https://github.com/arsenyjin/schellingcoin-sub"
+
+[[repo]]
+url = "https://github.com/arsenyjin/substrate-tutorial"
+
+[[repo]]
+url = "https://github.com/AurevoirXavier/certify-book"
+
+[[repo]]
+url = "https://github.com/baiyuqi/magic-chain"
+
+[[repo]]
+url = "https://github.com/bandotorg/Bandot"
+
+[[repo]]
+url = "https://github.com/bifrost-finance/bifrost"
+
+[[repo]]
+url = "https://github.com/blockchainhelppro/Statez-Mobile-Wallet"
+
+[[repo]]
+url = "https://github.com/blockxlabs/enzyme"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/boneyard93501/substrate-scaffold"
+
+[[repo]]
+url = "https://github.com/buidl-labs/polkabot-twitter"
+
+[[repo]]
+url = "https://github.com/buidl-labs/polkadot-parachains-indexer"
+
+[[repo]]
+url = "https://github.com/buidl-labs/polkaviz"
+
+[[repo]]
+url = "https://github.com/buidl-labs/YieldScan"
+
+[[repo]]
+url = "https://github.com/ByKeks/substrate-simple-token-example"
+
+[[repo]]
+url = "https://github.com/Caelumlabs/lorena"
+
+[[repo]]
+url = "https://github.com/cdyfng/substrate-kitties"
+
+[[repo]]
+url = "https://github.com/celer-network/cApps-substrate"
+
+[[repo]]
+url = "https://github.com/celer-network/cChannel-substrate"
+
+[[repo]]
+url = "https://github.com/cennznet/api.js"
+
+[[repo]]
+url = "https://github.com/centrifuge/centrifuge-chain"
+
+[[repo]]
+url = "https://github.com/centrifuge/substrate-pallet-multi-account"
+
+[[repo]]
 url = "https://github.com/ChainSafe/gossamer"
 tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/ChainSecurity/polpatrol"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/chainx-org/articles"
+
+[[repo]]
+url = "https://github.com/chainx-org/ChainX"
+
+[[repo]]
+url = "https://github.com/chainx-org/polkadot-white-paper-cn"
+
+[[repo]]
+url = "https://github.com/choraio/chora-host-rust"
+
+[[repo]]
+url = "https://github.com/christinto/COM_token_Substrate-chain"
+
+[[repo]]
+url = "https://github.com/chronicled/substrate"
+
+[[repo]]
+url = "https://github.com/clearloop/cydonia"
+
+[[repo]]
+url = "https://github.com/cloudburo/clb-polkadot-java-hello-world"
+
+[[repo]]
+url = "https://github.com/Colm3na/kusama-session-keys"
+
+[[repo]]
+url = "https://github.com/Colm3na/polkastats-backend-v3"
+
+[[repo]]
+url = "https://github.com/Colm3na/polkastats-v3"
+
+[[repo]]
+url = "https://github.com/Colm3na/substrate-auto-payout"
+
+[[repo]]
+url = "https://github.com/crustio/crust"
+
+[[repo]]
+url = "https://github.com/crustio/crust-tee"
+
+[[repo]]
+url = "https://github.com/CRYPTOINDUS/cryptoindus"
+
+[[repo]]
+url = "https://github.com/daidd2019/substrate-demo"
+
+[[repo]]
+url = "https://github.com/damiradrovic1116/substrate-node-template-master"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial-js"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial-node"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial-offchain"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial-react"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial-starter"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-subsocial-ui"
+
+[[repo]]
+url = "https://github.com/dappforce/dappforce-substrate-multisig"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/darwinia-network/darwinia"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/darwinia-network/darwinia-appchain"
+
+[[repo]]
+url = "https://github.com/darwinia-network/workshop"
+
+[[repo]]
+url = "https://github.com/DataHighway-DHX/api"
+
+[[repo]]
+url = "https://github.com/DataHighway-DHX/mining"
+
+[[repo]]
+url = "https://github.com/DataHighway-DHX/node"
+
+[[repo]]
+url = "https://github.com/debris/sapling-chain"
+
+[[repo]]
+url = "https://github.com/decentral-inc/nyc-blockchain-workshop"
+
+[[repo]]
+url = "https://github.com/definex/definex-libs"
+
+[[repo]]
+url = "https://github.com/developerfred/api"
+
+[[repo]]
+url = "https://github.com/dhiway/cord-concept"
+
+[[repo]]
+url = "https://github.com/djuanit0x/substrate-kitties"
+
+[[repo]]
+url = "https://github.com/dmm-bclabs/substrate-overlay-token"
+
+[[repo]]
+url = "https://github.com/docknetwork/poe"
+
+[[repo]]
+url = "https://github.com/docknetwork/substrate-scaffold"
+
+[[repo]]
+url = "https://github.com/docknetwork/substrate-warmup"
+
+[[repo]]
+url = "https://github.com/emeraldpay/moonbeam"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/emeraldpay/polkaj"
+
+[[repo]]
+url = "https://github.com/enfipy-stash/substample"
+
+[[repo]]
+url = "https://github.com/enfipy-stash/substrate-offchain-example"
+
+[[repo]]
+url = "https://github.com/enfipy-stash/substrate-runtime-interfaces"
+
+[[repo]]
+url = "https://github.com/ExinPool/Darwinia"
+
+[[repo]]
+url = "https://github.com/ExinPool/Kusama"
+
+[[repo]]
+url = "https://github.com/figment-networks/polkadothub-proxy"
+
+[[repo]]
+url = "https://github.com/flyq/erc20"
+
+[[repo]]
+url = "https://github.com/flyq/nftkitty"
+
+[[repo]]
+url = "https://github.com/freddy2030/PolkadotCar"
+
+[[repo]]
+url = "https://github.com/freehere107/go-scale-codec"
+
+[[repo]]
+url = "https://github.com/gautamdhameja/substrate-permissioning"
+
+[[repo]]
+url = "https://github.com/gautamdhameja/substrate-poa"
+
+[[repo]]
+url = "https://github.com/gautamdhameja/substrate-runtime-contract-sample"
+
+[[repo]]
+url = "https://github.com/gautamdhameja/substrate-tcr"
+
+[[repo]]
+url = "https://github.com/gautamdhameja/substrate-tcr-ui"
+
+[[repo]]
+url = "https://github.com/gautamdhameja/substrate-validator-set"
+
+[[repo]]
+url = "https://github.com/gavinggg/hello-world"
+
+[[repo]]
+url = "https://github.com/gdixon/polkadotHackathon"
+
+[[repo]]
+url = "https://github.com/GetSpeckle/speckle-browser-extension"
+
+[[repo]]
+url = "https://github.com/gleb-urvanov/substrate-xyk"
+
+[[repo]]
+url = "https://github.com/gmajor-encrypt/php-scale-codec"
+
+[[repo]]
+url = "https://github.com/gmpcnetwork/GMPC"
+
+[[repo]]
+url = "https://github.com/gooonline/crispy-tribble"
+
+[[repo]]
+url = "https://github.com/halva-suite/halva-test-example"
+
+[[repo]]
+url = "https://github.com/hammeWang/substrate-multisig"
+
+[[repo]]
+url = "https://github.com/hammeWang/substrate-oracle"
+
+[[repo]]
+url = "https://github.com/hammeWang/substrate-template"
+
+[[repo]]
+url = "https://github.com/hiphopd/hiphopd"
+
+[[repo]]
+url = "https://github.com/hoonsubin/exchange_platform"
+
+[[repo]]
+url = "https://github.com/hoprnet/hopr-core-polkadot"
+
+[[repo]]
+url = "https://github.com/hoprnet/hopr-polkadot"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/HPIPS/hpips_runtime"
+
+[[repo]]
+url = "https://github.com/hskang9/substrate-name-service"
+
+[[repo]]
+url = "https://github.com/hskang9/substrate-subscription-service"
+
+[[repo]]
+url = "https://github.com/hukkinj1/dotvanity"
+
+[[repo]]
+url = "https://github.com/InstateDev/w3ns"
+
+[[repo]]
+url = "https://github.com/IPSE-TEAM/ipse-core"
+
+[[repo]]
+url = "https://github.com/ithaka-dev/unity-chain"
+
+[[repo]]
+url = "https://github.com/Jackieyewang/Bast"
+
+[[repo]]
+url = "https://github.com/jaybutera/nft-registry"
+
+[[repo]]
+url = "https://github.com/jiayaoqijia/Weather-Forecast"
+
+[[repo]]
+url = "https://github.com/jimmychu0807/poe-tutorial"
+
+[[repo]]
+url = "https://github.com/jimmychu0807/substrate-offchain-pricefetch"
+
+[[repo]]
+url = "https://github.com/jimmychu0807/tutorial-offchain-worker"
+
+[[repo]]
+url = "https://github.com/johnhuang68/substrate-node-template"
+
+[[repo]]
+url = "https://github.com/joshua-mir/ethBerlin-p2pHosting"
+
+[[repo]]
+url = "https://github.com/Joystream/community-repo"
+
+[[repo]]
+url = "https://github.com/Joystream/hydra"
+
+[[repo]]
+url = "https://github.com/Joystream/joystream"
+
+[[repo]]
+url = "https://github.com/Joystream/query-node-joystream"
+
+[[repo]]
+url = "https://github.com/Joystream/substrate-hiring-module"
+
+[[repo]]
+url = "https://github.com/Joystream/substrate-node-joystream"
+
+[[repo]]
+url = "https://github.com/Joystream/substrate-versioned-store-module"
+
+[[repo]]
+url = "https://github.com/Joystream/substrate-versioned-store-permissions-module"
+
+[[repo]]
+url = "https://github.com/juniuszhou/nft-registry"
+
+[[repo]]
+url = "https://github.com/juniuszhou/pallet-try"
+
+[[repo]]
+url = "https://github.com/kaichaosun/mansion"
+
+[[repo]]
+url = "https://github.com/kaichaosun/substrate-stencil"
+
+[[repo]]
+url = "https://github.com/kaichaosun/tao"
+
+[[repo]]
+url = "https://github.com/katalchain/blockchain"
+
+[[repo]]
+url = "https://github.com/kianenigma/ptop"
+
+[[repo]]
+url = "https://github.com/kigawas/substrate-as"
+
+[[repo]]
+url = "https://github.com/KILTprotocol/demo-client"
+
+[[repo]]
+url = "https://github.com/KILTprotocol/demo-mobile-wallet"
+
+[[repo]]
+url = "https://github.com/KILTprotocol/kilt-workshop-101"
+
+[[repo]]
+url = "https://github.com/KILTprotocol/portablegabi"
+
+[[repo]]
+url = "https://github.com/KILTprotocol/prototype-services"
+
+[[repo]]
+url = "https://github.com/KILTprotocol/sdk-js"
+
+[[repo]]
+url = "https://github.com/kodadot/kodadot.github.io"
+
+[[repo]]
+url = "https://github.com/konchunas/substrate-place"
+
+[[repo]]
+url = "https://github.com/krichard410/substrate-moloch-dao"
+
+[[repo]]
+url = "https://github.com/lapolinarweb/substrate"
+
+[[repo]]
+url = "https://github.com/Lawliet-Chan/data-space"
+
+[[repo]]
+url = "https://github.com/Lawliet-Chan/ProposalsOffchain"
+
+[[repo]]
+url = "https://github.com/LayerXcom/zero-chain"
+
+[[repo]]
+url = "https://github.com/lesterli/substrate-tutorials"
+
+[[repo]]
+url = "https://github.com/leviachain/levia"
+
+[[repo]]
+url = "https://github.com/linbeier/substrate_tutorial"
+
+[[repo]]
+url = "https://github.com/Liqum/rust-onchain-execution-engine"
+
+[[repo]]
+url = "https://github.com/litentry/litentry-runtime"
+
+[[repo]]
+url = "https://github.com/LocalCoinSwap/kusama-multisig-implementation"
+
+[[repo]]
+url = "https://github.com/lorena-ssi/substrate-lib"
+
+[[repo]]
+url = "https://github.com/Lowhearth/substratekitties"
+
+[[repo]]
+url = "https://github.com/lsaether/substratefighters"
+
+[[repo]]
+url = "https://github.com/ltfschoen/play"
+
+[[repo]]
+url = "https://github.com/ltfschoen/protoshine"
+
+[[repo]]
+url = "https://github.com/lucasvo/centrifuge-chain-runtime"
+
+[[repo]]
+url = "https://github.com/luguslabs/archipel"
+
+[[repo]]
+url = "https://github.com/LusWar/substrate-staking"
+
+[[repo]]
+url = "https://github.com/MasakiMinamide/M-Governance"
+
+[[repo]]
+url = "https://github.com/mc-dean/substrate-base-node"
+
+[[repo]]
+url = "https://github.com/miguelmota/substratekitties-learning"
+tags = ["Documentation"]
+
+[[repo]]
+url = "https://github.com/mixbytes/substrate-oracle"
+
+[[repo]]
+url = "https://github.com/mixbytes/tank.ansible-polkadot"
+
+[[repo]]
+url = "https://github.com/mixbytes/tank.bench-polkadot"
+
+[[repo]]
+url = "https://github.com/my-number/mynachain"
+
+[[repo]]
+url = "https://github.com/NDNLink/NDNProtocol"
+
+[[repo]]
+url = "https://github.com/noahsalvadordenjo/dev"
+
+[[repo]]
+url = "https://github.com/noahsalvadordenjo/poa"
+
+[[repo]]
+url = "https://github.com/noahsalvadordenjo/sub"
+
+[[repo]]
+url = "https://github.com/noahsalvadordenjo/treasury"
+
+[[repo]]
+url = "https://github.com/noahsalvadordenjo/unprod"
+
+[[repo]]
+url = "https://github.com/NoCtrlZ/substrate-rnd"
+
+[[repo]]
+url = "https://github.com/NodeFactoryIo/metamask-snap-polkadot"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/NodleCode/substrate-client-kotlin"
+
+[[repo]]
+url = "https://github.com/nziyouren/EasyChainxClaim"
+
+[[repo]]
+url = "https://github.com/ObsidianLabs/SubstrateIDE"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/opennetsys/golkadot"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/opentensor/bittensor"
+
+[[repo]]
+url = "https://github.com/p2p-org/polkadot-profit-transformer"
+
+[[repo]]
+url = "https://github.com/PACTCare/Substrate-Web3-DNS-Tutorial"
+
+[[repo]]
+url = "https://github.com/paritytech/as-substrate"
+
+[[repo]]
+url = "https://github.com/paritytech/bn"
+
+[[repo]]
+url = "https://github.com/paritytech/bridge-ui"
+
+[[repo]]
+url = "https://github.com/paritytech/canvas-node"
+
+[[repo]]
+url = "https://github.com/paritytech/canvas-ui"
+
+[[repo]]
+url = "https://github.com/paritytech/cargo-contract"
+
+[[repo]]
+url = "https://github.com/paritytech/cumulus"
+
+[[repo]]
+url = "https://github.com/paritytech/desub"
+
+[[repo]]
+url = "https://github.com/paritytech/dotexporter"
 
 [[repo]]
 url = "https://github.com/paritytech/finality-grandpa"
 tags = ["Protocol"]
 
 [[repo]]
+url = "https://github.com/paritytech/fleetwood"
+
+[[repo]]
+url = "https://github.com/paritytech/frontier"
+
+[[repo]]
+url = "https://github.com/paritytech/grandpa-bridge-gadget"
+
+[[repo]]
+url = "https://github.com/paritytech/ink"
+
+[[repo]]
+url = "https://github.com/paritytech/ink-types-node-runtime"
+
+[[repo]]
+url = "https://github.com/paritytech/ink-workshop"
+
+[[repo]]
+url = "https://github.com/paritytech/jsonrpc"
+
+[[repo]]
+url = "https://github.com/paritytech/jsonrpsee"
+
+[[repo]]
+url = "https://github.com/paritytech/ledgeracio"
+
+[[repo]]
+url = "https://github.com/paritytech/lightbeam-stammtisch"
+
+[[repo]]
+url = "https://github.com/paritytech/Nomidot"
+
+[[repo]]
+url = "https://github.com/paritytech/offline-phragmen"
+
+[[repo]]
+url = "https://github.com/paritytech/pallet-contracts-waterfall"
+
+[[repo]]
+url = "https://github.com/paritytech/parity-bridges-common"
+
+[[repo]]
+url = "https://github.com/paritytech/parity-common"
+
+[[repo]]
+url = "https://github.com/paritytech/parity-scale-codec"
+
+[[repo]]
+url = "https://github.com/paritytech/parity-signer"
+
+[[repo]]
+url = "https://github.com/paritytech/parity-wasm"
+
+[[repo]]
+url = "https://github.com/paritytech/polkadash"
+
+[[repo]]
 url = "https://github.com/paritytech/polkadot"
 tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/paritytech/polkadot-ui"
+
+[[repo]]
+url = "https://github.com/paritytech/polkassembly"
+
+[[repo]]
+url = "https://github.com/paritytech/react-native-substrate-sign"
 
 [[repo]]
 url = "https://github.com/paritytech/rhododendron"
 tags = ["Protocol"]
 
 [[repo]]
+url = "https://github.com/paritytech/stateless-blockchain"
+
+[[repo]]
+url = "https://github.com/paritytech/subdb"
+
+[[repo]]
 url = "https://github.com/paritytech/substrate"
 tags = ["Protocol"]
 
 [[repo]]
+url = "https://github.com/paritytech/substrate-analytics"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-api-sidecar"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-archive"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-bip39"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-bridge-relay"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-cli-tools"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-connect"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-debug-kit"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-deps"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-exchange"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-lfs"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-light-ui"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-playground"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-subxt"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-telemetry"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-test-runner"
+
+[[repo]]
 url = "https://github.com/paritytech/substrate-ui"
+
+[[repo]]
+url = "https://github.com/paritytech/substrate-up"
+
+[[repo]]
+url = "https://github.com/paritytech/trie"
+
+[[repo]]
+url = "https://github.com/paritytech/txwrapper"
+
+[[repo]]
+url = "https://github.com/paritytech/vscode-substrate"
+
+[[repo]]
+url = "https://github.com/paritytech/wasm-utils"
+
+[[repo]]
+url = "https://github.com/paritytech/wasmi"
+
+[[repo]]
+url = "https://github.com/paritytech/xcm-format"
+
+[[repo]]
+url = "https://github.com/paritytech/yamux"
+
+[[repo]]
+url = "https://github.com/patractlabs/redspot"
+
+[[repo]]
+url = "https://github.com/pavelkrolevets/neurochain-substrate"
+
+[[repo]]
+url = "https://github.com/peterwillcn/tea"
+
+[[repo]]
+url = "https://github.com/playproject-io/datdot-substrate"
+tags = ["Dapp"]
+
+[[repo]]
+url = "https://github.com/playzero/subzero"
+
+[[repo]]
+url = "https://github.com/playzero/subzero-node"
+
+[[repo]]
+url = "https://github.com/plugblockchain/plug-blockchain"
+
+[[repo]]
+url = "https://github.com/Polkadex-Substrate/Polkadex"
+
+[[repo]]
+url = "https://github.com/polkadot-js/api"
+
+[[repo]]
+url = "https://github.com/polkadot-js/apps"
+
+[[repo]]
+url = "https://github.com/polkadot-js/client"
+
+[[repo]]
+url = "https://github.com/polkadot-js/common"
+
+[[repo]]
+url = "https://github.com/polkadot-js/dev"
+
+[[repo]]
+url = "https://github.com/polkadot-js/dns.js.org"
+
+[[repo]]
+url = "https://github.com/polkadot-js/docs"
+
+[[repo]]
+url = "https://github.com/polkadot-js/dotapps.io"
+
+[[repo]]
+url = "https://github.com/polkadot-js/extension"
+
+[[repo]]
+url = "https://github.com/polkadot-js/oo7-polkadot"
+
+[[repo]]
+url = "https://github.com/polkadot-js/phishing"
+
+[[repo]]
+url = "https://github.com/polkadot-js/polkadot-identicon"
+
+[[repo]]
+url = "https://github.com/polkadot-js/polkadot-js.github.io"
+
+[[repo]]
+url = "https://github.com/polkadot-js/polyfill"
+
+[[repo]]
+url = "https://github.com/polkadot-js/schnorrkel-js"
+
+[[repo]]
+url = "https://github.com/polkadot-js/ss58"
+
+[[repo]]
+url = "https://github.com/polkadot-js/tools"
+
+[[repo]]
+url = "https://github.com/polkadot-js/ts"
+
+[[repo]]
+url = "https://github.com/polkadot-js/ui"
+
+[[repo]]
+url = "https://github.com/polkadot-js/wasm"
+
+[[repo]]
+url = "https://github.com/polkascan/polkascan-os"
+
+[[repo]]
+url = "https://github.com/polkascan/polkascan-pre-explorer-api"
+
+[[repo]]
+url = "https://github.com/polkascan/polkascan-pre-explorer-gui"
+
+[[repo]]
+url = "https://github.com/polkascan/polkascan-pre-harvester"
+
+[[repo]]
+url = "https://github.com/polkascan/py-scale-codec"
+
+[[repo]]
+url = "https://github.com/polkascan/py-substrate-interface"
+
+[[repo]]
+url = "https://github.com/polkasource/subkey"
+
+[[repo]]
+url = "https://github.com/polkawallet-io/polkadot-api-RN-debugging"
+
+[[repo]]
+url = "https://github.com/polkawallet-io/polkawallet-flutter"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/polkaworld-org/hackthon-anytoken-protocol"
+
+[[repo]]
+url = "https://github.com/polkaworld-org/PolkaCar"
+
+[[repo]]
+url = "https://github.com/polkaworld-org/Xiaoming-s-friends"
+
+[[repo]]
+url = "https://github.com/PolymathNetwork/Polymesh"
+
+[[repo]]
+url = "https://github.com/PolymathNetwork/polymesh-sdk"
+
+[[repo]]
+url = "https://github.com/prasanna-rkumar/kulupu-rest-api"
+
+[[repo]]
+url = "https://github.com/ProChain/prochain-substrate"
+
+[[repo]]
+url = "https://github.com/protofire/polkadot-failover-mechanism"
+
+[[repo]]
+url = "https://github.com/protos-research/polkadot-node-explorer"
+
+[[repo]]
+url = "https://github.com/PureStake/moonbeam"
+
+[[repo]]
+url = "https://github.com/PureStake/moonbeam-poc"
+
+[[repo]]
+url = "https://github.com/puti94/substrate-wallet"
+
+[[repo]]
+url = "https://github.com/puti94/vanity-address"
+
+[[repo]]
+url = "https://github.com/raindust/smart-audit"
+
+[[repo]]
+url = "https://github.com/raindust/substrate-samples"
+
+[[repo]]
+url = "https://github.com/Ramshreyas/bnft"
+
+[[repo]]
+url = "https://github.com/rchain-community/noahs-aRk"
+
+[[repo]]
+url = "https://github.com/readlnh/certifybook-chain"
+
+[[repo]]
+url = "https://github.com/readlnh/substrate_demo"
+
+[[repo]]
+url = "https://github.com/revotu/polkadot-utils"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/riusricardo/contracts-chain"
+
+[[repo]]
+url = "https://github.com/romangvk/polkadot-visualization"
+
+[[repo]]
+url = "https://github.com/Ryabina-io/substratebot"
+
+[[repo]]
+url = "https://github.com/second-state/rust-ssvm"
+
+[[repo]]
+url = "https://github.com/second-state/SSVM"
+
+[[repo]]
+url = "https://github.com/shawntabrizi/substrate-feeless-token-factory"
+
+[[repo]]
+url = "https://github.com/shawntabrizi/substrate-package"
+
+[[repo]]
+url = "https://github.com/shawntabrizi/substrate-price-oracle"
+
+[[repo]]
+url = "https://github.com/SherLzp/substrate-crowdfunding"
+
+[[repo]]
+url = "https://github.com/shiliyuanma/substrate-node-template"
+
+[[repo]]
+url = "https://github.com/shunp/substrate-ethereum"
+
+[[repo]]
+url = "https://github.com/shunp/substrate-ethereum-old"
+
+[[repo]]
+url = "https://github.com/shunp/substrate_simple_sto"
+
+[[repo]]
+url = "https://github.com/shunp/substrate_template"
+
+[[repo]]
+url = "https://github.com/ShuntaShirai/substrate-sample"
+
+[[repo]]
+url = "https://github.com/SimplyVC/panic_polkadot"
+
+[[repo]]
+url = "https://github.com/skardas/derman"
+
+[[repo]]
+url = "https://github.com/skyh24/bandot"
+
+[[repo]]
+url = "https://github.com/Sladuca/polkadauth"
+
+[[repo]]
+url = "https://github.com/smartcontractkit/chainlink-polkadot"
+
+[[repo]]
+url = "https://github.com/Snowfork/polkadot-ethereum"
+
+[[repo]]
+url = "https://github.com/sora-xor/polkaswap-web"
+tags = ["Dapp"]
+
+[[repo]]
+url = "https://github.com/soramitsu/kagome"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/sriharikapu/Dots-template"
+
+[[repo]]
+url = "https://github.com/stafiprotocol/stafi-node"
+
+[[repo]]
+url = "https://github.com/substrate-developer-hub/pallet-did"
+
+[[repo]]
+url = "https://github.com/substrate-developer-hub/recipes"
+
+[[repo]]
+url = "https://github.com/substrate-developer-hub/substrate-proof-of-existence"
+
+[[repo]]
+url = "https://github.com/substrate-developer-hub/tcr-substrate"
+
+[[repo]]
+url = "https://github.com/SubstrateCourse-Term3/BitDAO"
+
+[[repo]]
+url = "https://github.com/SubstrateCourse-Term3/WhatSubs"
+
+[[repo]]
+url = "https://github.com/SubstrateCourse/substrate-kitties"
+
+[[repo]]
+url = "https://github.com/SubstrateOrg/archer-in-zoo"
+
+[[repo]]
+url = "https://github.com/SubstrateOrg/Canonical-Techfin"
+
+[[repo]]
+url = "https://github.com/SubstrateOrg/Morning-Star"
+
+[[repo]]
+url = "https://github.com/SubstrateOrg/Oracle-Infinity"
+
+[[repo]]
+url = "https://github.com/SubstrateOrg/Sailing"
+
+[[repo]]
+url = "https://github.com/SubstrateOrg/substrate-nft"
+
+[[repo]]
+url = "https://github.com/sunqiLoveSnow/substrate2.0-nft"
+
+[[repo]]
+url = "https://github.com/swisscom-blockchain/polkadot-k8s-operator"
+
+[[repo]]
+url = "https://github.com/syuukawa/record-substrate"
+
+[[repo]]
+url = "https://github.com/syuukawa/substrate-erc721"
+
+[[repo]]
+url = "https://github.com/syuukawa/substrate-post"
+
+[[repo]]
+url = "https://github.com/talfco/clb-polkadot"
+
+[[repo]]
+url = "https://github.com/talfco/clb-substrate"
+
+[[repo]]
+url = "https://github.com/TerenceGe/sr25519-donna"
+
+[[repo]]
+url = "https://github.com/thashimoto1998/cApps-substrate"
+
+[[repo]]
+url = "https://github.com/thashimoto1998/cChannel-substrate"
+
+[[repo]]
+url = "https://github.com/thashimoto1998/substrate-DIDOffchainTrade"
+
+[[repo]]
+url = "https://github.com/TiENBlockchain/tien-sub"
+
+[[repo]]
+url = "https://github.com/totem-tech/totem-message-service"
+
+[[repo]]
+url = "https://github.com/TransactionX/TransX"
+
+[[repo]]
+url = "https://github.com/tswap-org/tswapchain"
+
+[[repo]]
+url = "https://github.com/usetech-llc/nft_parachain"
+
+[[repo]]
+url = "https://github.com/usetech-llc/polka_cosmos_bridge_poc"
+
+[[repo]]
+url = "https://github.com/uvfive/substrate-lesson"
+
+[[repo]]
+url = "https://github.com/ValeryiaKarpenko/cafe-substrate"
+
+[[repo]]
+url = "https://github.com/valibre-org/node"
+
+[[repo]]
+url = "https://github.com/validitylabs/hopr-polkadot"
+
+[[repo]]
+url = "https://github.com/vedhavyas/go-subkey"
+
+[[repo]]
+url = "https://github.com/vue-polkadot/apps"
+
+[[repo]]
+url = "https://github.com/vue-polkadot/presskit"
+
+[[repo]]
+url = "https://github.com/vue-polkadot/vue-polkadot.github.io"
+
+[[repo]]
+url = "https://github.com/vue-polkadot/vue-ui"
 
 [[repo]]
 url = "https://github.com/w3f/1k-validators-be"
@@ -57,13 +1259,22 @@ url = "https://github.com/w3f/bellman"
 url = "https://github.com/w3f/bls"
 
 [[repo]]
+url = "https://github.com/w3f/cargo-remote-docker"
+
+[[repo]]
 url = "https://github.com/w3f/chainspec-generator"
+
+[[repo]]
+url = "https://github.com/w3f/ci-commons-node-docker"
 
 [[repo]]
 url = "https://github.com/w3f/cla-assistant"
 
 [[repo]]
 url = "https://github.com/w3f/Claims-App"
+
+[[repo]]
+url = "https://github.com/w3f/cloudflare-ts"
 
 [[repo]]
 url = "https://github.com/w3f/cmd-ts"
@@ -75,6 +1286,9 @@ url = "https://github.com/w3f/community-base-services"
 url = "https://github.com/w3f/community-matrix-server"
 
 [[repo]]
+url = "https://github.com/w3f/components-ts"
+
+[[repo]]
 url = "https://github.com/w3f/config-ts"
 
 [[repo]]
@@ -82,6 +1296,12 @@ url = "https://github.com/w3f/consensus"
 
 [[repo]]
 url = "https://github.com/w3f/crowdsale-website"
+
+[[repo]]
+url = "https://github.com/w3f/crypto-ts"
+
+[[repo]]
+url = "https://github.com/w3f/disc2020-scalability-and-interoperability-workshop"
 
 [[repo]]
 url = "https://github.com/w3f/downloader-ts"
@@ -114,6 +1334,9 @@ url = "https://github.com/w3f/General-Grants-Program"
 url = "https://github.com/w3f/ghost-preview"
 
 [[repo]]
+url = "https://github.com/w3f/github-org-member-list"
+
+[[repo]]
 url = "https://github.com/w3f/givethbot"
 
 [[repo]]
@@ -132,6 +1355,9 @@ url = "https://github.com/w3f/hd-ed25519"
 url = "https://github.com/w3f/helm-charts"
 
 [[repo]]
+url = "https://github.com/w3f/helm-ts"
+
+[[repo]]
 url = "https://github.com/w3f/hs-p4p"
 
 [[repo]]
@@ -147,6 +1373,9 @@ url = "https://github.com/w3f/js-libp2p-crypto"
 url = "https://github.com/w3f/k4a-f-test"
 
 [[repo]]
+url = "https://github.com/w3f/kind-ts"
+
+[[repo]]
 url = "https://github.com/w3f/KTFPs"
 
 [[repo]]
@@ -154,6 +1383,18 @@ url = "https://github.com/w3f/kubeconfig-generator"
 
 [[repo]]
 url = "https://github.com/w3f/kusama-genesis-spec"
+
+[[repo]]
+url = "https://github.com/w3f/kusama-validator-resource-center"
+
+[[repo]]
+url = "https://github.com/w3f/kusama-validator-resource-center-orig"
+
+[[repo]]
+url = "https://github.com/w3f/kusama-validator-resource-center-test"
+
+[[repo]]
+url = "https://github.com/w3f/lab-test-case-number-of-peers-chart"
 
 [[repo]]
 url = "https://github.com/w3f/librustzcash"
@@ -166,6 +1407,9 @@ url = "https://github.com/w3f/logger-ts"
 
 [[repo]]
 url = "https://github.com/w3f/matrix-recorder"
+
+[[repo]]
+url = "https://github.com/w3f/matrix-recorder-chart"
 
 [[repo]]
 url = "https://github.com/w3f/matrix-server"
@@ -192,6 +1436,21 @@ url = "https://github.com/w3f/mooc-exercises"
 url = "https://github.com/w3f/namespaces-chart"
 
 [[repo]]
+url = "https://github.com/w3f/neptune"
+
+[[repo]]
+url = "https://github.com/w3f/network-policy-chart"
+
+[[repo]]
+url = "https://github.com/w3f/node-dind-docker"
+
+[[repo]]
+url = "https://github.com/w3f/node-docker"
+
+[[repo]]
+url = "https://github.com/w3f/node-exporter-dashboard"
+
+[[repo]]
 url = "https://github.com/w3f/noiseexplorer"
 
 [[repo]]
@@ -210,6 +1469,12 @@ url = "https://github.com/w3f/Open-Grants-Program"
 url = "https://github.com/w3f/operator-sdk-docker"
 
 [[repo]]
+url = "https://github.com/w3f/opsdroid"
+
+[[repo]]
+url = "https://github.com/w3f/parachain-implementers-guide"
+
+[[repo]]
 url = "https://github.com/w3f/parity"
 
 [[repo]]
@@ -225,6 +1490,9 @@ url = "https://github.com/w3f/platform"
 url = "https://github.com/w3f/polkadot"
 
 [[repo]]
+url = "https://github.com/w3f/polkadot-1"
+
+[[repo]]
 url = "https://github.com/w3f/polkadot-api-client-ts"
 
 [[repo]]
@@ -237,6 +1505,9 @@ url = "https://github.com/w3f/polkadot-chart"
 url = "https://github.com/w3f/polkadot-charts"
 
 [[repo]]
+url = "https://github.com/w3f/polkadot-checker"
+
+[[repo]]
 url = "https://github.com/w3f/polkadot-claims"
 
 [[repo]]
@@ -247,6 +1518,21 @@ url = "https://github.com/w3f/polkadot-deployer"
 
 [[repo]]
 url = "https://github.com/w3f/polkadot-deployer-ci"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-docs"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-lab"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-lab-test-case-common"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-lab-test-case-prometheus-chart"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-lab-types-ts"
 
 [[repo]]
 url = "https://github.com/w3f/polkadot-legacy-spec"
@@ -267,10 +1553,22 @@ url = "https://github.com/w3f/polkadot-network-website"
 url = "https://github.com/w3f/polkadot-overview"
 
 [[repo]]
+url = "https://github.com/w3f/polkadot-payouts"
+
+[[repo]]
 url = "https://github.com/w3f/polkadot-re-spec"
 
 [[repo]]
 url = "https://github.com/w3f/polkadot-re-tests"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-registrar-bot"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-registrar-challenger"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-registrar-watcher"
 
 [[repo]]
 url = "https://github.com/w3f/polkadot-release"
@@ -291,6 +1589,15 @@ url = "https://github.com/w3f/polkadot-validator-watcher"
 url = "https://github.com/w3f/polkadot-watcher"
 
 [[repo]]
+url = "https://github.com/w3f/polkadot-watcher-csv-exporter"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-watcher-registrar"
+
+[[repo]]
+url = "https://github.com/w3f/polkadot-watcher-transaction"
+
+[[repo]]
 url = "https://github.com/w3f/polkadot-white-paper"
 
 [[repo]]
@@ -306,13 +1613,22 @@ url = "https://github.com/w3f/polkadot-wiki-old"
 url = "https://github.com/w3f/polkadot-yellow-paper"
 
 [[repo]]
+url = "https://github.com/w3f/polkascan-explorer-gui-docker"
+
+[[repo]]
 url = "https://github.com/w3f/postgresql-chart"
+
+[[repo]]
+url = "https://github.com/w3f/prometheus-api-client-ts"
 
 [[repo]]
 url = "https://github.com/w3f/PSPs"
 
 [[repo]]
 url = "https://github.com/w3f/pumba-chart"
+
+[[repo]]
+url = "https://github.com/w3f/reed-solomon-erasure"
 
 [[repo]]
 url = "https://github.com/w3f/research"
@@ -324,6 +1640,15 @@ url = "https://github.com/w3f/reverse-proxy-chart"
 url = "https://github.com/w3f/ring-vrf"
 
 [[repo]]
+url = "https://github.com/w3f/ripp"
+
+[[repo]]
+url = "https://github.com/w3f/rwc2021-real-world-decentralised-cryptography-workshop"
+
+[[repo]]
+url = "https://github.com/w3f/rwc2021-real-world-decentralized-cryptography-workshop"
+
+[[repo]]
 url = "https://github.com/w3f/schnorr-dalek"
 
 [[repo]]
@@ -333,13 +1658,22 @@ url = "https://github.com/w3f/schnorrkel"
 url = "https://github.com/w3f/Small-Grants-Program"
 
 [[repo]]
+url = "https://github.com/w3f/staking-rewards-collector"
+
+[[repo]]
 url = "https://github.com/w3f/substrate"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-alertrules-chart"
 
 [[repo]]
 url = "https://github.com/w3f/substrate-benchmarks"
 
 [[repo]]
 url = "https://github.com/w3f/substrate-benchmarks-results"
+
+[[repo]]
+url = "https://github.com/w3f/substrate-benchmarks-reviewer"
 
 [[repo]]
 url = "https://github.com/w3f/substrate-benchmarks-role"
@@ -360,16 +1694,40 @@ url = "https://github.com/w3f/summit2019"
 url = "https://github.com/w3f/talks"
 
 [[repo]]
+url = "https://github.com/w3f/teleport-role"
+
+[[repo]]
+url = "https://github.com/w3f/template-ts"
+
+[[repo]]
+url = "https://github.com/w3f/terraform-aws-polkadot-deployer"
+
+[[repo]]
+url = "https://github.com/w3f/terraform-azure-polkadot-deployer"
+
+[[repo]]
 url = "https://github.com/w3f/terraform-azure-polkadot-k8s"
 
 [[repo]]
 url = "https://github.com/w3f/terraform-client-ts"
 
 [[repo]]
+url = "https://github.com/w3f/terraform-digitalocean-polkadot-deployer"
+
+[[repo]]
+url = "https://github.com/w3f/terraform-google-polkadot-deployer"
+
+[[repo]]
 url = "https://github.com/w3f/terraform-google-polkadot-lab"
 
 [[repo]]
+url = "https://github.com/w3f/terraform-ts"
+
+[[repo]]
 url = "https://github.com/w3f/terratest-docker"
+
+[[repo]]
+url = "https://github.com/w3f/terratest-polkadot-deployer"
 
 [[repo]]
 url = "https://github.com/w3f/test-utils-ts"
@@ -396,6 +1754,9 @@ url = "https://github.com/w3f/w3f-substrate-telemetry"
 url = "https://github.com/w3f/web3"
 
 [[repo]]
+url = "https://github.com/w3f/web3-assets"
+
+[[repo]]
 url = "https://github.com/w3f/web3-assets-chart"
 
 [[repo]]
@@ -412,3 +1773,82 @@ url = "https://github.com/w3f/website-tmp"
 
 [[repo]]
 url = "https://github.com/w3f/zexe"
+
+[[repo]]
+url = "https://github.com/w3finance/sakura"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/wangjj9219/yesorno"
+
+[[repo]]
+url = "https://github.com/Wanxiang-Blockchain-Hackathon-2020/N02-Bast"
+
+[[repo]]
+url = "https://github.com/Wanxiang-Blockchain-Hackathon-2020/N14-Caliburn"
+
+[[repo]]
+url = "https://github.com/williamwang1/mdao"
+
+[[repo]]
+url = "https://github.com/WoeOm/darwinia-apps-api"
+
+[[repo]]
+url = "https://github.com/woss/polkadot-node-grafana"
+tags = ["Developer Tool"]
+
+[[repo]]
+url = "https://github.com/wuminzhe/substrate-node-template"
+
+[[repo]]
+url = "https://github.com/xaya/substrate-names"
+
+[[repo]]
+url = "https://github.com/Xynnect/SubstrateTest"
+
+[[repo]]
+url = "https://github.com/y2labs-0sh/module-money-pool"
+
+[[repo]]
+url = "https://github.com/yalland-ubi/yalland-node"
+
+[[repo]]
+url = "https://github.com/yanganto/certifybook-chain"
+
+[[repo]]
+url = "https://github.com/yangwao/substrate-package-demo"
+
+[[repo]]
+url = "https://github.com/yrong/substrate-tutorial"
+
+[[repo]]
+url = "https://github.com/yxf/substrate-redpacket"
+
+[[repo]]
+url = "https://github.com/yxf/subwallet"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/yz89/kitties-extension"
+
+[[repo]]
+url = "https://github.com/yz89/substrate-heap"
+
+[[repo]]
+url = "https://github.com/zatoichi-labs/plasma-cash-node"
+
+[[repo]]
+url = "https://github.com/zhangzhao2/home0603"
+
+[[repo]]
+url = "https://github.com/Zondax/ledger-kusama"
+tags = ["Wallet"]
+
+[[repo]]
+url = "https://github.com/Zondax/ledger-kusama-app"
+
+[[repo]]
+url = "https://github.com/Zondax/ledger-polkadot-js"
+
+[[repo]]
+url = "https://github.com/Zondax/ledger-polkadot-vm"
