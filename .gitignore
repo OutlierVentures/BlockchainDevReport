@@ -1,4 +1,11 @@
-*.json
-*.png
-*.txt
+# ignore all output json files
+output/*
+# but keep the output folder
+!output/.gitkeep
+# ignore all result png and csv files
+res/*
+# but keep the res folder
+!res/.gitkeep
+logfile.log
+__pycache__
 .env
