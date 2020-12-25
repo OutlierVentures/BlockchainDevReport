@@ -3,7 +3,7 @@
 import asyncio
 import datetime as dt
 import json
-import os
+from os import path, remove
 import re
 from logger import sys
 from asyncio import get_event_loop, ensure_future
@@ -105,7 +105,8 @@ class Contributors:
                 rate_limit_exceeded = False
                 for response in responses:
                     if response["error"]:
-                        if response["error_code"] == 403:
+                        # Get 502 some times
+                        if response["error_code"] == 403 or response["error_code"] // 100 == 5:
                             print("Rate limit trigger detected")
                             rate_limit_exceeded = True
                             break
@@ -143,7 +144,6 @@ class Contributors:
                 sys.exit(1)
         # De-duplicate commiters
         deduplicated_contributors = list(set(contributors))
-        # print(len(deduplicated_contributors))
         return deduplicated_contributors
 
     async def get_monthly_contributors_of_repo_in_last_year(self, org_then_slash_then_repo: str):
@@ -193,7 +193,8 @@ class Contributors:
                 rate_limit_exceeded = False
                 for response in responses:
                     if response["error"]:
-                        if response["error_code"] == 403:
+                        # Get 502 some times
+                        if response["error_code"] == 403 or response["error_code"] // 100 == 5:
                             print("Rate limit trigger detected")
                             rate_limit_exceeded = True
                             break
@@ -252,17 +253,19 @@ class Contributors:
         progress_file_name = toml_file.replace('.toml', '_repos_seen.txt')
 
         stats = None
-        if os.path.exists(out_file_name):
-            with open(out_file_name, 'r') as stats_json:
-                stats = json.load(stats_json)
-
         seen_repos = []
-        if os.path.exists(progress_file_name):
-            progress_file = open(progress_file_name, 'r')
-            progress_repos_list = progress_file.readlines()
-            for (_, repo_name_with_line_term) in enumerate(progress_repos_list):
-                repo_name = repo_name_with_line_term.split("\n")[0]
-                seen_repos.append(repo_name)
+        if path.exists(out_file_name_with_path):
+            with open(out_file_name_with_path, 'r') as stats_json:
+                stats = json.load(stats_json)
+            if not stats == [[], [], [], [], [], [], [], [], [], [], [], []]:
+                if path.exists(progress_file_name):
+                    progress_file = open(progress_file_name, 'r')
+                    progress_repos_list = progress_file.readlines()
+                    for (_, repo_name_with_line_term) in enumerate(progress_repos_list):
+                        repo_name = repo_name_with_line_term.split("\n")[0]
+                        seen_repos.append(repo_name)
+            elif path.exists(progress_file_name):
+                remove(progress_file_name)
 
         if stats:
             core_array = stats
@@ -273,6 +276,7 @@ class Contributors:
         else:
             # yearly
             core_array = []
+
         with open(out_file_name_with_path, 'w') as outfile:
             json.dump(core_array, outfile)
         try:
@@ -282,6 +286,7 @@ class Contributors:
         except:
             print('Could not open toml file - check formatting.')
             sys.exit(1)
+        
         # Don't thread this - API limit
         for repo in repos:
             if 'url' in repo:
