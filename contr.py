@@ -54,7 +54,8 @@ class Contributors:
     # list all the repos of a protocol from toml 
     # Includes all the core github org/user repos and the repo urls listed in toml
     # Ensure protocol is same as name of toml file
-    def get_repos_for_protocol_from_toml(self, protocol):
+    async def get_repos_for_protocol_from_toml(self, protocol):
+        pat = await self._get_access_token()
         repos = set()
         toml_file_path = path.join(dir_path, 'protocols', protocol + '.toml')
         if not path.exists(toml_file_path):
@@ -84,13 +85,13 @@ class Contributors:
                 # Get all repos 
                 all_org_repos = []
                 url = f"https://api.github.com/orgs/{org_name}/repos"
-                response = requests.get(url)
+                response = requests.get(url, headers={'Authorization': 'Token ' + pat})
                 for repo in response.json():
                     all_org_repos.append(repo["full_name"])
                 # Get forked repos
                 forked_org_repos = []
                 url = f"https://api.github.com/orgs/{org_name}/repos?type=forks"
-                response = requests.get(url)
+                response = requests.get(url, headers={'Authorization': 'Token ' + pat})
                 for repo in response.json():
                     forked_org_repos.append(repo["full_name"])
                 # Find difference
@@ -101,7 +102,7 @@ class Contributors:
                 # Core org is not org but a user
                 # Get repos of user
                 url = f"https://api.github.com/users/{org_name}/repos"
-                response = requests.get(url)
+                response = requests.get(url, headers={'Authorization': 'Token ' + pat})
                 for repo in response.json():
                     repos.add(repo["full_name"].lower())
         return list(repos)
@@ -337,7 +338,7 @@ class Contributors:
         with open(out_file_name_with_path, 'w') as outfile:
             json.dump(core_array, outfile)
         
-        repos = self.get_repos_for_protocol_from_toml(protocol_name)
+        repos = await self.get_repos_for_protocol_from_toml(protocol_name)
         unseen_repo = []
         for repo in repos:
             if repo in seen_repos:
