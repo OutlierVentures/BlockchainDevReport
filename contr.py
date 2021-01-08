@@ -70,13 +70,6 @@ class Contributors:
             print('Could not open toml file - check formatting!!')
             sys.exit(1)
  
-        for repo in repos_in_toml:
-            if 'url' in repo and repo['url'].lower().startswith("https://github.com/"):
-                repo_to_be_added = repo['url'].lower().split('github.com/')[1]
-                if repo_to_be_added[-1] == '/':
-                    repo_to_be_added = repo_to_be_added[:-1]
-                repos.add(repo_to_be_added)
-
         for org in github_orgs:
             if not org.lower().startswith("https://github.com/"):
                 continue
