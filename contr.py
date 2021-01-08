@@ -108,7 +108,7 @@ class Contributors:
         await asyncio.sleep(res["sleep_time_secs"])
         return await self._get_access_token()
 
-    async def get_contributors_of_repo_in_last_year(self, org_then_slash_then_repo: str):
+    async def get_contributors_of_repo_in_last_n_years(self, org_then_slash_then_repo: str, n_years: int = 1):
         # Commits are not chronological, so need to pull all and filter
         commits = []
 
@@ -179,8 +179,9 @@ class Contributors:
                 rate_limit_remaining -= successful_responses_count
                 batch_start += successful_responses_count
 
+        days_count = 365 * n_years # TODO: Adjust for leap years
         # Remove older commits
-        year_ago_date = dt.datetime.now() - dt.timedelta(days=365)  # Use 366 for leap years
+        year_ago_date = dt.datetime.now() - dt.timedelta(days=days_count)  
         contributors = []
         for item in commits:
             try:
@@ -196,20 +197,27 @@ class Contributors:
         deduplicated_contributors = list(set(contributors))
         return deduplicated_contributors
 
-    async def get_monthly_contributors_of_repo_in_last_year(self, org_then_slash_then_repo: str):
+    async def get_monthly_contributors_of_repo_in_last_n_years(self, org_then_slash_then_repo: str, n_years: int = 1):
         # Commits are not chronological, so need to pull all and filter
         commits = []
 
         # get personal access token
         pat = await self._get_access_token()
 
+        month_count_plus_one = 12 * n_years + 1
+        # create empty 2D list of (12 * n_years) empty list elements)
+        # explicity append rather than []*12 as this uses same memory ref, thus append to one element means append to all
+        contributors = []
+        for i in range(1, month_count_plus_one):
+            contributors.append([])
+
         async with ClientSession() as session:
             initial_request = await get_commits(session, pat, org_then_slash_then_repo, page=1)
             # Repo doesn't exist
             if initial_request["error"] or (type(initial_request["data"]) == dict and initial_request["data"].message == 'Not Found'):
-                return [[], [], [], [], [], [], [], [], [], [], [], []] 
+                return contributors
             if isinstance(initial_request["data"], list) and len(initial_request["data"]) == 0:
-                return [[], [], [], [], [], [], [], [], [], [], [], []]
+                return contributors
             commits.extend(initial_request["data"])
 
             rate_limit_remaining = initial_request["rate_limit_remaining"]
@@ -272,11 +280,9 @@ class Contributors:
         #    json.dump(commits, outfile)
         # Remove older commits
         month_start_dates = [dt.datetime.now()]  # Include final end date for later use
-        for month in range(1, 13):  # Generate 12 months of start dates
+        for month in range(1, month_count_plus_one):  # Generate (12 * n_years) months of start dates
             month_start_dates.append(month_start_dates[-1] - dt.timedelta(days=30))  # 12 'months' is 360 days
         month_start_dates.reverse()
-        # Explicity def rather than []*12 as this uses same memory ref, thus append to one element means append to all
-        contributors = [[], [], [], [], [], [], [], [], [], [], [], []]
         for item in commits:
             try:
                 date_string = item['commit']['author']['date']
@@ -295,7 +301,7 @@ class Contributors:
             contributors[index] = deduplicated_contributors
         return contributors
 
-    async def get_contr_from_toml(self, toml_file: str, monthly: bool = True):
+    async def get_contr_from_toml(self, toml_file: str, monthly: bool = True, years_count: int = 1):
         toml_file_without_protocols = toml_file.split('protocols/')[1]
         protocol_name = toml_file_without_protocols.split('.toml')[0]
         out_file_name = toml_file_without_protocols.replace('.toml', '_contributors.json')
@@ -303,12 +309,19 @@ class Contributors:
         # Useful if left running e.g. over weekend - if failed, re-run INCLUDING last repo listed
         progress_file_name = toml_file.replace('.toml', '_repos_seen.txt')
 
+        month_count_plus_one = 12 * years_count + 1
+        # create empty 2D list of (12 * years_count) empty list elements)
+        # explicity append rather than []*12 as this uses same memory ref, thus append to one element means append to all
+        list_2d = []
+        for i in range(1, month_count_plus_one):
+            list_2d.append([])
+
         stats = None
         seen_repos = []
         if path.exists(out_file_name_with_path):
             with open(out_file_name_with_path, 'r') as stats_json:
                 stats = json.load(stats_json)
-            if not stats == [[], [], [], [], [], [], [], [], [], [], [], []]:
+            if not stats == list_2d:
                 if path.exists(progress_file_name):
                     progress_file = open(progress_file_name, 'r')
                     progress_repos_list = progress_file.readlines()
@@ -323,7 +336,7 @@ class Contributors:
         elif monthly:
             # Explicity def, see above
             # TODO: change this length to make it configurable 
-            core_array = [[], [], [], [], [], [], [], [], [], [], [], []]
+            core_array = list_2d
         else:
             # yearly
             core_array = []
@@ -343,9 +356,9 @@ class Contributors:
         for repo in unseen_repo:
             print("Analysing repo: ", repo)
             if monthly:
-                contributors = await self.get_monthly_contributors_of_repo_in_last_year(repo)
+                contributors = await self.get_monthly_contributors_of_repo_in_last_n_years(repo, n_years=years_count)
             else:
-                contributors = await self.get_contributors_of_repo_in_last_year(repo)
+                contributors = await self.get_contributors_of_repo_in_last_n_years(repo, n_years=years_count)
             # Save progress in case of failure
             try:
                 with open(out_file_name_with_path) as json_file:
@@ -385,16 +398,21 @@ class Contributors:
         return deduplicated_contributors
 
 
-# Get last commit from JSON response, and create one list of all active in the past year, and one list of all contributors ever
+# Get last commit from JSON response, and create one list of all active in the past n years, and one list of all contributors ever
 # Write to file every n repos + repos viewed to not lose progress
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Usage: python3 contr.py [INPUTFILE.TOML]')
+    if not (len(sys.argv) == 2 or len(sys.argv) == 3):
+        print('Usage: python3 contr.py [INPUTFILE.TOML] [YEARS_COUNT]')
         sys.exit(1)
     loop = get_event_loop()
     try:
+        if len(sys.argv) == 3 and sys.argv[2] and int(sys.argv[2]) > 0 and int(sys.argv[2]) < 5:
+            years_count = int(sys.argv[2])
+    except:
+        years_count = 1
+    try:
         c = Contributors('./output')
-        loop.run_until_complete(c.get_contr_from_toml(sys.argv[1]))
+        loop.run_until_complete(c.get_contr_from_toml(sys.argv[1], years_count=years_count))
     finally:
         loop.close()
