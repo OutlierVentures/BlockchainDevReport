@@ -6,6 +6,8 @@ output/*
 res/*
 # but keep the res folder
 !res/.gitkeep
+# ignore all repos seen txt files in protocols
+protocols/*.txt
 logfile.log
 __pycache__
 .env
