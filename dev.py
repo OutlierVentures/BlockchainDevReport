@@ -100,11 +100,17 @@ class DevOracle:
     # get the data for all the repos of a github organization
     def _get_repo_data_for_org(self, org_name: str):
         org_repos = self._make_org_repo_list(org_name)
-        url = f"https://api.github.com/orgs/{org_name}/repos?type=forks"
-        response = requests.get(url)
         forked_repos = []
-        for repo in response.json():
-            forked_repos.append(repo["full_name"])
+        page = 1
+        url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
+        PAT = self._get_access_token()
+        response = requests.get(url, headers={'Authorization': 'Token ' + PAT})
+        while len(response.json()) > 0:
+            for repo in response.json():
+                forked_repos.append(repo["full_name"])
+            page += 1
+            url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
+            response = requests.get(url, headers={'Authorization': 'Token ' + PAT})
         unforked_repos = list(set(org_repos) - set(forked_repos))
         # GitHub API can hit spam limit
         number_of_hyperthreads = multiprocessing.cpu_count()

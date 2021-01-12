@@ -77,20 +77,30 @@ class Contributors:
             try:
                 # Get all repos 
                 all_org_repos = []
-                url = f"https://api.github.com/orgs/{org_name}/repos"
+                page = 1
+                url = f"https://api.github.com/orgs/{org_name}/repos?page={page}&per_page=100"
                 response = requests.get(url, headers={'Authorization': 'Token ' + pat})
-                for repo in response.json():
-                    all_org_repos.append(repo["full_name"])
+                while len(response.json()) > 0:
+                    for repo in response.json():
+                        all_org_repos.append(repo["full_name"])
+                    page += 1
+                    url = f"https://api.github.com/orgs/{org_name}/repos?page={page}&per_page=100"
+                    response = requests.get(url, headers={'Authorization': 'Token ' + pat})
                 # Get forked repos
                 forked_org_repos = []
-                url = f"https://api.github.com/orgs/{org_name}/repos?type=forks"
+                page = 1
+                url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
                 response = requests.get(url, headers={'Authorization': 'Token ' + pat})
-                for repo in response.json():
-                    forked_org_repos.append(repo["full_name"])
+                while len(response.json()) > 0:
+                    for repo in response.json():
+                        forked_org_repos.append(repo["full_name"])
+                    page += 1
+                    url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
+                    response = requests.get(url, headers={'Authorization': 'Token ' + pat})
                 # Find difference
                 unforked_repos = list(set(all_org_repos) - set(forked_org_repos))
                 for repo in unforked_repos:
-                    repos.add(repo['url'].lower())
+                    repos.add(repo.lower())
             except:
                 # Core org is not org but a user
                 # Get repos of user
@@ -409,6 +419,8 @@ if __name__ == '__main__':
     try:
         if len(sys.argv) == 3 and sys.argv[2] and int(sys.argv[2]) > 0 and int(sys.argv[2]) < 5:
             years_count = int(sys.argv[2])
+        elif len(sys.argv) == 2:
+            years_count = 1
     except:
         years_count = 1
     try:
