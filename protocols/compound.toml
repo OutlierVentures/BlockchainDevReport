@@ -1,0 +1,121 @@
+# Ecosystem Level Information
+title = "Compound"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/compound-finance"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/compound-finance/0x-monorepo"
+
+[[repo]]
+url = "https://github.com/compound-finance/algo"
+
+[[repo]]
+url = "https://github.com/compound-finance/autonomous-proposals"
+
+[[repo]]
+url = "https://github.com/compound-finance/bitcoin"
+
+[[repo]]
+url = "https://github.com/compound-finance/cloud-builders-community"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-config"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-eureka"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-js"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-money-market"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-oracle"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-protocol"
+
+[[repo]]
+url = "https://github.com/compound-finance/compound-v2-subgraph"
+
+[[repo]]
+url = "https://github.com/compound-finance/cosmos"
+
+[[repo]]
+url = "https://github.com/compound-finance/DeFi-Pulse-Adapters"
+
+[[repo]]
+url = "https://github.com/compound-finance/eth-contract-metadata"
+
+[[repo]]
+url = "https://github.com/compound-finance/ethereumjs-util"
+
+[[repo]]
+url = "https://github.com/compound-finance/ethereumjs-vm"
+
+[[repo]]
+url = "https://github.com/compound-finance/etherscan"
+
+[[repo]]
+url = "https://github.com/compound-finance/ganache-cli"
+
+[[repo]]
+url = "https://github.com/compound-finance/ganache-core"
+
+[[repo]]
+url = "https://github.com/compound-finance/libra"
+
+[[repo]]
+url = "https://github.com/compound-finance/open-oracle"
+
+[[repo]]
+url = "https://github.com/compound-finance/quest"
+
+[[repo]]
+url = "https://github.com/compound-finance/QuickBorrow"
+
+[[repo]]
+url = "https://github.com/compound-finance/redis"
+
+[[repo]]
+url = "https://github.com/compound-finance/redix_stream"
+
+[[repo]]
+url = "https://github.com/compound-finance/rust-cache"
+
+[[repo]]
+url = "https://github.com/compound-finance/saddle"
+
+[[repo]]
+url = "https://github.com/compound-finance/solana"
+
+[[repo]]
+url = "https://github.com/compound-finance/solidity"
+
+[[repo]]
+url = "https://github.com/compound-finance/solidity-coverage"
+
+[[repo]]
+url = "https://github.com/compound-finance/solidity-parser-antlr"
+
+[[repo]]
+url = "https://github.com/compound-finance/substrate"
+
+[[repo]]
+url = "https://github.com/compound-finance/substrate-1"
+
+[[repo]]
+url = "https://github.com/compound-finance/tezos"
+
+[[repo]]
+url = "https://github.com/compound-finance/token-list"
+
+[[repo]]
+url = "https://github.com/compound-finance/tokens"
+
+[[repo]]
+url = "https://github.com/compound-finance/vault"
