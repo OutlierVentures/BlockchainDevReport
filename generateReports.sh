@@ -14,8 +14,8 @@ done
 
 echo "Running contr.py ..."
 for name in $names; do
-    python3 contr.py protocols/$name.toml
+    python3 contr.py protocols/$name.toml 1
 done
 
-# echo "Running visualizer ..."
-# python3 vis.py
+echo "Running visualizer ..."
+python3 vis.py
