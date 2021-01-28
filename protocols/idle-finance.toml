@@ -1,0 +1,10 @@
+# Ecosystem Level Information
+title = "Idle Finance"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/Idle-Labs"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/bugduino/idle-contracts"

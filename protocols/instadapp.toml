@@ -1,0 +1,88 @@
+# Ecosystem Level Information
+title = "InstaDApp"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/InstaDApp"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/InstaDApp/all-things-instadapp"
+
+[[repo]]
+url = "https://github.com/InstaDApp/blockchain-security-contacts"
+
+[[repo]]
+url = "https://github.com/InstaDApp/brand"
+
+[[repo]]
+url = "https://github.com/InstaDApp/contract-v2"
+
+[[repo]]
+url = "https://github.com/InstaDApp/defibot"
+
+[[repo]]
+url = "https://github.com/InstaDApp/docs"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-connect"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-connectors"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-connectors-new"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-contracts"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-developers"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-ecosystem"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-flashloan"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-resolvers"
+
+[[repo]]
+url = "https://github.com/InstaDApp/dsa-sdk"
+
+[[repo]]
+url = "https://github.com/InstaDApp/flusher-contract"
+
+[[repo]]
+url = "https://github.com/InstaDApp/Gelato-automations"
+
+[[repo]]
+url = "https://github.com/InstaDApp/InstaContract"
+
+[[repo]]
+url = "https://github.com/InstaDApp/InstaDApp-Dashboard"
+
+[[repo]]
+url = "https://github.com/InstaDApp/reserve"
+
+[[repo]]
+url = "https://github.com/InstaDApp/sa-contracts"
+
+[[repo]]
+url = "https://github.com/InstaDApp/SaiPool"
+
+[[repo]]
+url = "https://github.com/InstaDApp/smart-account"
+
+[[repo]]
+url = "https://github.com/InstaDApp/smart-contract"
+
+[[repo]]
+url = "https://github.com/InstaDApp/spells"
+
+[[repo]]
+url = "https://github.com/InstaDApp/yield-contract"
+
+[[repo]]
+url = "https://github.com/InstaDApp/yield-flusher"

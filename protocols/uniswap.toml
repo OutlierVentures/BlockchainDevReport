@@ -1,0 +1,205 @@
+# Ecosystem Level Information
+title = "Uniswap"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/Uniswap"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/AndreMiras/pools"
+
+[[repo]]
+url = "https://github.com/ApopheniaPays/excel-liquidity-pool-simulator"
+
+[[repo]]
+url = "https://github.com/b-u-i-d-l/unifi"
+
+[[repo]]
+url = "https://github.com/banteg/uniswap"
+
+[[repo]]
+url = "https://github.com/BenSparksCode/uniswap-insights"
+
+[[repo]]
+url = "https://github.com/bloq/sol-qualify-lp"
+
+[[repo]]
+url = "https://github.com/ccyanxyz/uniswap-arbitrage-analysis"
+
+[[repo]]
+url = "https://github.com/clemlak/juani"
+
+[[repo]]
+url = "https://github.com/D-CDC/go-uniswap"
+
+[[repo]]
+url = "https://github.com/dapped/multiswap"
+
+[[repo]]
+url = "https://github.com/derekbar90/docker-uniswap"
+
+[[repo]]
+url = "https://github.com/fengluo/uniswap-white-paper"
+
+[[repo]]
+url = "https://github.com/kanthgithub/UniSwapper"
+
+[[repo]]
+url = "https://github.com/keep-network/uniswap-tbtc-exchange-scripts"
+
+[[repo]]
+url = "https://github.com/matextrem/cryptoRoi-api"
+
+[[repo]]
+url = "https://github.com/monosux/uniprices"
+
+[[repo]]
+url = "https://github.com/nathanjessen/tokenlist-template"
+
+[[repo]]
+url = "https://github.com/nicholashc/uniswap-skim"
+
+[[repo]]
+url = "https://github.com/NoahZinsmeister/hypertext"
+
+[[repo]]
+url = "https://github.com/shanefontaine/uniswap-python"
+
+[[repo]]
+url = "https://github.com/sigillabs/mobidex"
+
+[[repo]]
+url = "https://github.com/stefanmendoza/uniswap-price-feed"
+
+[[repo]]
+url = "https://github.com/thanhnguyennguyen/uniswap-price"
+
+[[repo]]
+url = "https://github.com/truffle-box/defi-box"
+
+[[repo]]
+url = "https://github.com/Uniswap/advanced-weth"
+
+[[repo]]
+url = "https://github.com/Uniswap/contracts-vyper"
+
+[[repo]]
+url = "https://github.com/Uniswap/convert-cidv0-cidv1"
+
+[[repo]]
+url = "https://github.com/Uniswap/default-token-list"
+
+[[repo]]
+url = "https://github.com/Uniswap/DeFi-Pulse-Adapters"
+
+[[repo]]
+url = "https://github.com/Uniswap/docs"
+
+[[repo]]
+url = "https://github.com/Uniswap/governance"
+
+[[repo]]
+url = "https://github.com/Uniswap/ipfs-pinata-deploy-action"
+
+[[repo]]
+url = "https://github.com/Uniswap/liquidity-staker"
+
+[[repo]]
+url = "https://github.com/Uniswap/merkle-distributor"
+
+[[repo]]
+url = "https://github.com/Uniswap/old-solidity-contracts"
+
+[[repo]]
+url = "https://github.com/Uniswap/replace-vercel-dns-records"
+
+[[repo]]
+url = "https://github.com/Uniswap/retroactive-query"
+
+[[repo]]
+url = "https://github.com/Uniswap/sybil-interface"
+
+[[repo]]
+url = "https://github.com/Uniswap/sybil-list"
+
+[[repo]]
+url = "https://github.com/Uniswap/sybil-verifier-worker"
+
+[[repo]]
+url = "https://github.com/Uniswap/token-lists"
+
+[[repo]]
+url = "https://github.com/Uniswap/tokenlists-org"
+
+[[repo]]
+url = "https://github.com/Uniswap/uni-registry"
+
+[[repo]]
+url = "https://github.com/Uniswap/unipig"
+
+[[repo]]
+url = "https://github.com/Uniswap/unisocks"
+
+[[repo]]
+url = "https://github.com/Uniswap/unisocks-erc20"
+
+[[repo]]
+url = "https://github.com/Uniswap/unisocks-erc721"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-api"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-exchange"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-frontend"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-generalized"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-info"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-info-redirects"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-interface"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-io"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-lib"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-org"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-pink"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-sdk"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-v1"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-v1-interface"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-v2-core"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-v2-periphery"
+
+[[repo]]
+url = "https://github.com/Uniswap/uniswap-v2-subgraph"
+
+[[repo]]
+url = "https://github.com/Uniswap/universe"
+
+[[repo]]
+url = "https://github.com/Uniswap/widget"

@@ -1,0 +1,439 @@
+# Ecosystem Level Information
+title = "Harmony"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/harmony-one"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/harmony-one/1earn"
+
+[[repo]]
+url = "https://github.com/harmony-one/abool"
+
+[[repo]]
+url = "https://github.com/harmony-one/analytics-ops"
+
+[[repo]]
+url = "https://github.com/harmony-one/android-puzzle"
+
+[[repo]]
+url = "https://github.com/harmony-one/ansible"
+
+[[repo]]
+url = "https://github.com/harmony-one/assets"
+
+[[repo]]
+url = "https://github.com/harmony-one/asym-key-pkgs"
+
+[[repo]]
+url = "https://github.com/harmony-one/auto-node"
+
+[[repo]]
+url = "https://github.com/harmony-one/BeastQuest"
+
+[[repo]]
+url = "https://github.com/harmony-one/blockatlas"
+
+[[repo]]
+url = "https://github.com/harmony-one/bls"
+
+[[repo]]
+url = "https://github.com/harmony-one/blst"
+
+[[repo]]
+url = "https://github.com/harmony-one/bnbridge.exchange"
+
+[[repo]]
+url = "https://github.com/harmony-one/bounty-token"
+
+[[repo]]
+url = "https://github.com/harmony-one/busd-contract"
+
+[[repo]]
+url = "https://github.com/harmony-one/chainlink-demo-project"
+
+[[repo]]
+url = "https://github.com/harmony-one/chainlink-harmony-adapter"
+
+[[repo]]
+url = "https://github.com/harmony-one/dapp"
+
+[[repo]]
+url = "https://github.com/harmony-one/dapp-curve-contracts"
+
+[[repo]]
+url = "https://github.com/harmony-one/dapp-curve-ui"
+
+[[repo]]
+url = "https://github.com/harmony-one/dapp-demo-crowdfunding"
+
+[[repo]]
+url = "https://github.com/harmony-one/dapp-examples"
+
+[[repo]]
+url = "https://github.com/harmony-one/demo-apps"
+
+[[repo]]
+url = "https://github.com/harmony-one/demo-multi-sender"
+
+[[repo]]
+url = "https://github.com/harmony-one/docker"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-contributors"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-developer"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-holders"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-home"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-home-cn"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-staking"
+
+[[repo]]
+url = "https://github.com/harmony-one/docs-validators"
+
+[[repo]]
+url = "https://github.com/harmony-one/erc20-test"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethconnector"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge-v2"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge.appengine"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge.frontend"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge.sdk"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge.tests"
+
+[[repo]]
+url = "https://github.com/harmony-one/ethhmy-bridge.ui-sdk"
+
+[[repo]]
+url = "https://github.com/harmony-one/experiment-deploy"
+
+[[repo]]
+url = "https://github.com/harmony-one/external-initiator"
+
+[[repo]]
+url = "https://github.com/harmony-one/go-ethereum"
+
+[[repo]]
+url = "https://github.com/harmony-one/go-lib"
+
+[[repo]]
+url = "https://github.com/harmony-one/go-raptorq"
+
+[[repo]]
+url = "https://github.com/harmony-one/go-sdk"
+
+[[repo]]
+url = "https://github.com/harmony-one/H2O"
+
+[[repo]]
+url = "https://github.com/harmony-one/hackathon"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-charity-dao"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-dashboard"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-deploy"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-erc-20"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-harvest.contract"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-harvest.frontend"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-jenkins-agent-docker"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-log-analysis"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-open"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-ops"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-react"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-stress"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-test"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-tests"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-tf"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-tui"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-tx-tests"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony-utils"
+
+[[repo]]
+url = "https://github.com/harmony-one/Harmony-website"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmony_angels_twitter_rewards"
+
+[[repo]]
+url = "https://github.com/harmony-one/HarmonyFoundationalNode"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmonyj"
+
+[[repo]]
+url = "https://github.com/harmony-one/harmonyj-busd"
+
+[[repo]]
+url = "https://github.com/harmony-one/hfi"
+
+[[repo]]
+url = "https://github.com/harmony-one/hmy-react"
+
+[[repo]]
+url = "https://github.com/harmony-one/hmydb"
+
+[[repo]]
+url = "https://github.com/harmony-one/horizon"
+
+[[repo]]
+url = "https://github.com/harmony-one/HRC"
+
+[[repo]]
+url = "https://github.com/harmony-one/hrc-holder"
+
+[[repo]]
+url = "https://github.com/harmony-one/HRC20-logos"
+
+[[repo]]
+url = "https://github.com/harmony-one/http-proxy-middleware"
+
+[[repo]]
+url = "https://github.com/harmony-one/ida"
+
+[[repo]]
+url = "https://github.com/harmony-one/key-generation"
+
+[[repo]]
+url = "https://github.com/harmony-one/landing-page"
+
+[[repo]]
+url = "https://github.com/harmony-one/ledger-app-one"
+
+[[repo]]
+url = "https://github.com/harmony-one/ledger-harmony-js"
+
+[[repo]]
+url = "https://github.com/harmony-one/libunison"
+
+[[repo]]
+url = "https://github.com/harmony-one/LinkToken"
+
+[[repo]]
+url = "https://github.com/harmony-one/lunie"
+
+[[repo]]
+url = "https://github.com/harmony-one/math-harmony-web-wallet"
+
+[[repo]]
+url = "https://github.com/harmony-one/mcl"
+
+[[repo]]
+url = "https://github.com/harmony-one/metacoin-box"
+
+[[repo]]
+url = "https://github.com/harmony-one/monitor"
+
+[[repo]]
+url = "https://github.com/harmony-one/monitor-ops"
+
+[[repo]]
+url = "https://github.com/harmony-one/multichain"
+
+[[repo]]
+url = "https://github.com/harmony-one/native-bridge"
+
+[[repo]]
+url = "https://github.com/harmony-one/native-token-swap"
+
+[[repo]]
+url = "https://github.com/harmony-one/nft-store"
+
+[[repo]]
+url = "https://github.com/harmony-one/node-binary"
+
+[[repo]]
+url = "https://github.com/harmony-one/node-http-proxy"
+
+[[repo]]
+url = "https://github.com/harmony-one/node-log-monitoring"
+
+[[repo]]
+url = "https://github.com/harmony-one/offkey"
+
+[[repo]]
+url = "https://github.com/harmony-one/onebtc"
+
+[[repo]]
+url = "https://github.com/harmony-one/onewallet"
+
+[[repo]]
+url = "https://github.com/harmony-one/pangaea-community"
+
+[[repo]]
+url = "https://github.com/harmony-one/pangaea-ops"
+
+[[repo]]
+url = "https://github.com/harmony-one/papers"
+
+[[repo]]
+url = "https://github.com/harmony-one/pprof-reports"
+
+[[repo]]
+url = "https://github.com/harmony-one/py-pangaea-ops"
+
+[[repo]]
+url = "https://github.com/harmony-one/pyhmy"
+
+[[repo]]
+url = "https://github.com/harmony-one/rings-dapp"
+
+[[repo]]
+url = "https://github.com/harmony-one/rupiahtoken-smart-contracts"
+
+[[repo]]
+url = "https://github.com/harmony-one/sdk"
+
+[[repo]]
+url = "https://github.com/harmony-one/seeswap"
+
+[[repo]]
+url = "https://github.com/harmony-one/seeswap-pool"
+
+[[repo]]
+url = "https://github.com/harmony-one/simple-list"
+
+[[repo]]
+url = "https://github.com/harmony-one/solidity"
+
+[[repo]]
+url = "https://github.com/harmony-one/stake-heist"
+
+[[repo]]
+url = "https://github.com/harmony-one/staking-dashboard"
+
+[[repo]]
+url = "https://github.com/harmony-one/staking-dashboard-e2e"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-cli"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-core"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-default-token-list"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-deployment"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-interface"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-landing-stub"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-lib"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-misc"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-periphery"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-sdk"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-testing"
+
+[[repo]]
+url = "https://github.com/harmony-one/swoop-utils"
+
+[[repo]]
+url = "https://github.com/harmony-one/taggedrlp"
+
+[[repo]]
+url = "https://github.com/harmony-one/terraform"
+
+[[repo]]
+url = "https://github.com/harmony-one/token-faucet-demo-dapp"
+
+[[repo]]
+url = "https://github.com/harmony-one/transaction-generator"
+
+[[repo]]
+url = "https://github.com/harmony-one/validator-logos"
+
+[[repo]]
+url = "https://github.com/harmony-one/vdf"
+
+[[repo]]
+url = "https://github.com/harmony-one/vdf-1"
+
+[[repo]]
+url = "https://github.com/harmony-one/vx"
+
+[[repo]]
+url = "https://github.com/harmony-one/wallet-core"
+
+[[repo]]
+url = "https://github.com/harmony-one/watchdog"
+
+[[repo]]
+url = "https://github.com/harmony-one/website"
+
+[[repo]]
+url = "https://github.com/harmony-one/zkHMY"

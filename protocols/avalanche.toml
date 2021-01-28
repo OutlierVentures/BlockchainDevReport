@@ -1,0 +1,194 @@
+# Ecosystem Level Information
+title = "Avalanche"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/ava-labs"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/ava-labs/athereum-explorer"
+
+[[repo]]
+url = "https://github.com/ava-labs/athereum-faucet"
+
+[[repo]]
+url = "https://github.com/ava-labs/athereum-solidity"
+
+[[repo]]
+url = "https://github.com/ava-labs/athereum_demo_docs"
+
+[[repo]]
+url = "https://github.com/ava-labs/ava-explorer"
+
+[[repo]]
+url = "https://github.com/ava-labs/ava-faucet"
+
+[[repo]]
+url = "https://github.com/ava-labs/ava-quicksign"
+
+[[repo]]
+url = "https://github.com/ava-labs/ava-sdk"
+
+[[repo]]
+url = "https://github.com/ava-labs/ava-wallet"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-cli"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-docs"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-docs-deprecated"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-explorer"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-faucet"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-go"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-postman-collection"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-quicksign"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-testing"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche-wallet"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanche.js"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanchego"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanchejs"
+
+[[repo]]
+url = "https://github.com/ava-labs/avalanchetipbot"
+
+[[repo]]
+url = "https://github.com/ava-labs/avash"
+
+[[repo]]
+url = "https://github.com/ava-labs/avax-js-cli-tools"
+
+[[repo]]
+url = "https://github.com/ava-labs/coreth"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/ava-labs/docs"
+
+[[repo]]
+url = "https://github.com/ava-labs/ethereum-studio"
+
+[[repo]]
+url = "https://github.com/ava-labs/explorer-site"
+
+[[repo]]
+url = "https://github.com/ava-labs/faucet-site"
+
+[[repo]]
+url = "https://github.com/ava-labs/gecko"
+
+[[repo]]
+url = "https://github.com/ava-labs/go-ethereum"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/ava-labs/homebrew-avalanchego"
+
+[[repo]]
+url = "https://github.com/ava-labs/homebrew-core"
+
+[[repo]]
+url = "https://github.com/ava-labs/hummingbot"
+
+[[repo]]
+url = "https://github.com/ava-labs/ledger-app-avalanche"
+
+[[repo]]
+url = "https://github.com/ava-labs/linux-sgx"
+
+[[repo]]
+url = "https://github.com/ava-labs/node-monitoring"
+
+[[repo]]
+url = "https://github.com/ava-labs/ortelius"
+
+[[repo]]
+url = "https://github.com/ava-labs/public-facing-docs"
+
+[[repo]]
+url = "https://github.com/ava-labs/salticidae"
+
+[[repo]]
+url = "https://github.com/ava-labs/salticidae-go"
+
+[[repo]]
+url = "https://github.com/ava-labs/slips"
+
+[[repo]]
+url = "https://github.com/ava-labs/slopes"
+
+[[repo]]
+url = "https://github.com/ava-labs/vue-components"
+
+[[repo]]
+url = "https://github.com/ava-labs/vue_components"
+
+[[repo]]
+url = "https://github.com/ava-labs/wallet-site"
+
+[[repo]]
+url = "https://github.com/bayroio/ahoj-network-example"
+
+[[repo]]
+url = "https://github.com/bayroio/ahoj-token-issuance"
+
+[[repo]]
+url = "https://github.com/BradMcFall/MDNANFT"
+
+[[repo]]
+url = "https://github.com/bws9000/avalanchejs-demo-cms"
+
+[[repo]]
+url = "https://github.com/collincusce/makeutxos"
+
+[[repo]]
+url = "https://github.com/datadef/ava-hd-wallet"
+
+[[repo]]
+url = "https://github.com/datadef/com.avamatic.client"
+
+[[repo]]
+url = "https://github.com/dxl2/ava-repl"
+
+[[repo]]
+url = "https://github.com/IskraNikolova/VScout"
+
+[[repo]]
+url = "https://github.com/jtormey/avax-wallet"
+
+[[repo]]
+url = "https://github.com/magiclabs/example-avalanche"
+
+[[repo]]
+url = "https://github.com/obsidiansystems/avalanche-wallet-cli"
+
+[[repo]]
+url = "https://github.com/tbrunain/avalanche-nft-creation"
+
+[[repo]]
+url = "https://github.com/tbrunain/snowboard"

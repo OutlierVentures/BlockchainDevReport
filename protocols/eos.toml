@@ -1,9 +1,36 @@
 # Ecosystem Level Information
 title = "EOS"
 
-sub_ecosystems = ["Andoromeda", "Bank of Staked", "BOSCore", "dfuse.io", "EOS Knights", "EOS Nation", "EOSDAC", "Eva", "Everipedia", "FeeSimple", "Iryo Network", "MEET.ONE", "Scatter", "SuperONE", "Telos", "TokenPocket", "Worbli", "Worldwide Asset eXchange"]
+sub_ecosystems = [
+  "Andoromeda",
+  "Bank of Staked",
+  "BOSCore",
+  "DAO.Casino",
+  "dfuse.io",
+  "EOS Knights",
+  "EOS Nation",
+  "EOSDAC",
+  "Eva",
+  "Everipedia",
+  "FeeSimple",
+  "Iryo Network",
+  "MEET.ONE",
+  "Scatter",
+  "SuperONE",
+  "Telos",
+  "TokenPocket",
+  "Worbli",
+  "Worldwide Asset eXchange",
+]
 
-github_organizations = ["https://github.com/eosdac", "https://github.com/EOSEssentials", "https://github.com/EOSIO", "https://github.com/eosio-eps", "https://github.com/eosnewyork", "https://github.com/eosrio"]
+github_organizations = [
+  "https://github.com/eosdac",
+  "https://github.com/EOSEssentials",
+  "https://github.com/EOSIO",
+  "https://github.com/eosio-eps",
+  "https://github.com/eosnewyork",
+  "https://github.com/eosrio",
+]
 
 # Repositories
 [[repo]]
@@ -53,9 +80,6 @@ url = "https://github.com/breakstring/savemyeosram"
 
 [[repo]]
 url = "https://github.com/CatchTheFrog/eos-tokens"
-
-[[repo]]
-url = "https://github.com/cern-eos/eos"
 
 [[repo]]
 url = "https://github.com/CoinageCrypto/lamington"
@@ -192,6 +216,9 @@ url = "https://github.com/eosdac/dacescrow"
 url = "https://github.com/eosdac/dacfactory-docs"
 
 [[repo]]
+url = "https://github.com/eosdac/dacfactory-ui"
+
+[[repo]]
 url = "https://github.com/eosdac/dacmultisigs"
 
 [[repo]]
@@ -208,6 +235,9 @@ url = "https://github.com/eosdac/discbot"
 
 [[repo]]
 url = "https://github.com/eosdac/discord-dac-bot"
+
+[[repo]]
+url = "https://github.com/eosdac/documentation"
 
 [[repo]]
 url = "https://github.com/eosdac/eos"
@@ -336,6 +366,15 @@ url = "https://github.com/eosdac/ual-simplewallet"
 url = "https://github.com/eosdac/ual-wax"
 
 [[repo]]
+url = "https://github.com/eosdac/unity-wcw-bridge"
+
+[[repo]]
+url = "https://github.com/eosdac/wax-delphi"
+
+[[repo]]
+url = "https://github.com/eosdac/wax-pack-bot"
+
+[[repo]]
 url = "https://github.com/eosdac/worbli-testnet"
 
 [[repo]]
@@ -441,6 +480,9 @@ url = "https://github.com/EOSIO/binaryen"
 
 [[repo]]
 url = "https://github.com/EOSIO/bitbar-ssa-client"
+
+[[repo]]
+url = "https://github.com/EOSIO/buildpipe-buildkite-plugin"
 
 [[repo]]
 url = "https://github.com/EOSIO/chain-kv"
@@ -651,10 +693,16 @@ tags = ["Documentation"]
 url = "https://github.com/EOSIO/history-tools"
 
 [[repo]]
+url = "https://github.com/EOSIO/history-tools-docs"
+
+[[repo]]
 url = "https://github.com/EOSIO/homebrew-eosio"
 
 [[repo]]
 url = "https://github.com/EOSIO/homebrew-eosio.cdt"
+
+[[repo]]
+url = "https://github.com/EOSIO/key-value-example-app"
 
 [[repo]]
 url = "https://github.com/EOSIO/libcxx"
@@ -687,6 +735,9 @@ url = "https://github.com/EOSIO/old-eosio-hackathon-starter"
 url = "https://github.com/EOSIO/patroneos"
 
 [[repo]]
+url = "https://github.com/EOSIO/return-values-example-app"
+
+[[repo]]
 url = "https://github.com/EOSIO/ricardian-spec"
 
 [[repo]]
@@ -709,6 +760,9 @@ url = "https://github.com/EOSIO/terraform-buildkite-old"
 
 [[repo]]
 url = "https://github.com/EOSIO/test-state-history"
+
+[[repo]]
+url = "https://github.com/EOSIO/training-EED101"
 
 [[repo]]
 url = "https://github.com/EOSIO/tropical-example-web-app"
@@ -889,6 +943,9 @@ url = "https://github.com/eosrio/bp-info-standard"
 url = "https://github.com/eosrio/BP-Position-Telegram-Notifier"
 
 [[repo]]
+url = "https://github.com/eosrio/contracts"
+
+[[repo]]
 url = "https://github.com/eosrio/dappmetadata"
 
 [[repo]]
@@ -922,7 +979,13 @@ url = "https://github.com/eosrio/eos_zmq_plugin"
 url = "https://github.com/eosrio/eosbeat"
 
 [[repo]]
+url = "https://github.com/eosrio/eosio-haproxy"
+
+[[repo]]
 url = "https://github.com/eosrio/eosio-log-agent"
+
+[[repo]]
+url = "https://github.com/eosrio/eosio.cdt"
 
 [[repo]]
 url = "https://github.com/eosrio/eosio.contracts"
@@ -935,6 +998,9 @@ url = "https://github.com/eosrio/Ghostbusters-Testnet"
 
 [[repo]]
 url = "https://github.com/eosrio/hyperion"
+
+[[repo]]
+url = "https://github.com/eosrio/hyperion-docs"
 
 [[repo]]
 url = "https://github.com/eosrio/Hyperion-History-API"
@@ -962,6 +1028,9 @@ url = "https://github.com/eosrio/signupeoseos"
 
 [[repo]]
 url = "https://github.com/eosrio/simpleos"
+
+[[repo]]
+url = "https://github.com/eosrio/simpleos-connect"
 
 [[repo]]
 url = "https://github.com/eosrio/telos-eosio.contracts"

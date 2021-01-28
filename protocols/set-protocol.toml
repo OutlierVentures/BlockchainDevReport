@@ -1,0 +1,64 @@
+# Ecosystem Level Information
+title = "Set Protocol"
+
+sub_ecosystems = ["Index Coop"]
+
+github_organizations = ["https://github.com/SetProtocol"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/SetProtocol/awesome-set-protocol"
+
+[[repo]]
+url = "https://github.com/SetProtocol/IIPS"
+
+[[repo]]
+url = "https://github.com/SetProtocol/index-coop"
+
+[[repo]]
+url = "https://github.com/SetProtocol/index-ui"
+
+[[repo]]
+url = "https://github.com/SetProtocol/ruby-eth"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-contract-utils"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-contracts"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-oracles"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-strategies"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-utils"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-v2-contracts"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-protocol-viewers"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-react-boilerplate"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-rebalancer-boilerplate"
+
+[[repo]]
+url = "https://github.com/SetProtocol/set-v2"
+
+[[repo]]
+url = "https://github.com/SetProtocol/setprotocol.js"
+
+[[repo]]
+url = "https://github.com/SetProtocol/setzer"
+
+[[repo]]
+url = "https://github.com/SetProtocol/solidity-coverage"
+
+[[repo]]
+url = "https://github.com/SetProtocol/uniswap-tokenlist"

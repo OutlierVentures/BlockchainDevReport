@@ -13,6 +13,9 @@ url = "https://github.com/corda/accounts"
 url = "https://github.com/corda/accounts-demo-supplychain"
 
 [[repo]]
+url = "https://github.com/corda/accounts_java_samples"
+
+[[repo]]
 url = "https://github.com/corda/activemq-artemis"
 
 [[repo]]
@@ -22,6 +25,9 @@ url = "https://github.com/corda/auctionhouse"
 url = "https://github.com/corda/avian"
 
 [[repo]]
+url = "https://github.com/corda/bank-in-a-box"
+
+[[repo]]
 url = "https://github.com/corda/barclays-derivhack"
 
 [[repo]]
@@ -29,6 +35,9 @@ url = "https://github.com/corda/blacklist"
 
 [[repo]]
 url = "https://github.com/corda/blockchain"
+
+[[repo]]
+url = "https://github.com/corda/bn-extension"
 
 [[repo]]
 url = "https://github.com/corda/bootcamp-cordapp"
@@ -47,6 +56,15 @@ url = "https://github.com/corda/caffeine"
 
 [[repo]]
 url = "https://github.com/corda/cash-issuer"
+
+[[repo]]
+url = "https://github.com/corda/cdl-example"
+
+[[repo]]
+url = "https://github.com/corda/cenm-deployment"
+
+[[repo]]
+url = "https://github.com/corda/community-cordapps"
 
 [[repo]]
 url = "https://github.com/corda/confidential-identities"
@@ -68,6 +86,9 @@ url = "https://github.com/corda/corda-ansible"
 
 [[repo]]
 url = "https://github.com/corda/corda-docker"
+
+[[repo]]
+url = "https://github.com/corda/corda-docs"
 
 [[repo]]
 url = "https://github.com/corda/corda-gradle-plugins"
@@ -94,6 +115,9 @@ url = "https://github.com/corda/corda-solutions"
 url = "https://github.com/corda/corda-stress-testing"
 
 [[repo]]
+url = "https://github.com/corda/corda-training-code"
+
+[[repo]]
 url = "https://github.com/corda/corda-training-materials"
 
 [[repo]]
@@ -115,7 +139,13 @@ url = "https://github.com/corda/corda-tut2-solution-java"
 url = "https://github.com/corda/corda-tut2-solution-kotlin"
 
 [[repo]]
+url = "https://github.com/corda/corda.github.io"
+
+[[repo]]
 url = "https://github.com/corda/cordaftp"
+
+[[repo]]
+url = "https://github.com/corda/cordapp-bn-kyc"
 
 [[repo]]
 url = "https://github.com/corda/cordapp-client-template"
@@ -178,6 +208,9 @@ url = "https://github.com/corda/flow-db"
 url = "https://github.com/corda/flow-http"
 
 [[repo]]
+url = "https://github.com/corda/graal-1"
+
+[[repo]]
 url = "https://github.com/corda/gradle-capsule-plugin"
 
 [[repo]]
@@ -193,13 +226,28 @@ url = "https://github.com/corda/hello-corda"
 url = "https://github.com/corda/ian-github-pages-test"
 
 [[repo]]
+url = "https://github.com/corda/infrastructure-profiles"
+
+[[repo]]
 url = "https://github.com/corda/jediterm"
+
+[[repo]]
+url = "https://github.com/corda/jira-create-issue-action"
+
+[[repo]]
+url = "https://github.com/corda/jira-sync-assigned-action"
+
+[[repo]]
+url = "https://github.com/corda/jira-sync-closed-action"
 
 [[repo]]
 url = "https://github.com/corda/jline2"
 
 [[repo]]
 url = "https://github.com/corda/jmeter-sampler"
+
+[[repo]]
+url = "https://github.com/corda/kotlin-stdlib-jdk-osgi"
 
 [[repo]]
 url = "https://github.com/corda/kotlin-web-demo"
@@ -218,6 +266,15 @@ url = "https://github.com/corda/msr-vc"
 
 [[repo]]
 url = "https://github.com/corda/negotiation-cordapp"
+
+[[repo]]
+url = "https://github.com/corda/new-america"
+
+[[repo]]
+url = "https://github.com/corda/node-explorer"
+
+[[repo]]
+url = "https://github.com/corda/node-server"
 
 [[repo]]
 url = "https://github.com/corda/noise-java"
@@ -262,13 +319,25 @@ url = "https://github.com/corda/qpid-proton-j"
 url = "https://github.com/corda/quasar"
 
 [[repo]]
+url = "https://github.com/corda/quickstart"
+
+[[repo]]
 url = "https://github.com/corda/quickstart-r3-corda"
+
+[[repo]]
+url = "https://github.com/corda/rec-orda"
 
 [[repo]]
 url = "https://github.com/corda/RxJava"
 
 [[repo]]
 url = "https://github.com/corda/samples"
+
+[[repo]]
+url = "https://github.com/corda/samples-java"
+
+[[repo]]
+url = "https://github.com/corda/samples-kotlin"
 
 [[repo]]
 url = "https://github.com/corda/sgxjvm-public"
@@ -287,6 +356,9 @@ url = "https://github.com/corda/token-sdk"
 
 [[repo]]
 url = "https://github.com/corda/TokenSDKDemo"
+
+[[repo]]
+url = "https://github.com/corda/training.corda.net"
 
 [[repo]]
 url = "https://github.com/corda/vscode-corda"

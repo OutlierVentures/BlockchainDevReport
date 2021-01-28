@@ -1,16 +1,19 @@
 import seaborn as sns, pandas as pd, json, sys
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
+from os import path
+import shutil
+import glob
+from config import get_chain_names, get_chain_targets
 
+dir_path = path.dirname(path.realpath(__file__))
 
 class Visualize:
 
     def __init__(self):
-        self.chains = ['Binance-Chain', 'Bitcoin', 'Bitcoin-ABC', 'Bitcoin-SV', 'Corda', 'Cosmos', 'Crypto-Com', 'DashPay', 'DogeCoin', 'EOSio', 'Ethereum', 'EthereumClassic', 'HuobiGroup', 'Hyperledger', 'Input-Output-HK', 'IOTALedger', 'Litecoin-Project', 'MakerDAO', 'Monero-Project', 'NemProject', 'Neo-Project', 'OKEX', 'OntIO', 'ParityTech', 'Ripple', 'SmartContractKit', 'Stellar', 'ThetaToken', 'TronProtocol', 'VeChain', 'Zcash']
-        self.target_names = ['Binance Chain', 'Bitcoin', 'Bitcoin Cash', 'Bitcoin SV', 'Corda', 'Cosmos', 'Crypto.Com', 'Dash', 'Dogecoin', 'EOS', 'Ethereum', 'Ethereum Classic', 'Huobi Chain', 'Hyperledger', 'Cardano', 'IOTA', 'Litecoin', 'MakerDAO', 'Monero', 'NEM', 'NEO', 'OKChain', 'Ontology', 'Polkadot', 'Ripple', 'Chainlink', 'Stellar', 'Theta', 'Tron', 'VeChain', 'Zcash']
-        self.contributor_chains = ['bitcoin-cash', 'bitcoin', 'cardano', 'corda', 'cosmos', 'eos', 'ethereum', 'hyperledger', 'polkadot', 'ripple', 'stellar', 'tron']
-        self.contributor_target_names = ['Bitcoin Cash', 'Bitcoin', 'Cardano', 'Corda', 'Cosmos', 'EOS', 'Ethereum', 'Hyperledger', 'Polkadot', 'Ripple', 'Stellar', 'Tron']
-        self.xaxis = ['Jun 19', 'Jul 19', 'Aug 19', 'Sep 19', 'Oct 19', 'Nov 19', 'Dec 19', 'Jan 20', 'Feb 20', 'Mar 20', 'Apr 20', 'May 20']
+        self.chains = get_chain_names().split(" ")
+        self.target_names = get_chain_targets().split(", ")
+        self.xaxis = ['Jan 2020', 'Feb 2020', 'Mar 2020', 'Apr 2020', 'May 2020', 'Jun 2020', 'Jul 2020', 'Aug 2020', 'Sep 2020', 'Oct 2020', 'Nov 2020', 'Dec 2020']
         end = datetime.now()
         start = datetime.now() - relativedelta(years = 1)
         date_index = pd.date_range(start, end, freq = 'W')
@@ -19,12 +22,16 @@ class Visualize:
         self.commits = pd.DataFrame({'Date': date_index})
         self.churn = pd.DataFrame({'Date': date_index})
         for chain in self.chains:
-            with open(chain + '_history.json') as json_file:
-                data = json.load(json_file)
-            self.commits[chain] = data['weekly_commits']
-            self.churn[chain] = data['weekly_churn'][-52:]
+            output_path = path.join(dir_path, 'output', chain + '_history.json')
+            try:
+                with open(output_path) as json_file:
+                    data = json.load(json_file)
+                self.commits[chain] = data['weekly_commits']
+                self.churn[chain] = data['weekly_churn'][-52:]
+            except:
+                print('Not found history output for ' + chain + ', please remove from config and rerun')
         sns.set(style = "darkgrid")
-        sns.set(rc = {'figure.figsize': (16, 9)})
+        sns.set(rc = {'figure.figsize': (24, 14)})
 
     def prep_code(self, commits_or_churn : str = 'commits'):
         if commits_or_churn == 'commits':
@@ -59,19 +66,23 @@ class Visualize:
 
     def prep_devs(self):
         protocols_comparison = pd.DataFrame({'Month': self.xaxis})
-        percentage_changes = pd.DataFrame({'Protocol': self.contributor_chains})
+        percentage_changes = pd.DataFrame({'Protocol': self.chains})
         change_list = []
-        for chain in self.contributor_chains:
+        for chain in self.chains:
             monthly_active_dev_count = []
-            with open(chain + '.json') as json_file:
+            output_path = path.join(dir_path, 'output', chain + '_contributors.json')
+            with open(output_path) as json_file:
                 data = json.load(json_file)
             for month in data:
                 monthly_active_dev_count.append(len(month))       
             protocols_comparison[chain] = monthly_active_dev_count
-            percentage_change = round((((monthly_active_dev_count[-2] + monthly_active_dev_count[-1]) / (monthly_active_dev_count[0] + monthly_active_dev_count[1])) * 100) - 100)
+            try:
+                percentage_change = round((((monthly_active_dev_count[-2] + monthly_active_dev_count[-1]) / (monthly_active_dev_count[0] + monthly_active_dev_count[1])) * 100) - 100)
+            except: 
+                percentage_change = 0
             change_list.append(percentage_change)
-        protocols_comparison.columns = ['Month'] + self.contributor_target_names
-        percentage_changes['Protocol'] = self.contributor_target_names
+        protocols_comparison.columns = ['Month'] + self.target_names
+        percentage_changes['Protocol'] = self.target_names
         percentage_changes['Percentage change in active devs'] = change_list
         percentage_changes = percentage_changes.sort_values('Percentage change in active devs')
         protocols_comparison = protocols_comparison.melt('Month', var_name = 'Protocol', value_name = 'Monthly Active Devs')
@@ -80,6 +91,7 @@ class Visualize:
     # Each of the below is separate as seaborn requires plots to have different figure variable names and clearing memory completely is not possible.
 
     def plot_commits(self, code : pd.DataFrame, percentage_changes: pd.DataFrame):
+        code.to_csv('commits.csv')
         fig1 = sns.lineplot(x = "Date", y = 'commits', hue = 'Protocol', data = code)
         fig1.get_figure().savefig('commits.png')
         fig1.clear()
@@ -88,6 +100,7 @@ class Visualize:
         fig2.clear()
 
     def plot_churn(self, code : pd.DataFrame, percentage_changes: pd.DataFrame):
+        code.to_csv('churn.csv')
         fig3 = sns.lineplot(x = "Date", y = 'churn', hue = 'Protocol', data = code)
         fig3.set_yscale("log")
         fig3.get_figure().savefig('churn.png')
@@ -97,6 +110,7 @@ class Visualize:
         fig4.clear()
 
     def plot_devs(self, protocols_comparison : pd.DataFrame, percentage_changes : pd.DataFrame):
+        protocols_comparison.to_csv('devs.csv')
         # Disable Seaborn sorting or months appear out of order
         fig5 = sns.lineplot(x = "Month", y = "Monthly Active Devs", hue = 'Protocol', data = protocols_comparison, sort = False, palette="Dark2_r")
         fig5.get_figure().savefig('devs.png')
@@ -112,6 +126,10 @@ class Visualize:
         self.plot_churn(code, percentage_changes)
         protocols_comparison, percentage_changes = self.prep_devs()
         self.plot_devs(protocols_comparison, percentage_changes)
+        for file in glob.glob('./*.png'):
+            shutil.move(file, './res')
+        for file in glob.glob('./*.csv'):
+            shutil.move(file, './res')
 
 
 if __name__ == '__main__':

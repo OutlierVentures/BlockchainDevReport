@@ -1,0 +1,10 @@
+# Ecosystem Level Information
+title = "Nuls"
+
+sub_ecosystems = []
+
+github_organizations = ["https://github.com/nuls-io"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/nuls-io/nuls"

@@ -1,0 +1,578 @@
+# Ecosystem Level Information
+title = "Solana"
+
+sub_ecosystems = ["Project Serum"]
+
+github_organizations = ["https://github.com/Nebula-Wallet", "https://github.com/solana-labs"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/0base-vc/0base-exporter"
+
+[[repo]]
+url = "https://github.com/aiell0/mineum"
+
+[[repo]]
+url = "https://github.com/andrey-do/solletmobile"
+
+[[repo]]
+url = "https://github.com/Anthony62039/Solana-Balance-Wallet"
+
+[[repo]]
+url = "https://github.com/bachlongkocanh/wallet-demo"
+
+[[repo]]
+url = "https://github.com/berberin/qrpay-sol"
+
+[[repo]]
+url = "https://github.com/bodytexture/serum"
+
+[[repo]]
+url = "https://github.com/cavanmflynn/solsnap"
+
+[[repo]]
+url = "https://github.com/certusone/wormhole"
+
+[[repo]]
+url = "https://github.com/chaaaaaaaau/solana-test"
+
+[[repo]]
+url = "https://github.com/civicteam/identity-swap"
+
+[[repo]]
+url = "https://github.com/CriesofCarrots/ts-test"
+
+[[repo]]
+url = "https://github.com/Crytoproof/Solana-save-image-to-on-chain"
+
+[[repo]]
+url = "https://github.com/cz-it/learn-solana"
+
+[[repo]]
+url = "https://github.com/cz-theng/learn-solana"
+
+[[repo]]
+url = "https://github.com/czl1378/solana-program-demo"
+
+[[repo]]
+url = "https://github.com/defactojob/solana-faucet"
+
+[[repo]]
+url = "https://github.com/defactojob/solray"
+
+[[repo]]
+url = "https://github.com/DescartesNetwork/senswap-contract"
+
+[[repo]]
+url = "https://github.com/DescartesNetwork/soprox"
+
+[[repo]]
+url = "https://github.com/DescartesNetwork/soprox-abi"
+
+[[repo]]
+url = "https://github.com/developerfred/AS-bridge"
+
+[[repo]]
+url = "https://github.com/dfuse-io/solana-dapp"
+
+[[repo]]
+url = "https://github.com/DistributedTown/distributed-town-backend"
+
+[[repo]]
+url = "https://github.com/dr497/awesome-serum-markets"
+
+[[repo]]
+url = "https://github.com/dr497/serum-nft-gui"
+
+[[repo]]
+url = "https://github.com/ErJavid/solhackathondapp"
+
+[[repo]]
+url = "https://github.com/everstake/tagger"
+
+[[repo]]
+url = "https://github.com/ExidioCo/modules"
+
+[[repo]]
+url = "https://github.com/ExodusMovement/solana-spl-token"
+
+[[repo]]
+url = "https://github.com/googlebest/Solana_send_message_to_wallet_via_instruction_data"
+
+[[repo]]
+url = "https://github.com/haggle-quest/solana_game"
+
+[[repo]]
+url = "https://github.com/haggle-quest/voting-drone-server"
+
+[[repo]]
+url = "https://github.com/HarshChaudhari/balance-fetcher-service"
+
+[[repo]]
+url = "https://github.com/hellomalaysia/example-webwallet"
+
+[[repo]]
+url = "https://github.com/hoangdaothienmenh/solana-wallet--create"
+
+[[repo]]
+url = "https://github.com/InCrypto-io/solana-dice"
+
+[[repo]]
+url = "https://github.com/Jkat/SOL-Drop"
+
+[[repo]]
+url = "https://github.com/jstarry/solana-feed-rs"
+
+[[repo]]
+url = "https://github.com/jubeless/test"
+
+[[repo]]
+url = "https://github.com/kemargrant/soltalk"
+
+[[repo]]
+url = "https://github.com/kiemtienonline360/solana-keyring-controller"
+
+[[repo]]
+url = "https://github.com/kiemtienonline360/solana-lite-metamask"
+
+[[repo]]
+url = "https://github.com/kiemtienonline360/solana-query"
+
+[[repo]]
+url = "https://github.com/kinecosystem/kin-node"
+
+[[repo]]
+url = "https://github.com/kytek-hub/serumold-js"
+
+[[repo]]
+url = "https://github.com/mankinskin/budget-app"
+
+[[repo]]
+url = "https://github.com/marbar3778/squad_finance"
+
+[[repo]]
+url = "https://github.com/mathwallet/math-solana-js"
+
+[[repo]]
+url = "https://github.com/mcf-rocks/simple-vote-tutorial"
+
+[[repo]]
+url = "https://github.com/mcf-rocks/solana-upload"
+
+[[repo]]
+url = "https://github.com/mehulbhardwaj/cfa_charter"
+
+[[repo]]
+url = "https://github.com/michaelhly/stable-swap-program"
+
+[[repo]]
+url = "https://github.com/mithraiclabs/ttp-oracle"
+
+[[repo]]
+url = "https://github.com/munnamizan1494/Defi-projects-"
+
+[[repo]]
+url = "https://github.com/nagare-labs/nagare"
+
+[[repo]]
+url = "https://github.com/Nebula-Wallet/nebula-website"
+
+[[repo]]
+url = "https://github.com/Nebula-Wallet/solana-name-service"
+
+[[repo]]
+url = "https://github.com/obsidiansystems/solana-bridges"
+
+[[repo]]
+url = "https://github.com/p2p-org/p2p-wallet-android"
+
+[[repo]]
+url = "https://github.com/p2p-org/p2p-wallet-ios"
+
+[[repo]]
+url = "https://github.com/p2p-org/p2p-wallet-web"
+
+[[repo]]
+url = "https://github.com/p2p-org/solana-swift"
+
+[[repo]]
+url = "https://github.com/p2p-org/solanaj"
+
+[[repo]]
+url = "https://github.com/Parth59/SolanaHackathonSubmit"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/awesome-solana"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/diy_etf"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/diy_etf_frontend"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/solana-escrow"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/solana-metamask-poc"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/solbot"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/solchess"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/spl-token-faucet"
+
+[[repo]]
+url = "https://github.com/paul-schaaf/spl-token-ui"
+
+[[repo]]
+url = "https://github.com/portto/solana-contract-wallet"
+
+[[repo]]
+url = "https://github.com/pqv199x/reveal-private-key"
+
+[[repo]]
+url = "https://github.com/prin-r/Solana-deployment-interaction"
+
+[[repo]]
+url = "https://github.com/prin-r/solana-example"
+
+[[repo]]
+url = "https://github.com/princesinha19/solgsn"
+
+[[repo]]
+url = "https://github.com/ProtoDao/solana-fantasy-app"
+
+[[repo]]
+url = "https://github.com/renproject/ren-solana"
+
+[[repo]]
+url = "https://github.com/robbiewain/solana-viz"
+
+[[repo]]
+url = "https://github.com/roynalnaruto/moebius"
+
+[[repo]]
+url = "https://github.com/rudijs/serum-dex-scripts"
+
+[[repo]]
+url = "https://github.com/sarawut11/spl-token-chrome-extension-wallet"
+
+[[repo]]
+url = "https://github.com/Secured-Finance/dione"
+
+[[repo]]
+url = "https://github.com/ShreyderD/eyes"
+
+[[repo]]
+url = "https://github.com/siddharths067/hellosolana"
+
+[[repo]]
+url = "https://github.com/siddharths067/solanaconv"
+
+[[repo]]
+url = "https://github.com/solana-labs/blockexplorer"
+
+[[repo]]
+url = "https://github.com/solana-labs/blockexplorer-front-end-app"
+
+[[repo]]
+url = "https://github.com/solana-labs/break"
+
+[[repo]]
+url = "https://github.com/solana-labs/browser-extension"
+
+[[repo]]
+url = "https://github.com/solana-labs/cfg-if"
+
+[[repo]]
+url = "https://github.com/solana-labs/clang"
+
+[[repo]]
+url = "https://github.com/solana-labs/clang-tools-extra"
+
+[[repo]]
+url = "https://github.com/solana-labs/cluster"
+
+[[repo]]
+url = "https://github.com/solana-labs/compiler-builtins"
+
+[[repo]]
+url = "https://github.com/solana-labs/compiler-rt"
+
+[[repo]]
+url = "https://github.com/solana-labs/create-react-app-buildpack"
+
+[[repo]]
+url = "https://github.com/solana-labs/dc-homedir-skeleton"
+
+[[repo]]
+url = "https://github.com/solana-labs/ed25519"
+
+[[repo]]
+url = "https://github.com/solana-labs/ed25519-dalek"
+
+[[repo]]
+url = "https://github.com/solana-labs/elastic-ci-stack-for-aws"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-erc20-token"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-helloworld"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-messagefeed"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-move"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-tictactoe"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-token"
+
+[[repo]]
+url = "https://github.com/solana-labs/example-webwallet"
+
+[[repo]]
+url = "https://github.com/solana-labs/explorer"
+
+[[repo]]
+url = "https://github.com/solana-labs/gatsby-plugin-intl"
+
+[[repo]]
+url = "https://github.com/solana-labs/hashbrown"
+
+[[repo]]
+url = "https://github.com/solana-labs/heroku-buildpack-rust-wasm-pack"
+
+[[repo]]
+url = "https://github.com/solana-labs/heroku-buildpack-static"
+
+[[repo]]
+url = "https://github.com/solana-labs/jsonrpc"
+
+[[repo]]
+url = "https://github.com/solana-labs/ledger-app-solana"
+
+[[repo]]
+url = "https://github.com/solana-labs/libra"
+
+[[repo]]
+url = "https://github.com/solana-labs/lld"
+
+[[repo]]
+url = "https://github.com/solana-labs/llvm"
+
+[[repo]]
+url = "https://github.com/solana-labs/llvm-builder"
+
+[[repo]]
+url = "https://github.com/solana-labs/llvm-project"
+
+[[repo]]
+url = "https://github.com/solana-labs/metrics-tee"
+
+[[repo]]
+url = "https://github.com/solana-labs/network_simulation"
+
+[[repo]]
+url = "https://github.com/solana-labs/networkexplorer"
+
+[[repo]]
+url = "https://github.com/solana-labs/obsolete-dontuse-example-webwallet"
+
+[[repo]]
+url = "https://github.com/solana-labs/oyster-lending"
+
+[[repo]]
+url = "https://github.com/solana-labs/oyster-swap"
+
+[[repo]]
+url = "https://github.com/solana-labs/rbpf"
+
+[[repo]]
+url = "https://github.com/solana-labs/reddit-scaling-demo"
+
+[[repo]]
+url = "https://github.com/solana-labs/reed-solomon-erasure"
+
+[[repo]]
+url = "https://github.com/solana-labs/rpc-websockets"
+
+[[repo]]
+url = "https://github.com/solana-labs/rust"
+
+[[repo]]
+url = "https://github.com/solana-labs/rust-bpf-builder"
+
+[[repo]]
+url = "https://github.com/solana-labs/rust-bpf-sysroot"
+
+[[repo]]
+url = "https://github.com/solana-labs/sealevel"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-json-rpc-https-proxy"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-labs.github.io"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-learning-content"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-perf-libs"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-pkcs8"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-program-library"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-tokens"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-voib-demo"
+
+[[repo]]
+url = "https://github.com/solana-labs/solana-web3.js"
+
+[[repo]]
+url = "https://github.com/solana-labs/solminer"
+
+[[repo]]
+url = "https://github.com/solana-labs/stdsimd"
+
+[[repo]]
+url = "https://github.com/solana-labs/superstruct"
+
+[[repo]]
+url = "https://github.com/solana-labs/token-list"
+
+[[repo]]
+url = "https://github.com/solana-labs/token-ops"
+
+[[repo]]
+url = "https://github.com/solana-labs/tour-de-sol"
+
+[[repo]]
+url = "https://github.com/solana-labs/update-electron-app"
+
+[[repo]]
+url = "https://github.com/solana-labs/validator-tracker"
+
+[[repo]]
+url = "https://github.com/solana-labs/webide"
+
+[[repo]]
+url = "https://github.com/solana-labs/whitepaper"
+
+[[repo]]
+url = "https://github.com/solana-labs/wormhole-hackathon"
+
+[[repo]]
+url = "https://github.com/solana-labs/ws-rs"
+
+[[repo]]
+url = "https://github.com/solongwallet/mintregistry"
+
+[[repo]]
+url = "https://github.com/solongwallet/solong.js"
+
+[[repo]]
+url = "https://github.com/soukaryag/xaiv"
+
+[[repo]]
+url = "https://github.com/SportsToken/solana-dashboard"
+
+[[repo]]
+url = "https://github.com/srmswap/srmswap.github.io"
+
+[[repo]]
+url = "https://github.com/t-900-a/odoo-solana-payments"
+
+[[repo]]
+url = "https://github.com/t-nelson/solana"
+
+[[repo]]
+url = "https://github.com/tardis-dev/serum-machine"
+
+[[repo]]
+url = "https://github.com/tema7707/solana_hack"
+
+[[repo]]
+url = "https://github.com/the-market-finance/backend_v2"
+
+[[repo]]
+url = "https://github.com/TheLoneRonin/SolarweaveBridge"
+
+[[repo]]
+url = "https://github.com/tomland123/solana-roguelike"
+
+[[repo]]
+url = "https://github.com/tranchien2002/solana-sdk"
+
+[[repo]]
+url = "https://github.com/tsnyder701/everybuddy"
+
+[[repo]]
+url = "https://github.com/tsnyder701/solana-name-server"
+
+[[repo]]
+url = "https://github.com/turnyay/solanaroll"
+
+[[repo]]
+url = "https://github.com/user2745/spl-wallet"
+
+[[repo]]
+url = "https://github.com/vbstreetz/hedge"
+
+[[repo]]
+url = "https://github.com/vidhunv1/jabber"
+
+[[repo]]
+url = "https://github.com/vidorge/solflare-decrypt"
+
+[[repo]]
+url = "https://github.com/viraja1/solana_asset_platform"
+
+[[repo]]
+url = "https://github.com/vkomenda/auction"
+
+[[repo]]
+url = "https://github.com/vlzhr/YieldDAO"
+
+[[repo]]
+url = "https://github.com/vsmelov/serum-fortune-crank"
+
+[[repo]]
+url = "https://github.com/wilbarnes/solana-structured-products"
+
+[[repo]]
+url = "https://github.com/Xuriwork/Solly-Wallet"
+
+[[repo]]
+url = "https://github.com/yclnl/yclnl.github.io"
+
+[[repo]]
+url = "https://github.com/zemse/solana-rust-contract"
+
+[[repo]]
+url = "https://github.com/Zergity/static"
+
+[[repo]]
+url = "https://github.com/zjhmale/solana-explorer-tui"
+
+[[repo]]
+url = "https://gitlab.com/sigrlami/omuon"

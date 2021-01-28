@@ -1,0 +1,10 @@
+# Ecosystem Level Information
+title = "Ardor"
+
+sub_ecosystems = []
+
+github_organizations = ["https://bitbucket.org/Jelurida/"]
+
+# Repositories
+[[repo]]
+url = "https://github.com/ardornxtgroup/ardor"

@@ -3,15 +3,17 @@ title = "Bitcoin Cash"
 
 sub_ecosystems = []
 
-github_organizations = ["https://github.com/bitcoincashorg", "https://github.com/Electron-Cash", "https://github.com/gcash", "https://github.com/simpleledger"]
+github_organizations = [
+  "https://github.com/bitcoin-cash-node",
+  "https://github.com/bitcoincashorg",
+  "https://github.com/Electron-Cash",
+  "https://github.com/gcash",
+  "https://github.com/simpleledger",
+]
 
 # Repositories
-
 [[repo]]
-url = "https://github.com/4ops/docker-bitcoin-abc"
-
-[[repo]]
-url = "https://github.com/4ops/terraform-digitalocean-bitcoin-abc"
+url = "https://bitbucket.org/o-studio/spedn/src/master"
 
 [[repo]]
 url = "https://github.com/abrkn/tipmebch"
@@ -29,19 +31,19 @@ url = "https://github.com/arilot/bitcoincashd"
 url = "https://github.com/avilches/nchain-bch-toolkit"
 
 [[repo]]
-url = "https://github.com/bcext/cashutil"
-
-[[repo]]
-url = "https://github.com/bcext/cashwallet"
-
-[[repo]]
-url = "https://github.com/bcext/gcash"
-
-[[repo]]
-url = "https://github.com/Bitcoin-ABC/bitcoin-abc"
-
-[[repo]]
 url = "https://github.com/Bitcoin-Cash-JP/guidelines"
+
+[[repo]]
+url = "https://github.com/bitcoin-cash-node/bchnode-web"
+
+[[repo]]
+url = "https://github.com/bitcoin-cash-node/bitcoin-cash-node"
+
+[[repo]]
+url = "https://github.com/bitcoin-cash-node/checkstyle2junit"
+
+[[repo]]
+url = "https://github.com/bitcoin-cash-node/docker-bcn-buildenv"
 
 [[repo]]
 url = "https://github.com/Bitcoin-com/cashscript"
@@ -54,6 +56,9 @@ url = "https://github.com/bitcoincashjs/bchaddrjs"
 
 [[repo]]
 url = "https://github.com/bitcoincashorg/bitcoincash.org"
+
+[[repo]]
+url = "https://github.com/bitcoincashorg/block-explorer"
 
 [[repo]]
 url = "https://github.com/bitcoincashorg/spec"
@@ -105,6 +110,12 @@ url = "https://github.com/dsmurrell/awesome-bitcoin-cash"
 url = "https://github.com/Ekliptor/cashp"
 
 [[repo]]
+url = "https://github.com/Electron-Cash/android-platform-ndk"
+
+[[repo]]
+url = "https://github.com/Electron-Cash/android-vendor-freebsd"
+
+[[repo]]
 url = "https://github.com/Electron-Cash/buildozer"
 
 [[repo]]
@@ -152,6 +163,9 @@ url = "https://github.com/Electron-Cash/rubicon-objc"
 
 [[repo]]
 url = "https://github.com/Electron-Cash/secp256k1"
+
+[[repo]]
+url = "https://github.com/Electron-Cash/secp256k1-1"
 
 [[repo]]
 url = "https://github.com/EyeOfPython/pyspv"
@@ -290,6 +304,9 @@ url = "https://github.com/PortalNetwork/bcns"
 url = "https://github.com/ProtocolCash/BCHSocket"
 
 [[repo]]
+url = "https://github.com/pybitcash/bitcash"
+
+[[repo]]
 url = "https://github.com/qshuai/btctracker"
 
 [[repo]]
@@ -362,6 +379,9 @@ url = "https://github.com/simpleledger/faucet"
 url = "https://github.com/simpleledger/rs-proof-lib"
 
 [[repo]]
+url = "https://github.com/simpleledger/simpleledger.github.io"
+
+[[repo]]
 url = "https://github.com/simpleledger/SimpleToken.cash"
 
 [[repo]]
@@ -380,7 +400,25 @@ url = "https://github.com/simpleledger/slp-faucet"
 url = "https://github.com/simpleledger/slp-implementation-instructions"
 
 [[repo]]
+url = "https://github.com/simpleledger/slp-light"
+
+[[repo]]
 url = "https://github.com/simpleledger/slp-list"
+
+[[repo]]
+url = "https://github.com/simpleledger/slp-list.js"
+
+[[repo]]
+url = "https://github.com/simpleledger/slp-metadatamaker.dart"
+
+[[repo]]
+url = "https://github.com/simpleledger/slp-metadatamaker.js"
+
+[[repo]]
+url = "https://github.com/simpleledger/slp-parser.dart"
+
+[[repo]]
+url = "https://github.com/simpleledger/slp-parser.js"
 
 [[repo]]
 url = "https://github.com/simpleledger/slp-specifications"
@@ -393,6 +431,9 @@ url = "https://github.com/simpleledger/slp-unit-test-data"
 
 [[repo]]
 url = "https://github.com/simpleledger/slp-validate"
+
+[[repo]]
+url = "https://github.com/simpleledger/slp-validate.js"
 
 [[repo]]
 url = "https://github.com/simpleledger/slp-web"
@@ -419,6 +460,18 @@ url = "https://github.com/simpleledger/sockserve"
 url = "https://github.com/simpleledger/web4bch"
 
 [[repo]]
+url = "https://github.com/SoftwareVerde/bitcoin-verde"
+
+[[repo]]
+url = "https://github.com/SoftwareVerde/bitcoin-verde-web"
+
+[[repo]]
+url = "https://github.com/SoftwareVerde/java-cryptography"
+
+[[repo]]
+url = "https://github.com/SoftwareVerde/verde-wallet"
+
+[[repo]]
 url = "https://github.com/SpendBCH/bch-stresstest-web"
 
 [[repo]]
@@ -435,3 +488,13 @@ url = "https://github.com/WeProgramIT/cryptowoo-bitcoin-cash-addon"
 
 [[repo]]
 url = "https://github.com/yenom/bitbox-watch-tx"
+
+[[repo]]
+url = "https://gitlab.com/bitcoin-cash-node/bitcoin-cash-node"
+tags = ["Protocol"]
+
+[[repo]]
+url = "https://gitlab.com/pokkst/bchgallery.git"
+
+[[repo]]
+url = "https://gitlab.com/pokkst/crescentcash.git"
