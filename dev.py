@@ -1,6 +1,7 @@
 import json
 import multiprocessing
 import os
+import re
 from logger import sys
 import time
 from collections import Counter
@@ -13,11 +14,43 @@ from joblib import Parallel, delayed
 from gitTokenHelper import GithubPersonalAccessTokenHelper
 from config import get_pats, remove_chain_from_config
 import requests
+import datetime
 
 dir_path = path.dirname(path.realpath(__file__))
 
 def element_wise_addition_lists(list1, list2):
     return [sum(x) for x in zip_longest(list1, list2, fillvalue=0)]
+
+def get_commits(pat, org_then_slash_then_repo, page=1, year_count=1, date_since=None, date_until=None):
+    url = 'https://api.github.com/repos/' + org_then_slash_then_repo + '/commits?page=' + str(page) + '&per_page=100'
+    if date_since:
+        url += '&since=' + date_since
+    if date_until:
+        url += '&until=' + date_until
+    r = requests.get(url=url,
+                           headers={'Authorization': 'Token ' + pat})
+    if r.status_code == 200:
+        data = r.json()
+        rate_limit_remaining = int(r.headers['X-RateLimit-Remaining'])
+        total_pages = None
+        if "link" in r.headers:
+            pages_link = r.headers['link']
+            last_page_link = pages_link.split(",")[1]
+            re_match = re.search('page=(.*)&per_page=100>; rel="last"', last_page_link)
+            if re_match:
+                total_pages = int(re_match.group(1))
+        return {
+            "error": None,
+            "error_code": None,
+            "data": data,
+            "total_pages": total_pages,
+            "rate_limit_remaining": rate_limit_remaining
+        }
+    return {
+        "error": r.content,
+        "error_code": r.status_code
+    }
+
 
 '''
 FLOW
@@ -36,8 +69,8 @@ class DevOracle:
     def __init__(self, save_path: str, frequency):
         self.save_path = save_path
         self.gh_pat_helper = GithubPersonalAccessTokenHelper(get_pats())        
-        PAT = self._get_access_token()
-        self.gh = Github(PAT)
+        self.PAT = self._get_access_token()
+        self.gh = Github(self.PAT)
         # churn, commit frequency
         self.frequency = frequency
     
@@ -48,8 +81,54 @@ class DevOracle:
         print('Going to sleep since no token exists with usable rate limit')
         time.sleep(res["sleep_time_secs"])
         return self._get_access_token()
+    
+    def _get_weekly_commits(self, pat, org_then_slash_then_repo, year_count):
+        weekly_commits = []
+        date_until = datetime.datetime.now()
+        WEEKS_PER_YEAR = 52
 
-    def get_and_save_full_stats(self, chain_name: str):
+        for week in range(1, WEEKS_PER_YEAR * year_count):
+            curr_week_commits_count = 0
+            page=1
+
+            # Set date since to one week from date until
+            date_since = date_until - datetime.timedelta(days=6)
+
+            date_since_formatted = date_since.strftime('%Y-%m-%dT%H:%M:%S%zZ')
+            date_until_formatted = date_until.strftime('%Y-%m-%dT%H:%M:%S%zZ')
+            while True:
+                resp = get_commits(
+                    pat,
+                    org_then_slash_then_repo,
+                    page,
+                    year_count,
+                    date_since_formatted,
+                    date_until_formatted
+                )
+                if resp["error_code"] == 403:
+                    print("Token rate limit reached, switching tokens")
+                    pat = self._get_access_token()
+                    continue
+                if resp["error_code"]:
+                    print("Error code: ", resp["error_code"])
+                    raise requests.exceptions.RequestException(f"Error occured while fetching weekly commits for {org_then_slash_then_repo}")
+                count = len(resp["data"])
+
+                # No more commits for the curr. week range
+                if count == 0:
+                    break
+                curr_week_commits_count += count
+                page += 1
+            
+            # Update the total weekly commits count
+            weekly_commits.insert(0, curr_week_commits_count)
+
+            # Set date_until to a day before the last computed week date
+            date_until = date_until - datetime.timedelta(days=7)
+
+        return weekly_commits
+
+    def get_and_save_full_stats(self, chain_name: str, year_count):
         github_orgs = self._read_orgs_for_chain_from_toml(chain_name)
 
         stats_counter = Counter()
@@ -62,7 +141,7 @@ class DevOracle:
                 continue
             org = org_url.split("https://github.com/")[1]
             print("Fetching repo data for", org)
-            org_repo_data_list = self._get_repo_data_for_org(org)
+            org_repo_data_list = self._get_repo_data_for_org(org, year_count)
             print("Fetching stats(stargazers, forks, releases, churn_4w) for", org_url)
             stats_counter += self._get_stats_for_org_from_repo_data(org_repo_data_list)
             hist_data_for_org = self._get_historical_progress(org_repo_data_list)
@@ -98,24 +177,24 @@ class DevOracle:
             sys.exit(1)
 
     # get the data for all the repos of a github organization
-    def _get_repo_data_for_org(self, org_name: str):
+    def _get_repo_data_for_org(self, org_name: str, year_count=1):
         org_repos = self._make_org_repo_list(org_name)
         forked_repos = []
         page = 1
         url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
-        PAT = self._get_access_token()
-        response = requests.get(url, headers={'Authorization': 'Token ' + PAT})
+        response = requests.get(url, headers={'Authorization': 'Token ' + self.PAT})
         while len(response.json()) > 0:
             for repo in response.json():
                 forked_repos.append(repo["full_name"])
             page += 1
             url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
-            response = requests.get(url, headers={'Authorization': 'Token ' + PAT})
+            response = requests.get(url, headers={'Authorization': 'Token ' + self.PAT})
         unforked_repos = list(set(org_repos) - set(forked_repos))
         # GitHub API can hit spam limit
         number_of_hyperthreads = multiprocessing.cpu_count()
         n_jobs = 2 if number_of_hyperthreads > 2 else number_of_hyperthreads
-        repo_data_list = Parallel(n_jobs=n_jobs)(delayed(self._get_single_repo_data)(repo) for repo in unforked_repos)
+        print("Fetching single repo data ...")
+        repo_data_list = Parallel(n_jobs=n_jobs)(delayed(self._get_single_repo_data)(repo, year_count) for repo in unforked_repos)
         return repo_data_list
 
     # given the org_name, return list of organisation repos
@@ -131,12 +210,12 @@ class DevOracle:
         return org_repos
     
     # get repo data using a repo URL in the form of `org/repo`
-    def _get_single_repo_data(self, org_then_slash_then_repo: str):
+    def _get_single_repo_data(self, org_then_slash_then_repo: str, year_count: int = 1):
         print('Fetching repo data for ', org_then_slash_then_repo)
         try:
             repo = self.gh.get_repo(org_then_slash_then_repo)
             weekly_add_del = repo.get_stats_code_frequency()
-            weekly_commits = repo.get_stats_participation().all
+            weekly_commits = self._get_weekly_commits(self.PAT, org_then_slash_then_repo, year_count)
             # TODO: Remove contributor specific code
             contributors = repo.get_stats_contributors()
             releases = repo.get_releases()
@@ -148,12 +227,15 @@ class DevOracle:
                 "contributors": contributors,
                 "releases": releases
             }
+        except requests.exceptions.RequestException:
+            print('Could not find data for ' + org_then_slash_then_repo)
+            return {}
         except Exception as e:
             if e.status == 403:
                 print("Token rate limit reached, switching tokens")
                 PAT = self._get_access_token()
                 self.gh = Github(PAT)
-                return self._get_single_repo_data(org_then_slash_then_repo)
+                return self._get_single_repo_data(org_then_slash_then_repo, year_count)
             print('Could not find data for ' + org_then_slash_then_repo)
             return {}
 
@@ -309,5 +391,11 @@ if __name__ == '__main__':
     if not options.frequency:
         options.frequency = 4
     
+    if sys.argv[2]:
+        years_count = int(sys.argv[2])
+    else:
+        years_count = 1
+
+    
     do = DevOracle('./output', options.frequency)
-    do.get_and_save_full_stats(sys.argv[1])
+    do.get_and_save_full_stats(sys.argv[1], years_count)
