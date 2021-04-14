@@ -110,7 +110,8 @@ class DevOracle:
                     pat = self._get_access_token()
                     continue
                 if resp["error_code"]:
-                    raise Exception(f"Error occured while fetching weekly commits for {org_then_slash_then_repo}")
+                    print("Error code: ", resp["error_code"])
+                    raise requests.exceptions.RequestException(f"Error occured while fetching weekly commits for {org_then_slash_then_repo}")
                 count = len(resp["data"])
 
                 # No more commits for the curr. week range
@@ -226,6 +227,9 @@ class DevOracle:
                 "contributors": contributors,
                 "releases": releases
             }
+        except requests.exceptions.RequestException:
+            print('Could not find data for ' + org_then_slash_then_repo)
+            return {}
         except Exception as e:
             if e.status == 403:
                 print("Token rate limit reached, switching tokens")
