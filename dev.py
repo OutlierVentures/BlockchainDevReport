@@ -22,12 +22,8 @@ dir_path = path.dirname(path.realpath(__file__))
 def element_wise_addition_lists(list1, list2):
     return [sum(x) for x in zip_longest(list1, list2, fillvalue=0)]
 
-def single_repo_stats_directory(chain_name):
-    return os.path.abspath("./output/" + chain_name
-
-def get_single_repo_stats_json_file_path(chain_name, org_then_slash_then_repo):
-    return single_repo_stats_directory(chain_name) + "/" + org_then_slash_then_repo.split("/")[1] + "_single_repo_stats.json")
-
+def get_single_repo_stats_json_file_path(org_then_slash_then_repo):
+    return os.path.abspath("./output/" + org_then_slash_then_repo.split("/")[1] + "_single_repo_stats.json")
 
 def get_commits(pat, org_then_slash_then_repo, page=1, year_count=1, date_since=None, date_until=None):
     url = 'https://api.github.com/repos/' + org_then_slash_then_repo + \
@@ -106,8 +102,7 @@ class DevOracle:
                 continue
             org = org_url.split("https://github.com/")[1]
             print("Fetching repo data for", org)
-            org_repo_data_list = self._get_repo_data_for_org(
-                chain_name, org, year_count)
+            org_repo_data_list = self._get_repo_data_for_org(org, year_count)
             print("Fetching stats(stargazers, forks, releases, churn_4w) for", org_url)
             stats_counter += self._get_stats_for_org_from_repo_data(
                 org_repo_data_list)
@@ -145,7 +140,7 @@ class DevOracle:
             sys.exit(1)
 
     # get the data for all the repos of a github organization
-    def _get_repo_data_for_org(self, chain_name: str, org_name: str, year_count=1):
+    def _get_repo_data_for_org(self, org_name: str, year_count=1):
         org_repos = self._make_org_repo_list(org_name)
         forked_repos = []
         page = 1
@@ -166,7 +161,7 @@ class DevOracle:
         n_jobs = 2 if number_of_hyperthreads > 2 else number_of_hyperthreads
         print("Fetching single repo data ...")
         repo_data_list = Parallel(n_jobs=n_jobs)(delayed(
-            self._get_single_repo_data)(chain_name, repo, year_count) for repo in unforked_repos)
+            self._get_single_repo_data)(repo, year_count) for repo in unforked_repos)
         return repo_data_list
 
     # given the org_name, return list of organisation repos
@@ -181,18 +176,14 @@ class DevOracle:
         org_repos = [org_name + '/{0}'.format(repo) for repo in org_repos]
         return org_repos
 
-    def _get_single_repo_data(self, chain_name, org_then_slash_then_repo: str, year_count: int = 1):
+    def _get_single_repo_data(self, org_then_slash_then_repo: str, year_count: int = 1):
         try:
-            output_directory = get_single_repo_stats_d
-            if not os.path.exists(directory):
-                os.makedirs(directory)
             out_file_name_with_path = get_single_repo_stats_json_file_path(
-                chain_name, org_then_slash_then_repo)
+                org_then_slash_then_repo)
             if path.exists(out_file_name_with_path):
                 with open(out_file_name_with_path, 'r') as single_repo_data_json:
                     return json.load(single_repo_data_json)
 
-            directory = out_file_name_with_path.split("/")[]
             repo_data = self._get_single_repo_data_from_api(
                 org_then_slash_then_repo, year_count)
             with open(out_file_name_with_path, 'w') as single_repo_data_json:
