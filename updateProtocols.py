@@ -16,7 +16,7 @@ def update_toml_data(coin_name):
         raise Exception("Invalid blockchain name")
 
     file_url = ELECTRIC_CAPITAL_RAW_CONTENT_BASE_URL + \
-               '/' + coin_name[0] + '/' + coin_name + '.toml'
+        '/' + coin_name[0] + '/' + coin_name + '.toml'
     r = requests.get(file_url)
     if r.status_code != 200:
         raise Exception("Failed to get the toml file for: ", coin_name)

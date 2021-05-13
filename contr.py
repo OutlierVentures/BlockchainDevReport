@@ -15,6 +15,7 @@ from config import get_pats
 
 dir_path = path.dirname(path.realpath(__file__))
 
+
 async def get_commits(session, pat, org_then_slash_then_repo, page):
     async with session.get(url='https://api.github.com/repos/' + org_then_slash_then_repo + '/commits?page='
                                + str(page) + '&per_page=100',
@@ -26,7 +27,8 @@ async def get_commits(session, pat, org_then_slash_then_repo, page):
             if "link" in r.headers:
                 pages_link = r.headers['link']
                 last_page_link = pages_link.split(",")[1]
-                re_match = re.search('page=(.*)&per_page=100>; rel="last"', last_page_link)
+                re_match = re.search(
+                    'page=(.*)&per_page=100>; rel="last"', last_page_link)
                 if re_match:
                     total_pages = int(re_match.group(1))
             return {
@@ -51,7 +53,7 @@ class Contributors:
         # TODO: fix this to be an array
         self.gh_pat_helper = GithubPersonalAccessTokenHelper(get_pats())
 
-    # list all the repos of a protocol from toml 
+    # list all the repos of a protocol from toml
     # Includes all the core github org/user repos and the repo urls listed in toml
     # Ensure protocol is same as name of toml file
     async def get_repos_for_protocol_from_toml(self, protocol):
@@ -69,47 +71,53 @@ class Contributors:
         except:
             print('Could not open toml file - check formatting!!')
             sys.exit(1)
- 
+
         for org in github_orgs:
             if not org.lower().startswith("https://github.com/"):
                 continue
             org_name = org.split('https://github.com/')[1]
             try:
-                # Get all repos 
+                # Get all repos
                 all_org_repos = []
                 page = 1
                 url = f"https://api.github.com/orgs/{org_name}/repos?page={page}&per_page=100"
-                response = requests.get(url, headers={'Authorization': 'Token ' + pat})
+                response = requests.get(
+                    url, headers={'Authorization': 'Token ' + pat})
                 while len(response.json()) > 0:
                     for repo in response.json():
                         all_org_repos.append(repo["full_name"])
                     page += 1
                     url = f"https://api.github.com/orgs/{org_name}/repos?page={page}&per_page=100"
-                    response = requests.get(url, headers={'Authorization': 'Token ' + pat})
+                    response = requests.get(
+                        url, headers={'Authorization': 'Token ' + pat})
                 # Get forked repos
                 forked_org_repos = []
                 page = 1
                 url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
-                response = requests.get(url, headers={'Authorization': 'Token ' + pat})
+                response = requests.get(
+                    url, headers={'Authorization': 'Token ' + pat})
                 while len(response.json()) > 0:
                     for repo in response.json():
                         forked_org_repos.append(repo["full_name"])
                     page += 1
                     url = f"https://api.github.com/orgs/{org_name}/repos?type=forks&page={page}&per_page=100"
-                    response = requests.get(url, headers={'Authorization': 'Token ' + pat})
+                    response = requests.get(
+                        url, headers={'Authorization': 'Token ' + pat})
                 # Find difference
-                unforked_repos = list(set(all_org_repos) - set(forked_org_repos))
+                unforked_repos = list(
+                    set(all_org_repos) - set(forked_org_repos))
                 for repo in unforked_repos:
                     repos.add(repo.lower())
             except:
                 # Core org is not org but a user
                 # Get repos of user
                 url = f"https://api.github.com/users/{org_name}/repos"
-                response = requests.get(url, headers={'Authorization': 'Token ' + pat})
+                response = requests.get(
+                    url, headers={'Authorization': 'Token ' + pat})
                 for repo in response.json():
                     repos.add(repo["full_name"].lower())
         return list(repos)
-    
+
     async def _get_access_token(self):
         res = self.gh_pat_helper.get_access_token()
         if "token" in res and res["token"] is not None:
@@ -129,7 +137,7 @@ class Contributors:
             initial_request = await get_commits(session, pat, org_then_slash_then_repo, page=1)
             # Repo doesn't exist
             if initial_request["error"] or (type(initial_request["data"]) == dict and initial_request["data"].message == 'Not Found'):
-                return []  
+                return []
             if isinstance(initial_request["data"], list) and len(initial_request["data"]) == 0:
                 return []
             commits.extend(initial_request["data"])
@@ -153,7 +161,8 @@ class Contributors:
                 tasks = []
                 for page in range(batch_start, batch_end + 1):
                     task = ensure_future(
-                        get_commits(session, pat, org_then_slash_then_repo, page)
+                        get_commits(
+                            session, pat, org_then_slash_then_repo, page)
                     )
                     tasks.append(task)
 
@@ -189,9 +198,9 @@ class Contributors:
                 rate_limit_remaining -= successful_responses_count
                 batch_start += successful_responses_count
 
-        days_count = 365 * n_years # TODO: Adjust for leap years
+        days_count = 365 * n_years  # TODO: Adjust for leap years
         # Remove older commits
-        year_ago_date = dt.datetime.now() - dt.timedelta(days=days_count)  
+        year_ago_date = dt.datetime.now() - dt.timedelta(days=days_count)
         contributors = []
         for item in commits:
             try:
@@ -199,7 +208,8 @@ class Contributors:
                 date = dt.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
                 if date > year_ago_date:
                     if item['author']:  # Can be null (user not logged in)
-                        contributors.append(item['author']['login']) # GitHub username
+                        # GitHub username
+                        contributors.append(item['author']['login'])
             except Exception as e:
                 print(e)
                 sys.exit(1)
@@ -249,7 +259,8 @@ class Contributors:
                 tasks = []
                 for page in range(batch_start, batch_end + 1):
                     task = ensure_future(
-                        get_commits(session, pat, org_then_slash_then_repo, page)
+                        get_commits(
+                            session, pat, org_then_slash_then_repo, page)
                     )
                     tasks.append(task)
 
@@ -289,9 +300,13 @@ class Contributors:
         # with open(org_then_slash_then_repo + '_commits.json', 'w+') as outfile:
         #    json.dump(commits, outfile)
         # Remove older commits
-        month_start_dates = [dt.datetime.now()]  # Include final end date for later use
-        for month in range(1, month_count_plus_one):  # Generate (12 * n_years) months of start dates
-            month_start_dates.append(month_start_dates[-1] - dt.timedelta(days=30))  # 12 'months' is 360 days
+        # Include final end date for later use
+        month_start_dates = [dt.datetime.now()]
+        # Generate (12 * n_years) months of start dates
+        for month in range(1, month_count_plus_one):
+            # 12 'months' is 360 days
+            month_start_dates.append(
+                month_start_dates[-1] - dt.timedelta(days=30))
         month_start_dates.reverse()
         for item in commits:
             try:
@@ -299,10 +314,12 @@ class Contributors:
                 date = dt.datetime.strptime(date_string, '%Y-%m-%dT%H:%M:%SZ')
                 # FIXME find a more efficient way to do this
                 for index, (start, end) in enumerate(zip(month_start_dates, month_start_dates[1:])):
-                    if date >= start and date < end and item['author']:  # Can be null (user not logged in)
+                    # Can be null (user not logged in)
+                    if date >= start and date < end and item['author']:
                         contributors[index].append(item['author']['login'])
             except Exception as e:
-                print('Failed to get monthly contributors for ' + org_then_slash_then_repo)
+                print('Failed to get monthly contributors for ' +
+                      org_then_slash_then_repo)
                 print(e)
                 sys.exit(1)
         # De-duplicate commiters
@@ -314,7 +331,8 @@ class Contributors:
     async def get_contr_from_toml(self, toml_file: str, monthly: bool = True, years_count: int = 1):
         toml_file_without_protocols = toml_file.split('protocols/')[1]
         protocol_name = toml_file_without_protocols.split('.toml')[0]
-        out_file_name = toml_file_without_protocols.replace('.toml', '_contributors.json')
+        out_file_name = toml_file_without_protocols.replace(
+            '.toml', '_contributors.json')
         out_file_name_with_path = self.save_path + '/' + out_file_name
         # Useful if left running e.g. over weekend - if failed, re-run INCLUDING last repo listed
         progress_file_name = toml_file.replace('.toml', '_repos_seen.txt')
@@ -345,15 +363,15 @@ class Contributors:
             core_array = stats
         elif monthly:
             # Explicity def, see above
-            # TODO: change this length to make it configurable 
+            # TODO: change this length to make it configurable
             core_array = list_2d
         else:
             # yearly
             core_array = []
-        
+
         with open(out_file_name_with_path, 'w') as outfile:
             json.dump(core_array, outfile)
-        
+
         repos = await self.get_repos_for_protocol_from_toml(protocol_name)
         unseen_repo = []
         for repo in repos:
@@ -384,7 +402,8 @@ class Contributors:
                 with open(out_file_name_with_path, 'w') as outfile:
                     json.dump(data, outfile)
             except Exception as e:
-                print('Failed to collate monthly contributors for all repos in toml file')
+                print(
+                    'Failed to collate monthly contributors for all repos in toml file')
                 print(e)
                 sys.exit(1)
         try:
@@ -396,13 +415,16 @@ class Contributors:
         if monthly:
             print('Monthly active developers in the past year:')
             for index, month_of_contributors in enumerate(data):
-                deduplicated_monthly_contributors = list(set(month_of_contributors))
+                deduplicated_monthly_contributors = list(
+                    set(month_of_contributors))
                 data[index] = deduplicated_monthly_contributors
-                print('Month ' + str(index + 1) + ': ' + str(len(deduplicated_monthly_contributors)))
+                print('Month ' + str(index + 1) + ': ' +
+                      str(len(deduplicated_monthly_contributors)))
             deduplicated_contributors = data
         else:
             deduplicated_contributors = list(set(data))
-            print('Total active developers in the past year: ' + str(len(deduplicated_contributors)))
+            print('Total active developers in the past year: ' +
+                  str(len(deduplicated_contributors)))
         with open(out_file_name_with_path, 'w') as outfile:
             json.dump(deduplicated_contributors, outfile)
         return deduplicated_contributors
@@ -425,6 +447,7 @@ if __name__ == '__main__':
         years_count = 1
     try:
         c = Contributors('./output')
-        loop.run_until_complete(c.get_contr_from_toml(sys.argv[1], years_count=years_count))
+        loop.run_until_complete(c.get_contr_from_toml(
+            sys.argv[1], years_count=years_count))
     finally:
         loop.close()

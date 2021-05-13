@@ -5,7 +5,7 @@ rm logfile.log
 
 echo "Generating reports ..."
 
-python3 updateProtocols.py
+# python3 updateProtocols.py
 
 echo "Running dev.py ..."
 for name in $names; do

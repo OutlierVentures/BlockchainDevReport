@@ -37,7 +37,8 @@ class GithubPersonalAccessTokenHelper():
                     'token': token
                 }
             rate_limit_reset_time = rate_limit.core.reset
-            time_delta = abs(rate_limit_reset_time - datetime.datetime.utcnow())
+            time_delta = abs(rate_limit_reset_time -
+                             datetime.datetime.utcnow())
             if min_sleep_time_secs is None:
                 min_sleep_time_secs = time_delta.total_seconds()
                 continue

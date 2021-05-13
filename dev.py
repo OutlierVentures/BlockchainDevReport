@@ -22,8 +22,10 @@ dir_path = path.dirname(path.realpath(__file__))
 def element_wise_addition_lists(list1, list2):
     return [sum(x) for x in zip_longest(list1, list2, fillvalue=0)]
 
+
 def get_single_repo_stats_json_file_path(org_then_slash_then_repo):
     return os.path.abspath("./output/" + org_then_slash_then_repo.split("/")[1] + "_single_repo_stats.json")
+
 
 def get_commits(pat, org_then_slash_then_repo, page=1, year_count=1, date_since=None, date_until=None):
     url = 'https://api.github.com/repos/' + org_then_slash_then_repo + \
