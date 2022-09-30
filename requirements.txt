@@ -1,4 +1,4 @@
-joblib==0.17.0
+joblib==1.2.0
 pandas==1.1.4
 toml==0.10.2
 seaborn==0.11.0
