@@ -13,7 +13,7 @@ pip3 install -r requirements.txt
 ```
 
 ### Add GitHub PATs
-For all large data pulling operations from GitHub, [Github Personal Access Tokens (PAT)](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) are required as user to GitHub server requests are rate-limited at 5000 requests per hour per authenticated user. No scope/access is required for the tokens.
+For all large data pulling operations from GitHub, [GitHub Personal Access Tokens (PAT)](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) are required as user to GitHub server requests are rate-limited at 5000 requests per hour per authenticated user. No scope/access is required for the tokens.
 PS: If you have private repos, be sure to use a token that only has the `public_repo` scope.
 Create a .env (refer to env.sample) to store all the GitHub PATs in a single space seperated list. These PATs will be used in round robin to access the various GitHub Organisations and Repositories. 
 
